@@ -9,3 +9,12 @@ button {
     border: none;
     border-radius: 40px;
 }
+
+.dark-button {
+    width: auto;
+    color: var(--white);
+    padding: 15px;
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: var(--dark-color);
+}
