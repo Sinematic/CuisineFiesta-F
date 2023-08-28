@@ -1,10 +1,11 @@
 import { Fragment } from 'react'
+import Login from './components/Login/Login'
 
 function App() {
 
 	return (
 		<Fragment>
-			Test
+			<Login />
 		</Fragment>
 	)
 }

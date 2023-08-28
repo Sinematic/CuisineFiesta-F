@@ -1,0 +1,11 @@
+button {
+    width: 100%;
+    padding: 15px 40px;
+	font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 40px;
+}

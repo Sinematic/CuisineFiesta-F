@@ -16,6 +16,11 @@
 	scroll-behavior: smooth;
 }
 
+
+nav:hover {
+    cursor: pointer;
+}
+
 * {
 	box-sizing: border-box !important;
 	margin: auto;

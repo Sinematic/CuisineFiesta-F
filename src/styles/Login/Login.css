@@ -1,0 +1,42 @@
+.register-container {
+    padding: 100px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    max-width: 720px;
+    margin: auto;
+}
+
+.register-container > form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    min-height: 315px;
+}
+
+.register-container > form > input {
+    margin: 0;
+}
+
+.register-container > form > button {
+    padding: 15px 60px;
+    width: auto;
+}
+
+.register-container > .switch-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    font-size: 1.2rem;
+    color: var(--white);
+}
+
+.register-container > .switch-form > button {
+    background-color: var(--secondary-color);
+    opacity: 0.4;
+}
+
+.register-container > .switch-form > button.active {
+    opacity: 1;
+}
