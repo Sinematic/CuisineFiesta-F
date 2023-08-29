@@ -3,18 +3,14 @@ import Button from "../Button/Button"
 import Input from "../Input/Input"
 import "../../styles/Login/Login.css"
 import PrivacyPolicy from '../PrivacyPolicy/PrivacyPolicy';
+import Dropdown from '../Dropdown/Dropdown';
 
 function Login() {
 
     const [isLogged, /*setIsLogged*/] = useState(false)
     const [page, setPage] = useState("login")
-    const [isOpen, setIsOpen] = useState(false)
 
     const [isChecked, setIsChecked] = useState(false)
-
-    const verifyForm = () => {
-        isChecked ? <p>Création du compte en cours</p> : <p>Vous devez accepter notre politique de confidentialité !</p>
-    }
 
     return (
         <Fragment>
@@ -27,32 +23,39 @@ function Login() {
                         {page === "signup" ? 
                             <Fragment>
                                 <Input name="birthDate" type="date" /> 
+                                <Dropdown title="Politique de confidentialité">
+                                    <PrivacyPolicy title="false" />
 
-                                <div className='policies-wrapper'>
-                                    <Button 
-                                        onClick={() => setIsOpen(!isOpen)} 
-                                        identifier="dark-button" 
-                                        value="Politique de confidentialité" 
-                                    />
-                                    <Input onChange={() => setIsChecked(!isChecked)} name="policies" type="checkbox" required="true" />
-                                </div>
-                               
-                                {isOpen ? <PrivacyPolicy isOpen={isOpen} /> : null}
+                                    <div className="accept-policies">
+                                        <label htmlFor="policies">
+                                            J'accepte la politique de confidentialité :
+                                        </label>
+                                        <Input onChange={() => setIsChecked(!isChecked)} name="policies" type="checkbox" />
+                                    </div>
+                                </Dropdown>
+
                             </Fragment>
                         : null}
-                        <Button  name={page} type="submit" onClick={() => verifyForm} value={page === "login" ? "Se connecter" : "S'inscrire"} />
+                        <Button  name={page} type="button" value={page === "login" ? "Se connecter" : "S'inscrire"} />
                         
                     </form>
 
                     <div className="switch-form">
-                        <button onClick={() => setPage("login")} className={page === "login" ? "active" : ""}>
-                            Connexion
-                        </button>
-                        <button onClick={() => setPage("signup")} className={page === "signup" ? "active" : ""}>
-                            Inscription
-                        </button>
+                        {page === "login" ? 
+                            <button onClick={() => setPage("signup")}>
+                                Inscription
+                            </button>
+                        : 
+                            <button onClick={() => setPage("login")}>
+                                Connexion
+                            </button>
+                        }
+                        
+                        
                     </div>
+
                 </div>
+
             : null}
         </Fragment>
     )

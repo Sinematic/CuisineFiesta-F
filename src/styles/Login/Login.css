@@ -1,8 +1,8 @@
 .register-container {
-    padding: 60px 10%;
+    padding: 30px 8vw;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 45px;
     max-width: 720px;
     margin: auto;
 }
@@ -10,6 +10,7 @@
 .register-container > h1 {
     font-size: 1.6rem;
     font-weight: 700;
+    line-height: normal;
     color: var(--main-color);
     text-align: center;
 }
@@ -17,7 +18,7 @@
 .register-container > form {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
     min-height: 315px;
 }
 
@@ -25,46 +26,35 @@
     margin: 0;
 }
 
-.register-container > form > button:not(.dark-button) {
+.register-container > form > input:focus {
+    outline: solid var(--main-color);
+}
+
+.register-container > form > button {
     padding: 15px 60px;
     width: auto;
 }
 
-.register-container > .switch-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.accept-policies {
+    display: grid;
+    grid-template-columns: 1fr 1.8rem;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 15px 10px ;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+
+.switch-form {
+    border-top: 3px solid #eaeaea;
+    padding-top: 12vmin;
     width: 100%;
     font-size: 1.2rem;
     color: var(--white);
 }
 
-.register-container > .switch-form > button {
+.switch-form > button {
     background-color: var(--secondary-color);
-    opacity: 0.4;
-}
-
-.register-container > .switch-form > button.active {
-    opacity: 1;
-}
-
-.policies-wrapper {
-    display: flex;
-    width: 100%;
-}
-
-.policies-wrapper > .dark-button {
-    margin: 0;
-}
-
-.policies-wrapper > input {
-    width: 25px;
-}
-
-.error-message {
-    position: absolute;
-    z-index: 3;
-    color: red;
-    font-size: 2rem;
-    font-weight: 500;
 }

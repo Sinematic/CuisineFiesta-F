@@ -9,7 +9,7 @@
     padding: 1rem 0 1rem 0;
 }
 
-.privacy-section {
+.privacy-section:not(:last-child) {
     padding: 20px 0;
     border-bottom: 1px solid;
 }

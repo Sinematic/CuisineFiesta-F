@@ -2,15 +2,14 @@ import { Fragment } from "react"
 import "../../styles/PrivacyPolicy/PrivacyPolicy.css"
 import privacyPolicy from "../../assets/privacy-policy.json"
 
-function PrivacyPolicy(props : { isOpen: boolean }) {
+function PrivacyPolicy(props: { title?: "true" | "false" }) {
 
     return (
         <Fragment>
-            {props.isOpen ? 
             <div className="privacy-container">
                 {privacyPolicy ? 
                     <Fragment>
-                        <h2>{privacyPolicy.title}</h2>
+                        {props.title === "true" ? <h2>{privacyPolicy.title}</h2> : null}
                         {privacyPolicy.sections.map((section) => 
                             <div className="privacy-section">
                                 <h3>{section.title}</h3>
@@ -20,7 +19,6 @@ function PrivacyPolicy(props : { isOpen: boolean }) {
                     </Fragment>
                 : <h2>Impossible de charger le document !</h2>}
             </div>
-            : null}
         </Fragment>
 
     )
