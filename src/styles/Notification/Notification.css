@@ -1,0 +1,33 @@
+.notification {
+    position: fixed;
+    color: var(--white);
+    padding: 12px 15px 18px 15px;
+    left: 8vw;
+    right: 8vw;
+    bottom: 10vh;
+    border-radius: 12px;
+    z-index: 2;
+}
+
+.notification > span {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.error {
+    background-color: var(--error-color);
+}
+
+.success {
+    background-color: var(--success-color);
+}
+
+.information {
+    background-color: var(--information-color);
+}
+
+.warning {
+    background-color: var(--warning-color);
+}

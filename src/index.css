@@ -3,6 +3,10 @@
 	--secondary-color: #232528;
 	--dark-color: #080708;
 	--white: #FFFFFF;
+	--error-color: #FE4A49;
+	--success-color: #7AC74F;
+	--information-color: #1F487E;
+	--warning-color: #FF8C42;
 }
 
 #root {

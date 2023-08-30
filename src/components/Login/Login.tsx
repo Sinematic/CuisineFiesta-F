@@ -1,9 +1,10 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState } from "react"
 import Button from "../Button/Button"
 import Input from "../Input/Input"
+import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy"
+import Dropdown from "../Dropdown/Dropdown"
+import Notification from "../Notification/Notification"
 import "../../styles/Login/Login.css"
-import PrivacyPolicy from '../PrivacyPolicy/PrivacyPolicy';
-import Dropdown from '../Dropdown/Dropdown';
 
 function Login() {
 
@@ -12,8 +13,9 @@ function Login() {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [birthDate, setBirthDate] = useState("")
-    const [isChecked, setIsChecked] = useState("")
+    const [birthdate, setbirthdate] = useState("")
+    const [isChecked, setIsChecked] = useState(false)
+    const [displayNotification, setDisplayNotification] = useState({ display: false, type: "information", content: "" })
 
     const isValidPassword = (password: string) => {
         const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
@@ -25,26 +27,38 @@ function Login() {
         return emailRegex.test(email);
     }
 
+    const isValidAge = (birthdate: string) => {
+        const currentDate = new Date();
+        const birthdateObject = new Date(birthdate);
+        const thirteenYearsAgo = new Date(currentDate.getFullYear() - 13, currentDate.getMonth(), currentDate.getDate());
+        return birthdateObject <= thirteenYearsAgo;
+    }
+
     const verifyFormInputs = () => {
+
         if (page === "login") {
-            isValidPassword(password) && isValidEmail(email) ? true : false
+
+            if (!isValidEmail(email) || !isValidPassword(password)) {
+
+                setDisplayNotification({
+                    display: true,
+                    type: "error",
+                    content: "L'email ou le mot de passe n'est pas valide."
+                })
+
+                setTimeout(() => setDisplayNotification({ ...displayNotification, display: false }), 5000)
+            }
         }
 
         if (page === "signup") {
-            isValidPassword(password) && isValidEmail(email) ? true : false
+            isValidPassword(password) && isValidEmail(email) && isChecked && isValidAge(birthdate) ? true : false
         }
     }
-
 
     return (
         <Fragment>
             {!isLogged ?
                 <div className="register-container">
-
-                    {"Email : " + email}
-                    {"Password : " + password}
-                    {"isChecked : " + isChecked}
-                    {"BirthDate : " + birthDate}
 
                     <h1>CuisineFiesta App 🍽️</h1>
                     <form action="" method="POST" className={page + "-form"}>
@@ -54,7 +68,7 @@ function Login() {
                         name="password" placeholder="Mot de passe" type="text" minLength={8}/>
                         {page === "signup" ? 
                             <Fragment>
-                                <Input onChange={(e) => setBirthDate(e.target.value)} name="birthDate" type="date" /> 
+                                <Input onChange={(e) => setbirthdate(e.target.value)} name="birthdate" type="date" /> 
                                 <Dropdown title="Politique de confidentialité">
                                     <PrivacyPolicy title="false" />
 
@@ -62,7 +76,7 @@ function Login() {
                                         <label htmlFor="policies">
                                             J'accepte la politique de confidentialité :
                                         </label>
-                                        <Input onChange={(e) => setIsChecked(e.target.value)} name="policies" type="checkbox" />
+                                        <Input onChange={() => setIsChecked(!isChecked)} name="policies" type="checkbox" />
                                     </div>
                                 </Dropdown>
 
@@ -70,6 +84,8 @@ function Login() {
                         : null}
                         <Button onClick={verifyFormInputs} name={page} type="button" value={page === "login" ? "Se connecter" : "S'inscrire"} />
                     </form>
+
+                    {displayNotification.display ? <Notification type={displayNotification.type} content={displayNotification.content} /> : null}
 
                     <div className="switch-form">
                         {page === "login" ? 
