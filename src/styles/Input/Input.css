@@ -1,4 +1,29 @@
-input {
+@keyframes labelMovingUp {
+    0% {
+        top: 0;
+        left: 15px;
+    }
+    
+    100% {
+        top: -30px;
+        left: 5px;
+        font-size: 0.9rem;
+    }
+}
+
+label {
+    pointer-events: none;
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+input:not([type="checkbox"]) {
     width: 100%;
     padding: 15px;
     font-size: 1rem;
@@ -8,6 +33,27 @@ input {
     border-radius: 10px;
 }
 
+input[type="checkbox"] + label {
+    position: absolute !important;
+    bottom: 10px;
+}
+
+input:not([type="checkbox"]) {
+    background-color: var(--white);
+}
+
+input:not([type="checkbox"]):focus + label {
+    animation: labelMovingUp 0.6s forwards;
+}
+
+input[type="date"] + label {
+    background-color: var(--white);
+}
+
 input[type="checkbox"] {
-    height: 1.6rem;
+    aspect-ratio: 1 / 1;
+}
+
+input[type="date"]:focus + label {
+    background-color: transparent;
 }

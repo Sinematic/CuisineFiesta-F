@@ -2,20 +2,20 @@ import "../../styles/Input/Input.css"
 
 function Input(props: { 
     onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined,
-    identifier?: string | undefined,
     type: string, 
     value?: string | undefined,
     name: string | undefined, 
-    placeholder ?: string | undefined, 
+    label ?: string | undefined, 
     minLength?: number | undefined, 
-    maxLength?: number | undefined,
-    required?: "true" | "false"    
+    maxLength?: number | undefined
 }) {
 
     return (
-        <input onChange={props.onChange} value={props.value}
-        className={props.identifier} type={props.type} name={props.name} placeholder={props.placeholder} 
-        minLength={props.minLength} maxLength={props.maxLength} required={props.required === "false" ? false : true} />
+        <div className={props.name + "-wrapper input-wrapper"}>
+            <input onChange={props.onChange} type={props.type} value={props.value} name={props.name} 
+            minLength={props.minLength} maxLength={props.maxLength} />
+            <label htmlFor={props.name}>{props.label}</label>
+        </div>
     )
 }
 

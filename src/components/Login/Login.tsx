@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react"
+import { useState } from "react"
 import Button from "../Button/Button"
 import Input from "../Input/Input"
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy"
@@ -13,7 +13,7 @@ function Login() {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [birthdate, setbirthdate] = useState("")
+    const [birthdate, setBirthdate] = useState("")
     const [isChecked, setIsChecked] = useState(false)
     const [displayNotification, setDisplayNotification] = useState({ display: false, type: "information", content: "" })
 
@@ -56,33 +56,31 @@ function Login() {
     }
 
     return (
-        <Fragment>
+        <>
             {!isLogged ?
                 <div className="register-container">
 
                     <h1>CuisineFiesta App 🍽️</h1>
                     <form action="" method="POST" className={page + "-form"}>
+
                         <Input onChange={(e) => setEmail(e.target.value)} value={email} 
-                        name="email" placeholder="Email" type="email" maxLength={60} />
+                        name="email" label="Email" type="email" maxLength={60} />
                         <Input onChange={(e) => setPassword(e.target.value)} value={password} 
-                        name="password" placeholder="Mot de passe" type="text" minLength={8}/>
+                        name="password" label="Mot de passe" type="text" minLength={8}/>
+
                         {page === "signup" ? 
-                            <Fragment>
-                                <Input onChange={(e) => setbirthdate(e.target.value)} name="birthdate" type="date" /> 
+                            <>
+                                <Input onChange={(e) => setBirthdate(e.target.value)} name="birthdate" 
+                                type="date" label="Date de naissance" /> 
+                                <Input onChange={() => setIsChecked(!isChecked)} name="policies" 
+                                type="checkbox" label="J'accepte la politique de confidentialité" />
                                 <Dropdown title="Politique de confidentialité">
                                     <PrivacyPolicy title="false" />
-
-                                    <div className="accept-policies">
-                                        <label htmlFor="policies">
-                                            J'accepte la politique de confidentialité :
-                                        </label>
-                                        <Input onChange={() => setIsChecked(!isChecked)} name="policies" type="checkbox" />
-                                    </div>
                                 </Dropdown>
-
-                            </Fragment>
+                            </>
                         : null}
-                        <Button onClick={verifyFormInputs} name={page} type="button" value={page === "login" ? "Se connecter" : "S'inscrire"} />
+
+                        <Button onClick={verifyFormInputs} value={page === "login" ? "Se connecter" : "S'inscrire"} name={page} type="button" />
                     </form>
 
                     {displayNotification.display ? <Notification type={displayNotification.type} content={displayNotification.content} /> : null}
@@ -97,11 +95,17 @@ function Login() {
                                 Connexion
                             </button>
                         }
+                    {/*
+                    <button onClick={() => page === "login" ? setPage("signup") : setPage("login")}>
+                            {page === "login" ? "Connexion" : "Inscription"}
+                        </button> 
+                    */}
+                        
                     </div>
                 </div>
 
             : null}
-        </Fragment>
+        </>
     )
 }
 
