@@ -1,5 +1,4 @@
 .register-container {
-    padding: 30px 8vw;
     display: flex;
     flex-direction: column;
     gap: 45px;
@@ -7,19 +6,12 @@
     margin: auto;
 }
 
-.register-container > h1 {
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: normal;
-    color: var(--main-color);
-    text-align: center;
-}
-
 .register-container > form {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 45px;
     min-height: 315px;
+    padding: 0 8vw 30px 8vw;
 }
 
 .register-container > form > input {
@@ -35,15 +27,29 @@
     width: auto;
 }
 
-.register-container .policies-wrapper {
-    display: flex;
-    flex-direction: column-reverse;
-    margin: none;
-    text-align: left;
+.policies-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+    gap: 15px;
+    border-radius: 10px;
+    padding: 12px 0 12px 12px;
+    margin-top: -15px;
+    background-color: var(--white);
 }
 
 .policies-wrapper input {
+    margin: none;
     width: 1.3rem;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.policies-wrapper label {
+    grid-row: 1;
+}
+
+.register-container .dropdown {
+    margin-top: -10px;
 }
 
 .switch-form {

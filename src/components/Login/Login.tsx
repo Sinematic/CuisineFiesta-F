@@ -5,6 +5,8 @@ import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy"
 import Dropdown from "../Dropdown/Dropdown"
 import Notification from "../Notification/Notification"
 import "../../styles/Login/Login.css"
+import Cover from "../Cover/Cover"
+import CoverPicture from "../../assets/images/pates-italiennes-avec-legumes-et-fromage-fondu.webp"
 
 function Login() {
 
@@ -59,8 +61,8 @@ function Login() {
         <>
             {!isLogged ?
                 <div className="register-container">
-
-                    <h1>CuisineFiesta App 🍽️</h1>
+                    <Cover type="title" text="CuisineFiesta App" src={CoverPicture} 
+                    alt="Pâtes italiennes avec légumes et fromage fondu" />
                     <form action="" method="POST" className={page + "-form"}>
 
                         <Input onChange={(e) => setEmail(e.target.value)} value={email} 
