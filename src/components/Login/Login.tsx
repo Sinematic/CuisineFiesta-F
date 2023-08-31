@@ -60,50 +60,45 @@ function Login() {
     return (
         <>
             {!isLogged ?
-                <div className="register-container">
-                    <Cover type="title" text="CuisineFiesta App" src={CoverPicture} 
+                <div className="session-form">
+                    <Cover type="title" text="CuisineFiesta" src={CoverPicture} 
                     alt="Pâtes italiennes avec légumes et fromage fondu" />
-                    <form action="" method="POST" className={page + "-form"}>
 
+                    <div className="bar-state">
+                        <Button value="Connexion" onClick={() => setPage("login")} 
+                        identifier={(page ===  "login" ? "active-page" : "") + " button-page"} />
+                        <Button value="Inscription" onClick={() => setPage("signup")}
+                        identifier={(page ===  "signup" ? "active-page" : "") + " button-page"}  />
+                        <div className="filler-beige"></div>
+                    </div>
+
+                    <form action="" method="POST">
                         <Input onChange={(e) => setEmail(e.target.value)} value={email} 
-                        name="email" label="Email" type="email" maxLength={60} />
+                        name="email" label="Email" identifier={email ? "input-filled" : ""}
+                        type="email" maxLength={60} />
                         <Input onChange={(e) => setPassword(e.target.value)} value={password} 
-                        name="password" label="Mot de passe" type="text" minLength={8}/>
+                        type="text" identifier={password ? "input-filled" : ""}
+                        name="password" label="Mot de passe"  minLength={8} />
 
                         {page === "signup" ? 
                             <>
                                 <Input onChange={(e) => setBirthdate(e.target.value)} name="birthdate" 
-                                type="date" label="Date de naissance" /> 
+                                type="date" identifier={birthdate ? "input-filled" : ""} label="Date de naissance" /> 
                                 <Input onChange={() => setIsChecked(!isChecked)} name="policies" 
-                                type="checkbox" label="J'accepte la politique de confidentialité" />
+                                type="checkbox" identifier="policies-wrapper"
+                                label="J'accepte la politique de confidentialité" />
                                 <Dropdown title="Politique de confidentialité">
                                     <PrivacyPolicy title="false" />
                                 </Dropdown>
                             </>
                         : null}
 
-                        <Button onClick={verifyFormInputs} value={page === "login" ? "Se connecter" : "S'inscrire"} name={page} type="button" />
+                        <Button onClick={verifyFormInputs} type="button" value={page === "login" ? "Se connecter" : "S'inscrire"} 
+                        name={page} identifier="submit-form" />
                     </form>
 
                     {displayNotification.display ? <Notification type={displayNotification.type} content={displayNotification.content} /> : null}
 
-                    <div className="switch-form">
-                        {page === "login" ? 
-                            <button onClick={() => setPage("signup")}>
-                                Inscription
-                            </button>
-                        : 
-                            <button onClick={() => setPage("login")}>
-                                Connexion
-                            </button>
-                        }
-                    {/*
-                    <button onClick={() => page === "login" ? setPage("signup") : setPage("login")}>
-                            {page === "login" ? "Connexion" : "Inscription"}
-                        </button> 
-                    */}
-                        
-                    </div>
                 </div>
 
             : null}

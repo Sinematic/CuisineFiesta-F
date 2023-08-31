@@ -1,28 +1,28 @@
-.register-container {
+.session-form {
     display: flex;
     flex-direction: column;
     gap: 45px;
     max-width: 720px;
     margin: auto;
+    background-color: #F2F2F2;
 }
 
-.register-container > form {
+.session-form > form {
     display: flex;
     flex-direction: column;
     gap: 45px;
-    min-height: 315px;
-    padding: 0 8vw 30px 8vw;
+    padding: 40px 8vw 30px 8vw;
 }
 
-.register-container > form > input {
+.session-form > form > input {
     margin: 0;
 }
 
-.register-container > form > input:focus {
-    outline: solid var(--main-color);
+.session-form > form input:not([type="checkbox"]):focus {
+    outline: 2px solid #C4AE78;
 }
 
-.register-container > form > button {
+.submit-form {
     padding: 15px 60px;
     width: auto;
 }
@@ -48,18 +48,50 @@
     grid-row: 1;
 }
 
-.register-container .dropdown {
+.session-form .dropdown {
     margin-top: -10px;
 }
 
-.switch-form {
-    border-top: 3px solid #eaeaea;
-    padding-top: 12vmin;
+.bar-state {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
-    font-size: 1.2rem;
-    color: var(--white);
+    position: absolute;
+    top: 36vh;
+    left: 0;
+    z-index: 5;
 }
 
-.switch-form > button {
-    background-color: var(--secondary-color);
+.bar-state > button {
+    padding: 20px 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #F5F5DC;
+    background-color: #C4AE78;
+}
+
+.bar-state > button:first-of-type {
+    border-radius: 10px 10px 10px 0;
+}
+
+.bar-state > button:last-of-type {
+    border-radius: 10px 10px 0 10px;
+}
+
+.bar-state > .filler-beige {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 5vh;
+    margin-top: -5vh;
+    background-color: #F5F5DC;
+    z-index: -1;
+}
+
+button.active-page {
+    color: #C4AE78;
+    background-color: #F5F5DC;
+}
+
+.active-page {
+    border-radius: 10px 10px 0 0;
 }
