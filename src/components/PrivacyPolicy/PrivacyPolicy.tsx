@@ -9,7 +9,7 @@ function PrivacyPolicy(props: { title?: "true" | "false" }) {
                 <>
                     {props.title === "true" ? <h2>{privacyPolicy.title}</h2> : null}
                     {privacyPolicy.sections.map((section) => 
-                        <div className="privacy-section">
+                        <div key={section.title} className="privacy-section">
                             <h3>{section.title}</h3>
                             <p>{section.content}</p>
                         </div>

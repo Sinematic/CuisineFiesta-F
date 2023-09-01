@@ -48,12 +48,62 @@ function Login() {
                     content: "L'email ou le mot de passe n'est pas valide."
                 })
 
-                setTimeout(() => setDisplayNotification({ ...displayNotification, display: false }), 5000)
+                setTimeout(() => setDisplayNotification({ display: false, type: "", content: "" }), 5000)
             }
         }
 
         if (page === "signup") {
-            isValidPassword(password) && isValidEmail(email) && isChecked && isValidAge(birthdate) ? true : false
+
+            let sentence = ""
+
+            sentence += !isValidEmail(email) ? "L'email n'est pas valide. " : ""
+            sentence += !isValidPassword(password) ? "Le mot de passe n'est pas valide. " : ""
+            sentence += !isValidAge(birthdate) ? "Un âge minimal de 13 ans est requis pour utiliser l'application. " : ""
+            sentence += !isChecked ? "Vous devez accepter notre politique de confidentialité !" : ""
+
+            setDisplayNotification({
+                display: true,
+                type: "error",
+                content: sentence
+            })
+
+            setTimeout(() => setDisplayNotification({ display: false, type: "", content: "" }), 5000)
+        }
+    }
+
+    const auth = async () => {
+
+        verifyFormInputs()
+
+        if (displayNotification.display === false) {
+
+            const authBody = page === "login" ?  JSON.stringify({
+                email: email,
+                password
+            }) : JSON.stringify({
+                email: email,
+                password: password,
+                birthdate: birthdate
+            })
+
+            try {
+                const response = await fetch(`http://localhost:3000/api/auth/${page}`, {
+                    method: "POST",
+                    body: authBody,
+                    headers: { "Content-Type": "application/json" }
+                })
+
+                if (response.ok) {
+                    setDisplayNotification({ display: true, type: "success", content: "Utilisateur créé !" })
+                } else setDisplayNotification({ display: true, type: "error", content: "Une erreur non spécifiée est survenue." })
+        
+            } catch {
+                setDisplayNotification({
+                    display: true,
+                    type: "error",
+                    content: "L'email ou le mot de passe n'est pas valide."
+                })  
+            }
         }
     }
 
@@ -93,7 +143,7 @@ function Login() {
                             </>
                         : null}
 
-                        <Button onClick={verifyFormInputs} type="button" value={page === "login" ? "Se connecter" : "S'inscrire"} 
+                        <Button onClick={auth} type="button" value={page === "login" ? "Se connecter" : "S'inscrire"} 
                         name={page} identifier="submit-form" />
                     </form>
 
