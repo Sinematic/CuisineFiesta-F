@@ -4,20 +4,26 @@ import Input from "../Input/Input"
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy"
 import Dropdown from "../Dropdown/Dropdown"
 import Notification from "../Notification/Notification"
-import "../../styles/Login/Login.css"
+import "../../styles/AccessControl/AccessControl.css"
 import Cover from "../Cover/Cover"
 import CoverPicture from "../../assets/images/pates-italiennes-avec-legumes-et-fromage-fondu.webp"
+import { useNavigate } from "react-router"
 
-function Login() {
+function AccessControl() {
 
-    const [isLogged, /*setIsLogged*/] = useState(false)
+    const token = localStorage.getItem("token")
     const [page, setPage] = useState("login")
+    const [isLoading, setIsLoading] = useState(false)
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [birthdate, setBirthdate] = useState("")
     const [isChecked, setIsChecked] = useState(false)
-    const [displayNotification, setDisplayNotification] = useState({ display: false, type: "information", content: "" })
+    const [notification, setNotification] = useState({ type: "", content: "" })
+
+    const navigate = useNavigate()
+
+    if (token) navigate("/")
 
     const isValidPassword = (password: string) => {
         const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
@@ -26,83 +32,93 @@ function Login() {
 
     const isValidEmail = (email: string) => {
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        return emailRegex.test(email);
+        return emailRegex.test(email)
     }
 
     const isValidAge = (birthdate: string) => {
-        const currentDate = new Date();
-        const birthdateObject = new Date(birthdate);
-        const thirteenYearsAgo = new Date(currentDate.getFullYear() - 13, currentDate.getMonth(), currentDate.getDate());
-        return birthdateObject <= thirteenYearsAgo;
+        const currentDate = new Date()
+        const birthdateObject = new Date(birthdate)
+        const thirteenYearsAgo = new Date(currentDate.getFullYear() - 13, currentDate.getMonth(), currentDate.getDate())
+        return birthdateObject <= thirteenYearsAgo
     }
 
     const verifyFormInputs = () => {
 
-        if (page === "login") {
-
-            if (!isValidEmail(email) || !isValidPassword(password)) {
-
-                setDisplayNotification({
-                    display: true,
-                    type: "error",
-                    content: "L'email ou le mot de passe n'est pas valide."
-                })
-
-                setTimeout(() => setDisplayNotification({ display: false, type: "", content: "" }), 5000)
-            }
-        }
-
         if (page === "signup") {
 
-            let sentence = ""
+            setIsLoading(true)
+            let sentence : string = "";
 
             sentence += !isValidEmail(email) ? "L'email n'est pas valide. " : ""
-            sentence += !isValidPassword(password) ? "Le mot de passe n'est pas valide. " : ""
+            sentence += !isValidPassword(password) ? "Le mot de passe doit contenir au moins 8 caractères dont 1 majuscule et 1 chiffre. " : ""
             sentence += !isValidAge(birthdate) ? "Un âge minimal de 13 ans est requis pour utiliser l'application. " : ""
             sentence += !isChecked ? "Vous devez accepter notre politique de confidentialité !" : ""
 
-            setDisplayNotification({
-                display: true,
-                type: "error",
-                content: sentence
-            })
-
-            setTimeout(() => setDisplayNotification({ display: false, type: "", content: "" }), 5000)
+            setIsLoading(false)
+            if (sentence) generateNotification("error", sentence)
         }
     }
 
-    const auth = async () => {
+    const generateNotification = (type: string, content: string) => {
+        setNotification({ type: type, content: content })
+        setTimeout(() => setNotification({ type: "", content: content }), 5000)
+    }
+
+    const auth = () => page === "login" ? authLogin() : authSignup()
+
+    const authSignup = async () => {
 
         verifyFormInputs()
 
-        if (displayNotification.display === false) {
+        if (!notification.content) {
 
-            const authBody = page === "login" ?  JSON.stringify({
-                email: email,
-                password
-            }) : JSON.stringify({
+            const body = JSON.stringify({
                 email: email,
                 password: password,
                 birthdate: birthdate
             })
 
             try {
-                const response = await fetch(`http://localhost:3000/api/auth/${page}`, {
+                const response = await fetch(`http://localhost:3000/api/auth/signup`, {
                     method: "POST",
-                    body: authBody,
+                    body: body,
                     headers: { "Content-Type": "application/json" }
                 })
 
                 if (response.ok) {
-                    setDisplayNotification({ display: true, type: "success", content: "Utilisateur créé !" })
-                } else setDisplayNotification({ display: true, type: "error", content: "Une erreur non spécifiée est survenue." })
+                    generateNotification("success", "Utilisateur créé !")
+                } else generateNotification("error", "Une erreur non spécifiée est survenue.")
         
             } catch {
-                setDisplayNotification({
-                    display: true,
-                    type: "error",
-                    content: "L'email ou le mot de passe n'est pas valide."
-                })  
+                generateNotification("error", "L'email ou le mot de passe n'est pas valide.")  
+            }
+        }
+    }
+
+    const authLogin = async () => {
+
+        verifyFormInputs()
+
+        if (!notification.content) {
+
+            const body = JSON.stringify({ email: email, password: password })
+
+            try {
+                const response = await fetch(`http://localhost:3000/api/auth/login`, {
+                    method: "POST",
+                    body: body,
+                    headers: { "Content-Type": "application/json" }
+                })
+
+                if (response.ok) {
+                    generateNotification("success", "Connexion effectuée !" )
+                    const data = await response.json()
+                    localStorage.setItem("user",  data.userId)
+                    localStorage.setItem("token", data.token)
+                } else generateNotification("error", "Identifiants incorrects !")
+        
+            } catch {
+                generateNotification("error", "Une erreur non spécifiée est survenue.") 
             }
         }
     }
@@ -143,17 +159,16 @@ function Login() {
                             </>
                         : null}
 
-                        <Button onClick={auth} type="button" value={page === "login" ? "Se connecter" : "S'inscrire"} 
+                        <Button onClick={() => auth()} type="button" value={page === "login" ? "Se connecter" : "S'inscrire"} 
                         name={page} identifier="submit-form" />
                     </form>
 
-                    {displayNotification.display ? <Notification type={displayNotification.type} content={displayNotification.content} /> : null}
+                    {notification.type && !isLoading ? <Notification type={notification.type} content={notification.content} /> : null}
 
                 </div>
-
             : null}
         </>
     )
 }
 
-export default Login
+export default AccessControl
