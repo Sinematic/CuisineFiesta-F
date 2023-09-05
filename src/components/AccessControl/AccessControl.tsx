@@ -61,13 +61,13 @@ function AccessControl() {
 
     const generateNotification = (type: string, content: string) => {
         setNotification({ type: type, content: content })
-        setTimeout(() => setNotification({ type: "", content: content }), 5000)
+        setTimeout(() => setNotification({ type: "", content: "" }), 5000)
     }
 
     const auth = () => page === "login" ? authLogin() : authSignup()
 
     const authSignup = async () => {
-
+        setNotification({ type: "", content: "" })
         verifyFormInputs()
 
         if (!notification.content) {
@@ -87,6 +87,7 @@ function AccessControl() {
 
                 if (response.ok) {
                     generateNotification("success", "Utilisateur créé !")
+                    navigate("/")
                 } else generateNotification("error", "Une erreur non spécifiée est survenue.")
         
             } catch {
@@ -97,6 +98,7 @@ function AccessControl() {
 
     const authLogin = async () => {
 
+        setNotification({ type: "", content: "" })
         verifyFormInputs()
 
         if (!notification.content) {
@@ -125,7 +127,7 @@ function AccessControl() {
 
     return (
         <>
-            {!isLogged ?
+            {!token ?
                 <div className="session-form">
                     <Cover type="title" text="CuisineFiesta" src={CoverPicture} 
                     alt="Pâtes italiennes avec légumes et fromage fondu" />
@@ -145,7 +147,7 @@ function AccessControl() {
                         <Input onChange={(e) => setPassword(e.target.value)} value={password} 
                         type="text" identifier={password ? "input-filled" : ""}
                         name="password" label="Mot de passe"  minLength={8} />
-
+                        {email + " " + password}
                         {page === "signup" ? 
                             <>
                                 <Input onChange={(e) => setBirthdate(e.target.value)} name="birthdate" 

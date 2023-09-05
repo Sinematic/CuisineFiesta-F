@@ -29,12 +29,14 @@
     position: absolute;
     width: 100%;
     max-width: 90%;
+    font-family: 'Playfair Display', serif;
     color: var(--white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 3;
 }
 
-.cover > h1 {
-    font-size: 2rem;
-    font-weight: 700;
+.cover > h1.text {
+    font-style: italic;
+    font-size: 3rem;
+    font-weight: 500;
 }
