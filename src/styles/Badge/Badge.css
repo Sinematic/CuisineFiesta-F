@@ -1,0 +1,25 @@
+div.badge {
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+}
+
+.badge.green {
+    background-color: #4FB286;
+}
+
+.badge.red {
+    background-color: #FF4B3E;
+}
+
+.badge.blue {
+    background-color: #00AFF5;
+}
+
+.badge.golden {
+    background-color: #EBDA25;
+}

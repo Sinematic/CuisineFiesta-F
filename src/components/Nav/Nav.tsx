@@ -1,10 +1,33 @@
 import { useState } from "react"
-import { NavLink } from "react-router-dom"
 import "../../styles/Nav/Nav.css"
+import DropdownMenu from "../Dropdown/DropdownMenu"
 
 function Nav() {
 
     const [isOpen, setisOpen] = useState(false)
+
+    const hamburgerMenu = [
+        {
+            path: "/blog",
+            content: "Le Blog",
+            badge: "green"
+        },
+        {
+            path: "/les-mieux-notees",
+            content: "Les incontournables",
+            badge: undefined
+        },
+        {
+            path: "/les-recettes-du-moment",
+            content: "Les plats du moment",
+            badge: undefined
+        },
+        {
+            path: "/menu-aleatoire",
+            content: "Le menu Mystère",
+            badge: undefined
+        }
+    ]
 
     return (
         <>  
@@ -19,11 +42,8 @@ function Nav() {
                         <line x1="4" x2="20" y1="18" y2="18"/>
                     </svg> 
                                         
-                    <ul className={`nav-list ${isOpen ? "open" : ""}`}>
-                        <li><NavLink to="/les-mieux-notees">Les mieux notées</NavLink></li>
-                        <li><NavLink to="/recettes-du-moment">Les recettes du moment</NavLink></li>
-                        <li><NavLink to="/menu-au-hasard">Menu au hasard</NavLink></li>
-                    </ul>
+                    <DropdownMenu isOpen={isOpen} links={hamburgerMenu} />
+
                 </div>
 
                 <div className="nav-icon">

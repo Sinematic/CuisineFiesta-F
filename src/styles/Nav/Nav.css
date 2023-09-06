@@ -6,8 +6,8 @@
     padding-block: 10px 14px;
     position: fixed;
     bottom: 0;
-    border-top: 1px solid #FFFFFF;
-    background-color: #F2F2F2;
+    background-color: #4FB286;
+    height: 70px;
 }
 
 .nav-icon {
@@ -17,43 +17,6 @@
     height: 10vw;
     padding: 4px 4px 0px 4px;
     border-radius: 5px;
-    border: 2px solid #d9d7d7;
-}
-
-ul.nav-list {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    bottom: 8vh;
-    left: 0;
-    max-width: none;
-    width: max-content;
-    padding-inline: 20px;
-    max-height: 0;
-    overflow: hidden;
-    border: 1px solid transparent;
-    border-bottom: none;
-    border-left: none;
-    border-radius: 0 15px 0 0;
-    padding-block: 0;
-    transition: max-height 0.9s ease-in-out, padding-block 0.9s ease-in-out, border 0s 0.9s ease-in-out;
-}
-
-ul.nav-list.open {
-    padding-block: 12px;
-    max-height: 200px;
-    border-color: #dbdbdbda;
-    transition: max-height 0.9s ease-in-out, padding-block 0.9s ease-in-out, border 0s 0.9s ease-in-out;
-}
-
-ul.nav-list li {
-    padding-block: 10px;
-}
-
-ul.nav-list li:not(:last-of-type) {
-    border-bottom: 1px solid #dbdbdbda;
-}
-
-ul.nav-list a {
-    color: black;
+    border: 2px solid #F2F2F2;
+    background-color: var(--white);
 }

@@ -61,7 +61,7 @@ function AccessControl() {
 
     const generateNotification = (type: string, content: string) => {
         setNotification({ type: type, content: content })
-        setTimeout(() => setNotification({ type: "", content: "" }), 5000)
+        setTimeout(() => setNotification({ type: "", content: "" }), 3000)
     }
 
     const auth = () => page === "login" ? authLogin() : authSignup()
@@ -147,7 +147,7 @@ function AccessControl() {
                         <Input onChange={(e) => setPassword(e.target.value)} value={password} 
                         type="text" identifier={password ? "input-filled" : ""}
                         name="password" label="Mot de passe"  minLength={8} />
-                        {email + " " + password}
+
                         {page === "signup" ? 
                             <>
                                 <Input onChange={(e) => setBirthdate(e.target.value)} name="birthdate" 
