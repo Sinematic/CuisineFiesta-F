@@ -8,22 +8,22 @@ function Nav() {
 
     return (
         <>  
-            {isOpen ? <div className={"list-wrapper" + (isOpen ? " open" : null)}>
-                <ol className="nav-list">
-                    <li><NavLink to="/les-mieux-notees">Les mieux notées</NavLink></li>
-                    <li><NavLink to="/recettes-du-moment">Les recettes du moment</NavLink></li>
-                    <li><NavLink to="/menu-au-hasard">Menu au hasard</NavLink></li>
-                </ol>
-            </div> : null}
-
             <nav className="nav-bar">
+
                 <div onClick={() => setisOpen(!isOpen)} className="nav-icon">
+
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
                     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="4" x2="20" y1="12" y2="12"/>
                         <line x1="4" x2="20" y1="6" y2="6"/>
                         <line x1="4" x2="20" y1="18" y2="18"/>
                     </svg> 
+                                        
+                    <ul className={`nav-list ${isOpen ? "open" : ""}`}>
+                        <li><NavLink to="/les-mieux-notees">Les mieux notées</NavLink></li>
+                        <li><NavLink to="/recettes-du-moment">Les recettes du moment</NavLink></li>
+                        <li><NavLink to="/menu-au-hasard">Menu au hasard</NavLink></li>
+                    </ul>
                 </div>
 
                 <div className="nav-icon">
