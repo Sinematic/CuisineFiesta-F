@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" className="search-svg">
+    <circle cx="40" cy="40" r="30" />
+    <line x1="65" y1="65" x2="90" y2="90" />
+</svg>
