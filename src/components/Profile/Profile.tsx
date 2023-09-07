@@ -66,12 +66,12 @@ function Profile() {
                     <Input onChange={() => think()} identifier={email ? "input-filled" : ""} type="email" name="email" label="E-mail" value={email} />
                     <Input onChange={() => think()} identifier={password ? "input-filled" : ""} type="password" name="password" label="Mot de passe" value={password} />
                     <Input onChange={() => think()} identifier={birthdate ? "input-filled" : ""} type="text" name="birthdate" label="Date de naissance" value={birthdate} />
-                    <FakeInput value={premium ? "Premium" : "Essentiel"} name="account" label="Type d'abonnement" />
-
-                    <NavLink to={"/premium"}>
-                        <Button identifier="info-button" value="En savoir plus sur le Premium" />
-                    </NavLink>
-                    <Button value="Mettre à jour mon profil" />
+                    <Input onChange={() => think()} type="file" name="file" label="Mettre à jour ma photo de profil" />
+                    <FakeInput value={premium ? "Premium" : "Essentiel"} name="account" label="Type d'abonnement">
+                        <NavLink to={"/premium"}>En savoir plus sur le Premium</NavLink>
+                    </FakeInput>
+                    
+                    <Button identifier="submit-button" value="Mettre à jour mon profil" />
                     <Button identifier="red-button" value="Se déconnecter" onClick={() => logout()} />
                 </form>
             </div>

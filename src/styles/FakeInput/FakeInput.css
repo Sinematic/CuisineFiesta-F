@@ -5,3 +5,16 @@
     right: 20px;
     width: 24px;
 }
+.hint-link {
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+    text-align: center;
+}
+
+.hint-link > a {
+    font-weight: 700;
+    font-style: italic;
+    color: var(--information-color);
+}

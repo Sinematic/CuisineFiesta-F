@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "../../styles/Dropdown/Dropdown.css"
 
-function Dropdown(props: { title: string, children: any }) {
+function Dropdown(props: { title: string, children: React.ReactNode }) {
 
     const [isOpen, setIsOpen] = useState(false)
 

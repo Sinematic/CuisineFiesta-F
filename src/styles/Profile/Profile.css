@@ -53,3 +53,12 @@
     padding-top: 20px;
     padding-block: 40px;
 }
+
+.profile-form > a {
+    font-style: italic;
+    color: blueviolet;
+}
+
+.submit-button {
+    margin-top: 40px;
+}

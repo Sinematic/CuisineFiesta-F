@@ -66,3 +66,7 @@ input[type="checkbox"] {
 input[type="date"]:focus + label {
     background-color: transparent;
 }
+
+input[type="file"] {
+    display: none;
+}
