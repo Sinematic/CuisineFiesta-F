@@ -7,16 +7,18 @@
     position: fixed;
     bottom: 0;
     background-color: #4FB286;
-    height: 70px;
+    height: 60px;
 }
 
 .nav-icon {
-    width: 10vw;
-    height: fit-content;
-    max-width: 36px;
-    height: 10vw;
-    padding: 4px 4px 0px 4px;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    padding: 4px;
     border-radius: 5px;
-    border: 2px solid #F2F2F2;
     background-color: var(--white);
+}
+
+.nav-icon svg {
+    width: 24px;
 }

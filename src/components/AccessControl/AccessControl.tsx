@@ -23,7 +23,7 @@ function AccessControl() {
 
     const navigate = useNavigate()
 
-    if (token) navigate("/")
+    if (token && !isLoading) navigate("/")
 
     const isValidPassword = (password: string) => {
         const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
@@ -37,9 +37,9 @@ function AccessControl() {
 
     const isValidAge = (birthdate: string) => {
         const currentDate = new Date()
-        const birthdateObject = new Date(birthdate)
+        const userBirthdate= new Date(birthdate)
         const thirteenYearsAgo = new Date(currentDate.getFullYear() - 13, currentDate.getMonth(), currentDate.getDate())
-        return birthdateObject <= thirteenYearsAgo
+        return userBirthdate <= thirteenYearsAgo        
     }
 
     const verifyFormInputs = () => {
@@ -86,7 +86,8 @@ function AccessControl() {
                 })
 
                 if (response.ok) {
-                    generateNotification("success", "Utilisateur créé !")
+                    localStorage.setItem("notificationType", "success")
+                    localStorage.setItem("notificationContent", "Utilisateur créé !")
                     navigate("/")
                 } else generateNotification("error", "Une erreur non spécifiée est survenue.")
         
@@ -113,10 +114,13 @@ function AccessControl() {
                 })
 
                 if (response.ok) {
-                    generateNotification("success", "Connexion effectuée !" )
+                    setIsLoading(true)
+                    localStorage.setItem("notificationType", "succes")
+                    localStorage.setItem("notificationContent", "Connexion effectuée !")
                     const data = await response.json()
                     localStorage.setItem("user",  data.userId)
                     localStorage.setItem("token", data.token)
+                    setIsLoading(false)
                 } else generateNotification("error", "Identifiants incorrects !")
         
             } catch {
@@ -139,13 +143,13 @@ function AccessControl() {
                         identifier={(page ===  "signup" ? "active-page" : "") + " button-page"}  />
                         <div className="filler-beige"></div>
                     </div>
-
+                    {birthdate}
                     <form action="" method="POST">
                         <Input onChange={(e) => setEmail(e.target.value)} value={email} 
                         name="email" label="Email" identifier={email ? "input-filled" : ""}
                         type="email" maxLength={60} />
                         <Input onChange={(e) => setPassword(e.target.value)} value={password} 
-                        type="text" identifier={password ? "input-filled" : ""}
+                        type="password" identifier={password ? "input-filled" : ""}
                         name="password" label="Mot de passe"  minLength={8} />
 
                         {page === "signup" ? 

@@ -3,3 +3,8 @@
     border-radius: 15px;
     background-color: #24282C;
 }
+
+.logo {
+    position: relative;
+    max-width: 10vw;
+}

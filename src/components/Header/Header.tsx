@@ -1,13 +1,11 @@
 import { useNavigate } from "react-router"
 import "../../styles/Header/Header.css"
 import Button from "../Button/Button"
-import Cover from "../Cover/Cover"
-import Banner from "../../assets/images/hachage-d-herbe.webp"
+import Logo from "../../assets/images/logo.svg"
 
 function Header() {
 
     const token = localStorage.getItem("token")
-
     const navigate = useNavigate()
 
     const logout = () => {
@@ -20,7 +18,7 @@ function Header() {
 
     return (
         <header>
-            <Cover type="title" text="CuisineFiesta" src={Banner} alt="Bannière accueil CuisineFiesta"/>
+            <img className="logo" src={Logo} alt="" />
             <Button identifier="dark-button" value="Se déconnecter" onClick={() => logout()} />
         </header>
     )

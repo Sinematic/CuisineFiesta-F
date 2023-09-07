@@ -1,0 +1,55 @@
+.profile-page {
+    margin: auto;
+    text-align: center;
+    padding-block: 30px 40px;
+    padding-inline: 30px;
+}
+
+.profile-page > h1 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.picture-container {
+    width: 45vw;
+    position: relative;
+}
+
+.picture-container > img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 500px;
+    border: 3px solid var(--main-color);
+}
+
+.picture-container .profile-badge {
+    width: 24px;
+    aspect-ratio: 1/1;
+    stroke: orangered;
+}
+
+.icon-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 3vh;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    background-color: var(--white);
+    border-radius: 100px;
+    border: 2px solid black;
+}
+
+.icon-wrapper.premium {
+    border-color: gold;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 20px;
+    padding-block: 40px;
+}

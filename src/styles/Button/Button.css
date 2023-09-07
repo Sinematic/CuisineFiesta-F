@@ -12,9 +12,17 @@ button {
 
 .dark-button {
     width: auto;
-    color: var(--white);
     padding: 15px;
     border: 2px solid;
     border-radius: 10px;
     background-color: var(--dark-color);
+}
+
+.red-button {
+    width: auto;
+    background-color: var(--red-color);
+}
+
+.info-button {
+    background-color: var(--information-color);
 }

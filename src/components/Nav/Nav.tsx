@@ -1,11 +1,12 @@
 import { useState } from "react"
 import "../../styles/Nav/Nav.css"
 import DropdownMenu from "../Dropdown/DropdownMenu"
+import { useNavigate } from "react-router"
 
 function Nav() {
 
     const [isOpen, setisOpen] = useState(false)
-
+    const navigate = useNavigate()
     const hamburgerMenu = [
         {
             path: "/blog",
@@ -29,6 +30,11 @@ function Nav() {
         }
     ]
 
+    const handleNavigation = (path: string) => {
+        setisOpen(false)
+        navigate(path)
+    }
+
     return (
         <>  
             <nav className="nav-bar">
@@ -46,14 +52,14 @@ function Nav() {
 
                 </div>
 
-                <div className="nav-icon">
+                <div className="nav-icon" onClick={() => handleNavigation('/search')}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="7">
                         <circle cx="40" cy="40" r="30" />
                         <line x1="65" y1="65" x2="90" y2="90" />
                     </svg>
                 </div>
 
-                <div className="nav-icon">
+                <div className="nav-icon" onClick={() => handleNavigation("/profile")}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
                     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="12" cy="8" r="5"/>
