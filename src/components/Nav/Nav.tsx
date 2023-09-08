@@ -1,13 +1,16 @@
 import { useState } from "react"
 import "../../styles/Nav/Nav.css"
 import DropdownMenu from "../Dropdown/DropdownMenu"
-import { useNavigate } from "react-router"
+import { useNavigate, useLocation } from "react-router"
 import Home from "../../assets/icons/home.svg"
 import BurgerMenu from "../../assets/icons/burger-menu.svg"
 import Search from "../../assets/icons/search.svg"
 import User from "../../assets/icons/user.svg"
 
 function Nav() {
+
+    const page = useLocation()
+    console.log(page.pathname)
 
     const [isOpen, setisOpen] = useState(false)
     const navigate = useNavigate()
@@ -16,6 +19,11 @@ function Nav() {
             path: "/blog",
             content: "Le Blog",
             badge: "green"
+        },
+        {
+            path: "/ajouter-une-recette",
+            content: "Ajouter une recette",
+            badge: "blue"
         },
         {
             path: "/les-mieux-notees",
@@ -40,12 +48,14 @@ function Nav() {
     }
 
     return (
-        <>  
+        <>
             <nav className="nav-bar">
-                <div onClick={() => navigate("/")} className="nav-icon home">
+                {page.pathname !== "/" ? 
+                    <div onClick={() => navigate("/")} className="nav-icon home">
                         <img src={Home} alt="Accueil" />                   
-                </div>
-
+                    </div> 
+                : null}
+                
                 <div onClick={() => setisOpen(!isOpen)} className="nav-icon burger-menu">
                     <img src={BurgerMenu} alt="Menu" />                   
                     <DropdownMenu isOpen={isOpen} links={hamburgerMenu} />

@@ -1,0 +1,45 @@
+.premium-page {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding-block: 40px 90px;
+    padding-inline: 8vw;
+    color: var(--dark-color);
+}
+
+.premium-page > h1 {
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--red-color);
+}
+
+.premium-page h2 {
+    font-size: 1.2rem;
+    line-height: normal;
+}
+
+.premium-page h3 {
+    font-size: 1.1rem;
+    line-height: normal;
+}
+
+.premium-page ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.premium-page ul > li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    border: 1px solid #d7d3d3;
+    border-radius: 10px;
+}
+
+.premium-page > section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

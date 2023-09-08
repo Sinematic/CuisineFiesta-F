@@ -1,0 +1,34 @@
+{
+    "maintitle": "Découvre CuisineFiesta Premium - L'Expérience Culinaire Ultime",
+    "content": [
+        {
+            "section": "Bienvenue chez CuisineFiesta",
+            "content": "L'application de cuisine qui transforme tes repas en aventures gastronomiques inoubliables ! Avec notre nouvelle option Premium, nous t'offrons un accès exclusif à un monde de saveurs, de fonctionnalités avancées et d'inspiration culinaire illimitée."
+        },
+        {
+            "section": "Les Avantages de CuisineFiesta Premium",
+            "content" :[
+                {
+                    "title": "🍽️ Recettes Haut de Gamme",
+                    "content" : "Découvre des recettes exclusives conçues par nos chefs experts pour émerveiller tes papilles. Des plats raffinés aux créations originales, tu auras accès à une variété infinie de délices."
+                },{
+                    "title": "📅 Planification de Repas Facilitée",
+                    "content": "Notre fonctionnalité de planification de repas intégrée te permet de prévoir tes repas pour la semaine en un clin d'œil. Organise tes petits-déjeuners, déjeuners et dîners comme un pro."
+                }, {
+                    "title": "🛒 Listes de Courses Intelligentes",
+                    "content": "Dis adieu aux listes de courses chaotiques. CuisineFiesta Premium génère automatiquement des listes de courses basées sur les recettes que tu prévois de cuisiner. Plus de gaspillage alimentaire ni de courses inutiles."
+                }, {
+                    "title": "🚫 Adieu les Publicités",
+                    "content": "Profite d'une expérience sans publicité. Plus de distractions, juste toi et tes recettes préférées."
+                }, {
+                    "title": "🎉 Contenu Exclusif",
+                    "content": "Accède à des vidéos de recettes uniques, des astuces culinaires avancées et des suggestions personnalisées pour satisfaire ta passion pour la cuisine."
+                }
+            ]     
+        },
+        {
+            "section": "Comment Accéder à CuisineFiesta Premium",
+            "content": "Obtenir CuisineFiesta Premium est simple. Il te suffit de choisir l'option d'abonnement \"Gourmet\" mensuel ou annuel, et tu auras immédiatement accès à tous ces avantages exclusifs.\n\nDe plus, ton soutien en tant que membre Premium contribue à maintenir CuisineFiesta gratuit pour tous les amateurs de cuisine qui souhaitent explorer notre vaste collection de recettes.\n\nAlors, prêt à vivre l'expérience culinaire ultime ? Rejoins CuisineFiesta Premium dès aujourd'hui et commence à cuisiner avec style !"
+        }
+    ]
+}
