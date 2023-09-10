@@ -28,8 +28,8 @@
 .cover > .text {
     position: absolute;
     width: 100%;
-    max-width: 90%;
     font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
     color: var(--white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 3;

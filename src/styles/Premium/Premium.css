@@ -43,3 +43,8 @@
     flex-direction: column;
     gap: 20px;
 }
+
+.premium-page .conclusion {
+    font-style: italic;
+    padding-bottom: 10px;
+}

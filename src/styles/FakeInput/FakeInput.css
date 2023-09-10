@@ -18,3 +18,7 @@
     font-style: italic;
     color: var(--information-color);
 }
+
+.fake-input {
+    background-color: #d7d3d3 !important;
+}

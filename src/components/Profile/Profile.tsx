@@ -45,7 +45,22 @@ function Profile() {
 
     return (
         <>
-            <div className="profile-page">
+            <div className="profile-page"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="100"
+  height="100"
+  viewBox="0 0 100 100"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="2"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
+  <rect x="20" y="30" width="60" height="60" rx="10" ry="10" />
+  <line x1="50" y1="30" x2="50" y2="90" />
+  <line x1="30" y1="50" x2="70" y2="50" />
+</svg>
+
 
                 <h1>Mes informations 🍜</h1>
                 <div className="picture-container">
@@ -65,7 +80,7 @@ function Profile() {
                     <Input onChange={() => think()} identifier={lastname ? "input-filled" : ""} type="text" name="lastname" label="Nom"  value={lastname} />
                     <Input onChange={() => think()} identifier={email ? "input-filled" : ""} type="email" name="email" label="E-mail" value={email} />
                     <Input onChange={() => think()} identifier={password ? "input-filled" : ""} type="password" name="password" label="Mot de passe" value={password} />
-                    <Input onChange={() => think()} identifier={birthdate ? "input-filled" : ""} type="text" name="birthdate" label="Date de naissance" value={birthdate} />
+                    <FakeInput value={birthdate} name="birthdate" label="Date de naissance" />
                     <Input onChange={() => think()} type="file" name="file" label="Mettre à jour ma photo de profil" />
                     <FakeInput value={premium ? "Premium" : "Essentiel"} name="account" label="Type d'abonnement">
                         <NavLink to={"/premium"}>En savoir plus sur le Premium</NavLink>
@@ -75,6 +90,8 @@ function Profile() {
                     <Button identifier="red-button" value="Se déconnecter" onClick={() => logout()} />
                 </form>
             </div>
+
+            
 
             <Nav />
             <Footer />
