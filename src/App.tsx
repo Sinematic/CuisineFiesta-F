@@ -4,6 +4,7 @@ import Home from "./components/Home/Home"
 import Profile from "./components/Profile/Profile"
 import Premium from "./components/Premium/Premium"
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy"
+import Quiz from "./components/Quiz/Quiz"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/profile" element={<Profile />} />
 					<Route path="/premium" element={<Premium />} />
+					<Route path="/quiz" element={<Quiz />} />
 					<Route path="/confidentialite" element={<PrivacyPolicy />} />
 				<Route path="/login" element={<AccessControl />} />
 			</Routes>

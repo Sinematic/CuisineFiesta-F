@@ -1,0 +1,198 @@
+{
+    "questions": [
+        {
+            "question": "Quelle est la principale épice utilisée dans un curry indien traditionnel ?",
+            "options": ["Cumin", "Coriandre", "Curcuma", "Paprika"],
+            "answer": "Curcuma"
+        },
+        {
+            "question": "Quel est l'ingrédient principal de la cuisine japonaise sushi ?",
+            "options": ["Riz", "Poisson", "Pain", "Poulet"],
+            "answer": "Riz"
+        },
+        {
+            "question": "Quel aliment est principalement utilisé pour faire des frites ?",
+            "options": ["Pomme de terre", "Tomate", "Carotte", "Courgette"],
+            "answer": "Pomme de terre"
+        },
+        {
+            "question": "Quelle est la principale source de protéines dans un sandwich BLT ?",
+            "options": ["Bacon", "Laitue", "Tomate", "Fromage"],
+            "answer": "Bacon"
+        },
+        {
+            "question": "Quelle cuisine est célèbre pour ses plats épicés tels que le vindaloo ?",
+            "options": ["Mexicaine", "Indienne", "Chinoise", "Italienne"],
+            "answer": "Indienne"
+        },
+        {
+            "question": "Quel type de pâte est utilisé pour faire des spaghettis ?",
+            "options": ["Farine de blé entier", "Semoule de maïs", "Pâte feuilletée", "Pâte à pizza"],
+            "answer": "Semoule de maïs"
+        },
+        {
+            "question": "Quel est le principal ingrédient du guacamole ?",
+            "options": ["Avocat", "Banane", "Mangue", "Citron"],
+            "answer": "Avocat"
+        },
+        {
+            "question": "Quelle herbe aromatique est souvent utilisée pour parfumer les plats italiens ?",
+            "options": ["Basilic", "Menthe", "Persil", "Thym"],
+            "answer": "Basilic"
+        },
+        {
+            "question": "Quel type de viande est utilisé pour préparer un hamburger classique ?",
+            "options": ["Poulet", "Porc", "Bœuf", "Agneau"],
+            "answer": "Bœuf"
+        },
+        {
+            "question": "Quel est l'ingrédient principal de la soupe miso japonaise ?",
+            "options": ["Tofu", "Champignons", "Algues", "Pâte de soja fermentée"],
+            "answer": "Pâte de soja fermentée"
+        }, {
+            "question": "Quelle est la principale source de chaleur dans un four traditionnel ?",
+            "options": ["Gaz", "Électricité", "Bois", "Charbon"],
+            "answer": "Électricité"
+        },
+        {
+            "question": "Quel ingrédient est essentiel pour préparer une omelette ?",
+            "options": ["Pain", "Oignons", "Œufs", "Chocolat"],
+            "answer": "Œufs"
+        },
+        {
+            "question": "Quel est le principal ingrédient du plat mexicain guacamole ?",
+            "options": ["Pomme de terre", "Avocat", "Chocolat", "Poivron"],
+            "answer": "Avocat"
+        },
+        {
+            "question": "Quelle est la saveur dominante dans un plat au curry thaïlandais ?",
+            "options": ["Épicé", "Acide", "Sucré", "Salé"],
+            "answer": "Épicé"
+        },
+        {
+            "question": "Quel légume est généralement utilisé pour préparer des frites de patate douce ?",
+            "options": ["Carotte", "Courgette", "Pomme de terre", "Patate douce"],
+            "answer": "Patate douce"
+        },
+        {
+            "question": "Quel type de pâte est utilisé pour préparer des lasagnes ?",
+            "options": ["Pâte à pizza", "Lasagne", "Pâte à tarte", "Pâte feuilletée"],
+            "answer": "Lasagne"
+        },
+        {
+            "question": "Quelle est la principale viande utilisée dans un curry japonais katsu ?",
+            "options": ["Poulet", "Bœuf", "Porc", "Agneau"],
+            "answer": "Porc"
+        },
+        {
+            "question": "Quelle épice donne au chili con carne sa saveur distinctive ?",
+            "options": ["Cumin", "Cannelle", "Curcuma", "Gingembre"],
+            "answer": "Cumin"
+        },
+        {
+            "question": "Quel est l'ingrédient principal de la soupe française à l'oignon ?",
+            "options": ["Carotte", "Champignons", "Oignon", "Poisson"],
+            "answer": "Oignon"
+        },
+        {
+            "question": "Quel est l'ingrédient principal de la salade grecque ?",
+            "options": ["Laitue", "Tomate", "Concombre", "Épinard"],
+            "answer": "Concombre"
+        },
+        {
+            "question": "Quel type de riz est utilisé pour préparer la paella espagnole ?",
+            "options": ["Riz blanc", "Riz basmati", "Riz sauvage", "Riz à risotto"],
+            "answer": "Riz blanc"
+        },
+        {
+            "question": "Quel aliment est principalement utilisé pour faire des sushis végétariens ?",
+            "options": ["Poisson", "Riz", "Avocat", "Tofu"],
+            "answer": "Avocat"
+        },
+        {
+            "question": "Quel ingrédient est utilisé pour épaissir une sauce béchamel ?",
+            "options": ["Farine", "Maïzena", "Amidon de maïs", "Oeuf"],
+            "answer": "Farine"
+        },
+        {
+            "question": "Quel type de pain est traditionnellement utilisé pour préparer un sandwich au fromage grillé ?",
+            "options": ["Pain blanc", "Pain complet", "Pain aux noix", "Pain de seigle"],
+            "answer": "Pain blanc"
+        },
+        {
+            "question": "Quel est l'ingrédient principal de la soupe miso japonaise ?",
+            "options": ["Tofu", "Champignons", "Algues", "Pâte de soja fermentée"],
+            "answer": "Pâte de soja fermentée"
+        },
+        {
+            "question": "Quel est l'ingrédient principal de la sauce pesto italienne ?",
+            "options": ["Basilic", "Épinards", "Tomates", "Ail"],
+            "answer": "Basilic"
+        },
+        {
+            "question": "Quelle est la principale épice utilisée dans la cuisine marocaine pour parfumer le couscous ?",
+            "options": ["Cumin", "Curcuma", "Paprika", "Cannelle"],
+            "answer": "Cumin"
+        },
+        {
+            "question": "Quel fruit est principalement utilisé pour préparer une tarte aux pommes ?",
+            "options": ["Pomme", "Poire", "Banane", "Fraise"],
+            "answer": "Pomme"
+        },
+        {
+            "question": "Quelle est la principale viande utilisée dans un burger végétarien ?",
+            "options": ["Tofu", "Pois chiches", "Légumes", "Seitan"],
+            "answer": "Tofu"
+        },
+        {
+            "question": "Quelle est la principale herbe aromatique utilisée dans la cuisine thaïlandaise ?",
+            "options": ["Basilic", "Coriandre", "Menthe", "Persil"],
+            "answer": "Coriandre"
+        },
+        {
+            "question": "Quel est l'ingrédient principal de la tarte au citron ?",
+            "options": ["Citron", "Orange", "Pomme", "Banane"],
+            "answer": "Citron"
+        },
+        {
+            "question": "Quel fromage est traditionnellement utilisé pour préparer une fondue suisse ?",
+            "options": ["Gruyère", "Cheddar", "Brie", "Feta"],
+            "answer": "Gruyère"
+        },
+        {
+            "question": "Quelle est la principale boisson gazeuse associée à la pizza ?",
+            "options": ["Coca-Cola", "Sprite", "Pepsi", "Fanta"],
+            "answer": "Coca-Cola"
+        },
+        {
+            "question": "Quel est l'ingrédient principal de la soupe au poulet et aux nouilles ?",
+            "options": ["Bœuf", "Poulet", "Porc", "Légumes"],
+            "answer": "Poulet"
+        },
+        {
+            "question": "Quel est l'ingrédient principal du pain pita ?",
+            "options": ["Maïs", "Blé", "Orge", "Avoine"],
+            "answer": "Blé"
+        },
+        {
+            "question": "Quel est l'ingrédient de base du tofu ?",
+            "options": ["Soja", "Lait", "Avoine", "Riz"],
+            "answer": "Soja"
+        },
+        {
+            "question": "Quel est l'ingrédient principal de la salade César ?",
+            "options": ["Laitue romaine", "Roquette", "Épinards", "Chou frisé"],
+            "answer": "Laitue romaine"
+        },
+        {
+            "question": "Quel est l'ingrédient principal du houmous ?",
+            "options": ["Pois chiches", "Lentilles", "Haricots noirs", "Pommes de terre"],
+            "answer": "Pois chiches"
+        },
+        {
+            "question": "Quel légume est utilisé pour préparer une ratatouille française ?",
+            "options": ["Carotte", "Courgette", "Aubergine", "Concombre"],
+            "answer": "Aubergine"
+        }
+    ]
+  }
