@@ -1,0 +1,19 @@
+.quiz-question > h2 {
+    padding-block: 25px;
+    font-size: 1.05rem;
+}
+
+.options-wrapper {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.options-wrapper > li {
+    width: 100%;
+    padding-inline: 20px 5px;
+    padding-block: 12px;
+    background-color: var(--white);
+    border: 1px solid #d7d3d3;
+    border-radius: 10px;
+}

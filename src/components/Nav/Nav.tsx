@@ -2,16 +2,10 @@ import { useState } from "react"
 import "../../styles/Nav/Nav.css"
 import DropdownMenu from "../Dropdown/DropdownMenu"
 import { useNavigate, useLocation } from "react-router"
-import Home from "../../assets/icons/home.svg"
-import BurgerMenu from "../../assets/icons/burger-menu.svg"
-// import Search from "../../assets/icons/search.svg"
-import User from "../../assets/icons/user.svg"
 
 function Nav() {
 
     const page = useLocation()
-    console.log(page.pathname)
-
     const [isOpen, setisOpen] = useState(false)
     const navigate = useNavigate()
 
@@ -19,6 +13,11 @@ function Nav() {
         {
             path: "/blog",
             content: "Le Blog",
+            badge: undefined
+        },
+        {
+            path: "/quiz",
+            content: "Quiz",
             badge: "green"
         },
         {

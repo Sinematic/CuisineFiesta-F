@@ -24,6 +24,10 @@ a {
     color: #FFFFFF;
 }
 
+li {
+    list-style: none;
+}
+
 abbr[title], acronym[title] {
     border-bottom: none;
     cursor: help;

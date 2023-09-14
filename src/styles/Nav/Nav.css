@@ -6,7 +6,7 @@
     padding-block: 10px 14px;
     position: fixed;
     bottom: 0;
-    background-color: #4FB286;
+    background-color: var(--mint);
     height: 60px;
 }
 
