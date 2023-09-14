@@ -37,7 +37,7 @@ function AccessControl() {
 
     const isValidAge = (birthdate: string) => {
         const currentDate = new Date()
-        const userBirthdate= new Date(birthdate)
+        const userBirthdate = new Date(birthdate)
         const thirteenYearsAgo = new Date(currentDate.getFullYear() - 13, currentDate.getMonth(), currentDate.getDate())
         return userBirthdate <= thirteenYearsAgo        
     }

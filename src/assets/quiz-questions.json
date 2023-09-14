@@ -49,7 +49,8 @@
             "question": "Quel est l'ingrédient principal de la soupe miso japonaise ?",
             "options": ["Tofu", "Champignons", "Algues", "Pâte de soja fermentée"],
             "answer": "Pâte de soja fermentée"
-        }, {
+        }, 
+        {
             "question": "Quelle est la principale source de chaleur dans un four traditionnel ?",
             "options": ["Gaz", "Électricité", "Bois", "Charbon"],
             "answer": "Électricité"
@@ -193,6 +194,165 @@
             "question": "Quel légume est utilisé pour préparer une ratatouille française ?",
             "options": ["Carotte", "Courgette", "Aubergine", "Concombre"],
             "answer": "Aubergine"
+        },
+        { 
+            "question": "Quel est l'ingrédient principal de la sauce barbecue ?",
+            "options": ["Ketchup", "Moutarde", "Ail", "Vinaigre"],
+            "answer": "Ketchup"
+        },
+        {
+            "question": "Quelle variété de riz est généralement utilisée pour faire des sushis ?",
+            "options": ["Riz blanc", "Riz basmati", "Riz à risotto", "Riz sauvage"],
+            "answer": "Riz blanc"
+        },{
+            "question": "Quelle herbe aromatique est souvent utilisée pour parfumer les plats indiens ?",
+            "options": ["Cumin", "Coriandre", "Menthe", "Thym"],
+            "answer": "Coriandre"
+        },
+        {
+            "question": "Quel type de pâte est utilisé pour préparer des cannelloni ?",
+            "options": ["Pâte à pizza", "Lasagne", "Pâte à tarte", "Pâte à crêpes"],
+            "answer": "Lasagne"
+        },
+        {
+            "question": "Quelle est la principale source de protéines dans une pizza Margherita ?",
+            "options": ["Jambon", "Fromage", "Poulet", "Bœuf"],
+            "answer": "Fromage"
+        },
+        {
+            "question": "Quelle est la principale source de chaleur dans la cuisine thaïlandaise ?",
+            "options": ["Piment", "Poivre", "Curcuma", "Cumin"],
+            "answer": "Piment"
+        },
+        {
+            "question": "Dans quelle région de France est originaire le fromage Roquefort ?",
+            "options": ["Bourgogne", "Alsace", "Auvergne", "Bretagne"],
+            "answer": "Auvergne"
+        },
+        {
+            "question": "Quel est le nom du célèbre chef français qui a popularisé la cuisine nouvelle ?",
+            "options": ["Auguste Escoffier", "Julia Child", "Gordon Ramsay", "Alain Ducasse"],
+            "answer": "Auguste Escoffier"
+        },
+        {
+            "question": "Quel est l'ingrédient principal du plat indien Biryani ?",
+            "options": ["Agneau", "Poulet", "Riz", "Légumes"],
+            "answer": "Riz"
+        },
+        {
+            "question": "Quel est l'ingrédient clé dans la préparation du kimchi coréen ?",
+            "options": ["Chou", "Poisson", "Poulet", "Tofu"],
+            "answer": "Chou"
+        },
+        {
+            "question": "Quel type de pâtes italiennes est en forme de petits grains de riz ?",
+            "options": ["Penne", "Orzo", "Fusilli", "Ravioli"],
+            "answer": "Orzo"
+        },
+        {
+            "question": "Dans quelle cuisine est utilisé l'ingrédient \"wasabi\" ?",
+            "options": ["Cuisine chinoise", "Cuisine japonaise", "Cuisine thaïlandaise", "Cuisine indienne"],
+            "answer": "Cuisine japonaise"
+        },
+        {
+            "question": "Quel est le nom du plat mexicain à base de viande, généralement préparé en utilisant de la viande de porc ?",
+            "options": ["Taco", "Chimichanga", "Enchilada", "Carnitas"],
+            "answer": "Carnitas"
+        },
+        {
+            "question": "Quelle est la principale épice utilisée pour la préparation du curry jaune ?",
+            "options": ["Curcuma", "Cumin", "Paprika", "Coriandre"],
+            "answer": "Curcuma"
+        },
+        {
+            "question": "Dans quelle ville italienne trouve-t-on le célèbre plat Osso Buco ?",
+            "options": ["Venise", "Milan", "Rome", "Naples"],
+            "answer": "Milan"
+        },
+        {
+            "question": "Quel est l'ingrédient principal de la soupe ramen japonaise ?",
+            "options": ["Tofu", "Poisson", "Nouilles", "Poulet"],
+            "answer": "Nouilles"
+        },
+        {
+            "question": "Quelle boisson alcoolisée est traditionnellement utilisée pour flamber des plats en cuisine française ?",
+            "options": ["Cognac", "Whisky", "Rhum", "Vodka"],
+            "answer": "Cognac"
+        },
+        {
+            "question": "Quel est l'ingrédient principal du plat espagnol Paella ?",
+            "options": ["Poulet", "Lapin", "Fruits de mer", "Riz"],
+            "answer": "Riz"
+        },
+        {
+            "question": "Quelle est la principale herbe aromatique utilisée dans la cuisine vietnamienne pour parfumer les plats ?",
+            "options": ["Basilic", "Coriandre", "Menthe", "Aneth"],
+            "answer": "Menthe"
+        },
+        {
+            "question": "Quel est le nom du plat italien qui se compose de tranches fines de viande ou de légumes, généralement servi comme apéritif ?",
+            "options": ["Bruschetta", "Carpaccio", "Antipasto", "Lasagne"],
+            "answer": "Carpaccio"
+        },
+        {
+            "question": "Dans quelle cuisine est utilisé l'ingrédient \"galangal\" ?",
+            "options": ["Cuisine chinoise", "Cuisine indienne", "Cuisine thaïlandaise", "Cuisine japonaise"],
+            "answer": "Cuisine thaïlandaise"
+        },
+        {
+            "question": "Quel est le nom du plat de nouilles froides japonaises servi avec une sauce de soja ?",
+            "options": ["Soba", "Udon", "Ramen", "Sushi"],
+            "answer": "Soba"
+        },
+        {
+            "question": "Quel est l'ingrédient principal du plat libanais taboulé ?",
+            "options": ["Boulgour", "Riz", "Couscous", "Quinoa"],
+            "answer": "Boulgour"
+        },
+        {
+            "question": "Quel fruit est principalement utilisé pour préparer le guacamole ?",
+            "options": ["Mangue", "Avocat", "Pomme", "Banane"],
+            "answer": "Avocat"
+        },
+        {
+            "question": "Quel est l'ingrédient principal du plat indien Tandoori Chicken ?",
+            "options": ["Poulet", "Bœuf", "Agneau", "Légumes"],
+            "answer": "Poulet"
+        },
+        {
+            "question": "Dans quelle cuisine est utilisée l'huile de sésame pour parfumer les plats ?",
+            "options": ["Cuisine chinoise", "Cuisine indienne", "Cuisine japonaise", "Cuisine italienne"],
+            "answer": "Cuisine japonaise"
+        },
+        {
+            "question": "Quelle est la principale épice utilisée dans le plat indien Biryani ?",
+            "options": ["Safran", "Curcuma", "Cumin", "Cardamome"],
+            "answer": "Safran"
+        },
+        {
+            "question": "Quel est le nom du plat marocain de viande et légumes cuits dans un tajine ?",
+            "options": ["Couscous", "Tagine", "Shawarma", "Kebab"],
+            "answer": "Tagine"
+        },
+        {
+            "question": "Quelle variété de pommes de terre est souvent utilisée pour préparer des frites en Belgique ?",
+            "options": ["Russet", "Yukon Gold", "Idaho", "Bintje"],
+            "answer": "Bintje"
+        },
+        {
+            "question": "Quelle est la principale source de chaleur dans la cuisine thaïlandaise ?",
+            "options": ["Piment", "Curcuma", "Cumin", "Poivre"],
+            "answer": "Piment"
+        },
+        {
+            "question": "Quelle est la principale boisson non alcoolisée associée à la cuisine japonaise ?",
+            "options": ["Thé vert", "Café", "Soda", "Jus d'orange"],
+            "answer": "Thé vert"
+        },
+        {
+            "question": "Quel est le nom du plat italien composé de tranches fines de veau, généralement servi avec une sauce au citron et au beurre ?",
+            "options": ["Linguine", "Scaloppine", "Penne", "Tortellini"],
+            "answer": "Scaloppine"
         }
     ]
-  }
+}

@@ -1,8 +1,8 @@
 import "../../styles/Cover/Cover.css"
 
-function Cover(props: {type: "title" | "text", text: string, src: string, alt: string }) {
+function Cover(props: { type: "title" | "text", text: string, src: string, alt: string, format?: undefined | "reduced" }) {
     return (
-        <div className="cover">
+        <div className={"cover " + (props.format ? props.format : "")}>
 
             {props.type === "title" ? <h1 className="text">{props.text}</h1> : null}
             {props.type === "text" ? <p className="text">{props.text}</p> : null}
