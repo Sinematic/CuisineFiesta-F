@@ -143,7 +143,7 @@ function AccessControl() {
                         identifier={(page ===  "signup" ? "active-page" : "") + " button-page"}  />
                         <div className="filler-beige"></div>
                     </div>
-                    {birthdate}
+
                     <form action="" method="POST">
                         <Input onChange={(e) => setEmail(e.target.value)} value={email} 
                         name="email" label="Email" identifier={email ? "input-filled" : ""}

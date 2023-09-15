@@ -1,0 +1,10 @@
+.recipe-builder > form {
+    padding-inline: 30px;
+    padding-block: 40px;
+}
+
+select, option {
+    font-size: 1rem;
+    padding-block: 12px;
+    padding-inline: 10px;
+}

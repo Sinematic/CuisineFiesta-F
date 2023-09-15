@@ -89,10 +89,10 @@ function Quiz() {
                         handleClick={handleClick}
                         />
                     : <div className="score-wrapper">
-                        <span className="score">{score}/{questions.length}</span>
+                        <p className="score">{score}/{questions.length}</p>
                         <p className="score-message">{scoreMessage}</p>
 
-                        <Button value="Rejouer" onClick={resetQuiz}/>
+                        <Button value="Rejouer" onClick={resetQuiz} identifier="play-again" />
                     </div>}
 
                 </div>
