@@ -1,6 +1,12 @@
-.recipe-builder > form {
+.recipe-builder {
     padding-inline: 30px;
     padding-block: 40px;
+}
+
+.recipe-builder > form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 select, option {

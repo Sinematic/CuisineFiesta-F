@@ -10,6 +10,7 @@ import FakePicture from "../../assets/fake-profile-picture.png"
 import PremiumLogo from "../../assets/icons/premium-account.svg"
 import FreeLogo from "../../assets/icons/free-account.svg"
 import FakeInput from "../FakeInput/FakeInput"
+import FileInput from "../Input/FileInput"
 
 function Profile() {
 
@@ -23,8 +24,6 @@ function Profile() {
     }
 
     if (!token) navigate("/login")
-            
-    const think = () => {}
 
     const fakeUser = {
         firstname: "Maxime",
@@ -35,12 +34,12 @@ function Profile() {
         premium: true
     }
 
-    const [firstname/*, /*setfirstname*/] = useState(fakeUser.firstname)
-    const [lastname/*, /*setlastname*/] = useState(fakeUser.lastname)
-    const [email/*, setemail*/] = useState(fakeUser.email)
-    const [password/*, setpassword*/] = useState(fakeUser.password)
-    const [birthdate/*, setbirthdate*/] = useState(fakeUser.birthdate)
-    const [premium/*, setsubscription*/] = useState(fakeUser.premium)
+    const [firstname, setFirstname] = useState(fakeUser.firstname)
+    const [lastname, setLastname] = useState(fakeUser.lastname)
+    const [email, setEmail] = useState(fakeUser.email)
+    const [password, setPassword] = useState(fakeUser.password)
+    const [birthdate/*, setBirthdate*/] = useState(fakeUser.birthdate)
+    const [premium/*, setSubscription*/] = useState(fakeUser.premium)
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -48,25 +47,39 @@ function Profile() {
             <div className="profile-page">
 
                 <h1>Mes informations 🍜</h1>
+                
                 <div className="picture-container">
                     <img className="profile-picture" src={FakePicture} alt="" />
                     {fakeUser.premium ? 
-                        <div className="icon-wrapper premium" onClick={() => setIsOpen(!isOpen)}>
+                        <div className="icon-wrapper account premium" onClick={() => setIsOpen(!isOpen)}>
                             <img className="profile-badge" src={PremiumLogo} alt="Premium" /> 
                         </div>
-                    :   <div className="icon-wrapper" onClick={() => setIsOpen(!isOpen)}>
+                    :   <div className="icon-wrapper account" onClick={() => setIsOpen(!isOpen)}>
                             <img className="profile-badge" src={FreeLogo} alt="Premium" />
                         </div>
                     }
+
+                    <div className="icon-wrapper picture">
+                        <FileInput name="file" label="Mettre à jour ma photo de profil" />
+                    </div>                 
                 </div>
 
                 <form className="profile-form">
-                    <Input onChange={() => think()} identifier={firstname ? "input-filled" : ""} type="text" name="firstname" label="Prénom" value={firstname} />
-                    <Input onChange={() => think()} identifier={lastname ? "input-filled" : ""} type="text" name="lastname" label="Nom"  value={lastname} />
-                    <Input onChange={() => think()} identifier={email ? "input-filled" : ""} type="email" name="email" label="E-mail" value={email} />
-                    <Input onChange={() => think()} identifier={password ? "input-filled" : ""} type="password" name="password" label="Mot de passe" value={password} />
+
+                    <Input onChange={(e) => setFirstname(e.target.value)} type="text" name="firstname"
+                    identifier={firstname ? "input-filled" : ""}  label="Prénom" value={firstname} />
+
+                    <Input onChange={(e) => setLastname(e.target.value)} type="text" name="lastname"
+                    identifier={lastname ? "input-filled" : ""}  label="Nom"  value={lastname} />
+
+                    <Input onChange={(e) => setEmail(e.target.value)} type="email" name="email"
+                    identifier={email ? "input-filled" : ""} label="E-mail" value={email} />
+
+                    <Input onChange={(e) => setPassword(e.target.value)} type="password" name="password"
+                    identifier={password ? "input-filled" : ""}  label="Mot de passe" value={password} />
+
                     <FakeInput value={birthdate} name="birthdate" label="Date de naissance" />
-                    <Input onChange={() => think()} type="file" name="file" label="Mettre à jour ma photo de profil" />
+
                     <FakeInput value={premium ? "Premium" : "Essentiel"} name="account" label="Type d'abonnement">
                         <NavLink to={"/premium"}>En savoir plus sur le Premium</NavLink>
                     </FakeInput>

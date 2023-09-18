@@ -16,7 +16,7 @@
     animation: labelMovingUp 0.6s forwards;
 }
 
-label {
+input:not([type="file"]) + label {
     pointer-events: none;
     position: absolute;
     bottom: 10px;

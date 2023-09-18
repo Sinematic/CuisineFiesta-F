@@ -11,10 +11,23 @@ import BannerMeal from "../../assets/images/poelee-de-legumes-et-de-viande.webp"
 import BannerDessert from "../../assets/images/pommes-et-ustensiles-de-cuisine.webp"
 import "../../styles/RecipeBuilder/RecipeBuilder.css"
 import Select from "../Select/Select"
+import Textarea from "../Textarea/Textarea"
 
 function RecipeBuilder() {
 
-    const possibleTypes = ["Entrée", "Plat principal", "Dessert", "Autres"]
+    const possibleTypes = [{ 
+        type: "Entrée", 
+        image: BannerStarter
+    }, {
+        type: "Plat principal",
+        image: BannerMeal
+    }, {
+        type: "Dessert",
+        Image: BannerDessert
+    }, { 
+        type: "Autres",
+        image: DefaultBanner
+    }]
 
     const possibleOrigins = [
         "Française",
@@ -44,33 +57,30 @@ function RecipeBuilder() {
         "Sud-africaine"
     ]
 
+
     const [mealName, setMealName] = useState<string>("")
-    const [description, setDescription] = useState<string>("")
+    const [description, setDescription] = useState<string | undefined>("")
+    const [type, setType] = useState<string | undefined>("")
+    const [origin, setOrigin] = useState<string | undefined>("")
 
     return (
         <>
             <Header />
+            <Cover type="title" text="Partager une recette" src={DefaultBanner} alt="" />
             <div className="recipe-builder">
-                <Cover type="title" text="Partager une recette" src={DefaultBanner} alt="" />
-            
                 <form action="" method="POST">
                     <Input onChange={(e) => setMealName(e.target.value)} value={mealName} 
                     name="name" label="Nom du plat" type="text" minLength={5} maxLength={60}/>
-                    <Select name="type" options={possibleTypes} label="Sélectionner le type de plat" />
-                    <textarea name="description" 
-                    onChange={(e) => setDescription(e.target.value)} 
-                    value={description} />
-                    <Select name="origin" options={possibleOrigins} label="Sélectionner l'origine du plat" />
+                    <Select name="type" options={possibleTypes.map(option => option.type)} 
+                    state={type} setter={setType} label="Sélectionner le type de plat" />
+                    <Textarea state={description} setter={setDescription} value={description} 
+                    name="description" label="Ajouter une description du plat" />
+                    {description}
+                    <Select name="origin" options={possibleOrigins} state={origin} 
+                    setter={setOrigin} label="Sélectionner l'origine du plat" />
+                    <Button value="Publier la recette" />
                 </form>
             </div>
-
-                        {/* <Input onChange={(e) => setEmail(e.target.value)} value={email} 
-                        name="email" label="Email" identifier={email ? "input-filled" : ""}
-                        type="email" maxLength={60} />
-
-                        <Button onClick={() => auth()} type="button" value={page === "login" ? "Se connecter" : "S'inscrire"} 
-                        name={page} identifier="submit-form" />*/}
-
 
             <Nav />
             <Footer />

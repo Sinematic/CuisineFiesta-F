@@ -14,7 +14,7 @@ function Input(props: {
     return (
         <div className={props.identifier + " input-wrapper"}>
             <input onChange={props.onChange} type={props.type} value={props.value} name={props.name} 
-            minLength={props.minLength} maxLength={props.maxLength} />
+            id={props.name} minLength={props.minLength} maxLength={props.maxLength} />
             <label htmlFor={props.name}>{props.label}</label>
         </div>
     )

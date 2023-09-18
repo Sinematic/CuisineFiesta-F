@@ -32,18 +32,28 @@
 
 .icon-wrapper {
     position: absolute;
-    right: 0;
     bottom: 3vh;
     width: 40px;
     height: 40px;
     padding: 5px;
     background-color: var(--white);
     border-radius: 100px;
-    border: 2px solid black;
+    border: 3px solid var(--mint);
+}
+
+.icon-wrapper.account {
+    right: 0;
+}
+
+.icon-wrapper.picture {
+    left: 0;
+    color: var(--information-color);
+    border-color: var(--information-color);
 }
 
 .icon-wrapper.premium {
-    border-color: gold;
+    background-color: var(--dark-color);
+    border-color: #e6b422;
 }
 
 .profile-form {
