@@ -9,17 +9,17 @@ div.badge {
 }
 
 .badge.green {
-    background-color: #4FB286;
+    background-color: var(--mint);
 }
 
 .badge.red {
-    background-color: #FF4B3E;
+    background-color: var(--red);
 }
 
 .badge.blue {
-    background-color: #00AFF5;
+    background-color: var(--blue);
 }
 
 .badge.golden {
-    background-color: #EBDA25;
+    background-color: var(--gold);
 }

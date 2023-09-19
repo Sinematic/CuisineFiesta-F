@@ -1,7 +1,7 @@
 .quiz {
     padding-inline: 30px;
     padding-block: 50px 90px;
-    background-color: #F2F2F2;
+    background-color: var(--alt-white);
 }
 
 .quiz-game {
@@ -24,7 +24,7 @@
     width: 100%;
     text-align: center;
     padding-block: 40px 0;
-    color: var(--dark-color);
+    color: var(--black);
 }
 
 .score {
@@ -47,7 +47,7 @@
 
 .play-again {
     font-weight: 700;
-    background-color: var(--warning-color);
+    background-color: var(--warning);
     width: auto;
     padding-inline: 60px;
     border-radius: 10px;

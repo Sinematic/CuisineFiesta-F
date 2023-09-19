@@ -4,13 +4,13 @@
     gap: 35px;
     padding-block: 40px 90px;
     padding-inline: 8vw;
-    color: var(--dark-color);
+    color: var(--black);
 }
 
 .premium-page > h1 {
     font-size: 1.6rem;
     font-style: italic;
-    color: var(--red-color);
+    color: var(--red);
 }
 
 .premium-page h2 {

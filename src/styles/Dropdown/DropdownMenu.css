@@ -8,7 +8,7 @@ ul.dropdown-menu {
     width: max-content;
     max-height: 0;
     overflow: hidden;
-    background-color: #F2F2F2;
+    background-color: var(--alt-white);
     padding-block: 0;
     padding-inline: 10px;
     border-bottom: none;
@@ -22,7 +22,7 @@ ul.dropdown-menu.open {
     max-height: 500px;
     padding-block: 15px;
     gap: 6px;
-    border-color:  #FFFFFF;
+    border-color:  var(--white);
     transition: max-height 0.5s ease-out, padding-block 0.5s ease-out, gap 0.5s ease-out, border 0s 0.9s ease;
 }
 
@@ -38,5 +38,5 @@ ul.dropdown-menu a {
     display: block;
     width: 100%;
     height: 100%;
-    color: var(--dark-color);
+    color: var(--black);
 }

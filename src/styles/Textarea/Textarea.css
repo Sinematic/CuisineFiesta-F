@@ -1,8 +1,19 @@
+.textarea-wrapper {
+    display: grid;
+    gap: 12px;
+    width: 100%;
+}
+
 textarea {
     width: 100%;
     padding: 15px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    outline: 2px solid transparent;
 }
 
-.textarea-wrapper {
-    width: 100%;
+textarea:focus {
+    outline-color: var(--mint);
+    transition: all 0s 0.3s;
 }

@@ -39,7 +39,7 @@ input:not([type="checkbox"]) {
 }
 
 input:not([type="checkbox"]):focus {
-    outline: 2px solid #4FB286;
+    outline: 2px solid var(--mint);
     transition: all 0s 0.3s;
 }
 

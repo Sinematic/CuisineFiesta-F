@@ -15,14 +15,14 @@ button {
     padding: 15px;
     border: 2px solid;
     border-radius: 10px;
-    background-color: var(--dark-color);
+    background-color: var(--black);
 }
 
 .red-button {
     width: auto;
-    background-color: var(--red-color);
+    background-color: var(--red);
 }
 
 .blue-button {
-    background-color: var(--information-color);
+    background-color: var(--information);
 }

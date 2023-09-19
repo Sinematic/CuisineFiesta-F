@@ -16,7 +16,7 @@
 .hint-link > a {
     font-weight: 700;
     font-style: italic;
-    color: var(--information-color);
+    color: var(--information);
 }
 
 .fake-input {

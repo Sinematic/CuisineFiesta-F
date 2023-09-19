@@ -13,8 +13,8 @@ function Textarea(props: {
 
     return (
         <div className="textarea-wrapper">
-        <label htmlFor={props.name}>{props.label}</label>
-            <textarea onChange={(e) => props.setter(e.target.value)} id={props.name} 
+            <label htmlFor={props.name}>{props.label}</label>
+            <textarea onChange={(e) => props.setter(e.target.value)} id={props.name} rows={3} 
             name={props.name} minLength={props.minLength} maxLength={props.maxLength}>
                 {props.value}
             </textarea>

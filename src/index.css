@@ -1,20 +1,26 @@
 :root {
 	--main-color: #A663CC;
 	--secondary-color: #232528;
-	--dark-color: #181E25;
+	--black: #181E25;
+	--dark-grey: #3c3b3b;
 	--white: #FFFFFF;
-	--red-color: #FF4B3E;
-	--success-color: #7AC74F;
-	--information-color: #1F487E;
-	--warning-color: #FF8C42;
+	--alt-white: #F2F2F2;
+	--red: #FF4B3E;
+	--success: #7AC74F;
+	--information: #1F487E;
+	--warning: #FF8C42;
 	--mint: #4FB286;
+	--blue: #00AFF5;
+	--gold: #e6b422;
+	--light-yellow: #F5F5DC;
+	--sand: #C4AE78;
 }
 
 #root {
 	max-width: 1920px;
 	font-family: 'Varela Round', sans-serif;
 	margin: auto;
-	background-color: #F2F2F2;
+	background-color: var(--alt-white);
 	overflow: hidden;
 	width: 100vw;
 	min-height: 100vh;

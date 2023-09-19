@@ -19,7 +19,7 @@
 }
 
 .session-form > form input:not([type="checkbox"]):focus {
-    outline: 2px solid #C4AE78;
+    outline: 2px solid var(--sand);
 }
 
 .submit-form {
@@ -66,8 +66,8 @@
     padding: 20px 15px;
     font-size: 1.2rem;
     font-weight: 500;
-    color: #F5F5DC;
-    background-color: #C4AE78;
+    color: var(--light-yellow);
+    background-color: var(--sand);
 }
 
 .bar-state > button:first-of-type {
@@ -83,13 +83,13 @@
     width: 100%;
     height: 5vh;
     margin-top: -5vh;
-    background-color: #F5F5DC;
+    background-color: var(--light-yellow);
     z-index: -1;
 }
 
 button.active-page {
-    color: #C4AE78;
-    background-color: #F5F5DC;
+    color: var(--sand);
+    background-color: var(--light-yellow);
 }
 
 .active-page {

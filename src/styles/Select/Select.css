@@ -1,0 +1,20 @@
+.select-wrapper {
+    display: grid;
+    gap: 12px;
+    width: 100%;
+}
+
+select {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--white);
+    color: var(--black);
+    font-size: 1rem;
+    outline: none;
+    border: none;
+}
+
+select:focus {
+    outline: 2px solid var(--mint);
+    transition: all 0s 0.3s;
+}

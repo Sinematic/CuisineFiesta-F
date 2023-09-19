@@ -8,7 +8,7 @@
     width: 100%;
     padding: 10px 15px;
     font-size: 1rem;
-    background-color:  var(--dark-color);
+    background-color:  var(--black);
     color: var(--white);
     border-radius: 10px;
     transform: scaleY(1);
@@ -23,7 +23,7 @@
 }
 
 .dropdown-clicked {
-    background-color: #3c3b3b;
+    background-color: var(--dark-grey);
     transition: background-color 0.6s;
 }
 

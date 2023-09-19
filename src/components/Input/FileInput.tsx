@@ -16,7 +16,7 @@ function FileInput(props: {
             maxLength={props.maxLength} />
             <label htmlFor={props.name}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
-                stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                stroke="#3c3b3b" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/>
                     <line x1="16" x2="22" y1="5" y2="5"/>
                     <line x1="19" x2="19" y1="2" y2="8"/>

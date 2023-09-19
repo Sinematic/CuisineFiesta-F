@@ -89,8 +89,6 @@ function Profile() {
                 </form>
             </div>
 
-            
-
             <Nav />
             <Footer />
         </>
