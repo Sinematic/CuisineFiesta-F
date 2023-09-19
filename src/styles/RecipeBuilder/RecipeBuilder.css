@@ -14,3 +14,23 @@ select, option {
     padding-block: 12px;
     padding-inline: 10px;
 }
+
+.is-vegan-wrapper {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+}
+
+.is-vegan-wrapper > p {
+    width: 100%;
+}
+
+.define-vegan {
+    display: grid;
+    gap: 10px;
+    padding: 15px;
+    position: relative;
+    background-color: var(--white);
+    border: 2px solid var(--dark-grey);
+    border-radius: 5px;
+}

@@ -1,0 +1,14 @@
+.close-wrapper {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: var(--red);
+    overflow: hidden;
+    height: 28px;
+    width: 28px;
+    border-radius: 3px;
+}
+
+.close-wrapper > svg {
+    padding: 2px;
+}

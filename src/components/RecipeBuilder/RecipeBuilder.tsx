@@ -12,6 +12,7 @@ import BannerDessert from "../../assets/images/pommes-et-ustensiles-de-cuisine.w
 import "../../styles/RecipeBuilder/RecipeBuilder.css"
 import Select from "../Select/Select"
 import Textarea from "../Textarea/Textarea"
+import Dropdown from "../Dropdown/Dropdown"
 
 function RecipeBuilder() {
 
@@ -98,7 +99,6 @@ recipeFor (pour combien)
     const [specialUtensils, setSpecialUtensils] = useState<Array<string>>([])
     const [ingredients, setIngredients] = useState<Array<{ name: string, amount: number, unit: string }>>()
     const [isVegan, setIsVegan] = useState<string | undefined>(undefined)
-    const [isOpen, setIsOpen] = useState<boolean>(false)
 
 
     return (
@@ -120,12 +120,23 @@ recipeFor (pour combien)
                     setter={setOrigin} label="Sélectionner l'origine du plat" />
                     
                     {/* <Input  /> */}
-                    <Button onClick={() => setIsOpen(!isOpen)} name="openVegan" 
-                    type="button" value="Indiquer si le plat est végane" /> 
 
-                    {isOpen ? <Select name="isVegan" options={["Non", "Oui"]} state={isVegan}
-                    setter={setIsVegan} label="Indique si le plat est végane" /> : null}
-                    
+                    <div className="is-vegan-wrapper">
+                        <p>La recette est-elle végane ?</p>
+                        <Input type="radio" name="isVegan" label="Oui" />
+                        <Input type="radio" name="isVegan" label="Non" />
+                        <Input type="radio" name="isVegan" label="Non, mais il est possible de l'adapter" />
+                    </div>
+
+                    <Dropdown title="Qu'est-ce que le véganisme ?">
+                        <p>Le véganisme est un mode de vie qui exclut toute utilisation d'animaux 
+                        à des fins alimentaires, vestimentaires ou autres, ainsi que tout 
+                        produit d'origine animale.</p>
+                        <p>Le véganisme exclut donc l'utilisation d'ingrédients tels que la viande, 
+                        les produits laitiers, les œufs, le miel, la gélatine, et d'autres dérivés 
+                        animaux dans l'alimentation et les produits de tous les jours.</p>
+                    </Dropdown>
+
                     <Button value="Publier la recette" />
 
                 </form>
