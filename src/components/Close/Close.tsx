@@ -1,4 +1,3 @@
-import Xmark from "../../assets/icons/close.svg"
 import "../../styles/Close/Close.css"
 
     function Close() {

@@ -77,17 +77,17 @@ function RecipeBuilder() {
 /*
 title //
 ingredients
-type
+type//
 specialutensils
 steps
-description
-//images
-//videos
+description//
+//images//
+//videos//
 time
 cost
 origin
 complexity
-isvegan
+isvegan //
 recipeFor (pour combien)
 
 */
@@ -111,24 +111,25 @@ recipeFor (pour combien)
                 <form action="" method="POST">
 
                     <Input onChange={(e) => setMealName(e.target.value)} value={mealName} 
-                    name="name" label="Nom du plat" type="text" minLength={5} maxLength={60}/>
+                    name="name" label="Nom de la recette" type="text" minLength={5} maxLength={60}/>
                     <Select name="type" options={possibleTypes.map(option => option.type)} 
-                    state={type} setter={setType} label="Sélectionner le type de plat" />
+                    state={type} setter={setType} label="Type de recette" />
                     <Textarea state={description} setter={setDescription} value={description} 
-                    name="description" label="Ajouter la description du plat" />
+                    name="description" label="Description de la recette *" />
                     <Select name="origin" options={possibleOrigins} state={origin} 
-                    setter={setOrigin} label="Sélectionner l'origine du plat" />
+                    setter={setOrigin} label="Origine de la recette" />
                     
                     {/* <Input  /> */}
 
                     <div className="is-vegan-wrapper">
                         <p>La recette est-elle végane ?</p>
-                        <Input type="radio" name="isVegan" label="Oui" />
-                        <Input type="radio" name="isVegan" label="Non" />
-                        <Input type="radio" name="isVegan" label="Non, mais il est possible de l'adapter" />
+                        <Input onChange={() => setIsVegan("Oui")} name="isVegan" type="radio" label="Oui"/>
+                        <Input onChange={() => setIsVegan("Non")} name="isVegan" type="radio" label="Non" />
+                        <Input onChange={() => setIsVegan("Non, mais il est possible de l'adapter")} 
+                        name="isVegan" type="radio" label="Non, mais il est possible de l'adapter" />
                     </div>
 
-                    <Dropdown title="Qu'est-ce que le véganisme ?">
+                    <Dropdown title="C'est quoi le véganisme ?" identifier="blue">
                         <p>Le véganisme est un mode de vie qui exclut toute utilisation d'animaux 
                         à des fins alimentaires, vestimentaires ou autres, ainsi que tout 
                         produit d'origine animale.</p>
@@ -136,6 +137,8 @@ recipeFor (pour combien)
                         les produits laitiers, les œufs, le miel, la gélatine, et d'autres dérivés 
                         animaux dans l'alimentation et les produits de tous les jours.</p>
                     </Dropdown>
+
+                    <Input type="number" label="Nombre de convives"  name="mealFor"/>
 
                     <Button value="Publier la recette" />
 

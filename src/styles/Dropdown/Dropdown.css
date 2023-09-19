@@ -36,16 +36,20 @@
     border-radius: 0 0 10px 10px;
     max-height: 0;
     overflow: hidden;
-    padding: 0 20px;
+    padding-inline: 20px;
     transition: max-height 1s ease-in-out;
 }
 
 .dropdown-padding {
-    padding: 20px 12px 40px 12px;
+    padding-block: 20px 40px;
 }
 
 .dropdown-content.open {
     border: 2px solid #eaeaea;
     border-top: none;
     max-height: 9000px;
+}
+
+.blue {
+    background-color: var(--information);
 }
