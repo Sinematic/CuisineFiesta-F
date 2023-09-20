@@ -1,0 +1,25 @@
+.stars {
+    display: flex;
+    gap: 6px;
+    padding-inline: 10px;
+    padding-block: 8px;
+    border: 2px solid var(--light-grey);
+    border-radius: 10px;
+}
+
+.stars > li {
+    height: 32px;
+}
+
+.stars svg {
+    width: 32px;
+    cursor: pointer;
+}
+
+.colored {
+    fill: var(--gold);
+}
+
+.neutral {
+    fill: var(--light-grey);
+}

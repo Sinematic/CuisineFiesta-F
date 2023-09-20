@@ -2,17 +2,18 @@ import { useState } from "react"
 import Header from "../Header/Header"
 import Cover from "../Cover/Cover"
 import Nav from "../Nav/Nav"
-import Input from "../Input/Input"
-import Button from "../Button/Button"
+import Input from "../FormElements/Input/Input"
+import Button from "../FormElements/Button/Button"
 import Footer from "../Footer/Footer"
 import DefaultBanner from "../../assets/images/macarons-et-café.webp"
 import BannerStarter from "../../assets/images/bol-rempli-de-legumes.webp"
 import BannerMeal from "../../assets/images/poelee-de-legumes-et-de-viande.webp"
 import BannerDessert from "../../assets/images/pommes-et-ustensiles-de-cuisine.webp"
 import "../../styles/RecipeBuilder/RecipeBuilder.css"
-import Select from "../Select/Select"
-import Textarea from "../Textarea/Textarea"
+import Select from "../FormElements/Select/Select"
+import Textarea from "../FormElements/Textarea/Textarea"
 import Dropdown from "../Dropdown/Dropdown"
+import Rate from "../Rate/Rate"
 
 function RecipeBuilder() {
 
@@ -58,7 +59,7 @@ function RecipeBuilder() {
         "Sud-africaine"
     ]
 
-    const units = [
+    /*const units = [
         "Millilitres (mL)",
         "Centilitres (cL)",
         "Litres (L)",
@@ -72,7 +73,7 @@ function RecipeBuilder() {
         "Cuillères à café (c. à c.)",
         "Pièces",
         "Onces (oz)"
-      ];
+    ];*/
       
 /*
 title //
@@ -96,10 +97,10 @@ recipeFor (pour combien)
     const [description, setDescription] = useState<string | undefined>("")
     const [type, setType] = useState<string | undefined>("")
     const [origin, setOrigin] = useState<string | undefined>("")
-    const [specialUtensils, setSpecialUtensils] = useState<Array<string>>([])
-    const [ingredients, setIngredients] = useState<Array<{ name: string, amount: number, unit: string }>>()
-    const [isVegan, setIsVegan] = useState<string | undefined>(undefined)
-
+    //const [specialUtensils, setSpecialUtensils] = useState<Array<string>>([])
+    //const [ingredients, setIngredients] = useState<Array<{ name: string, amount: number, unit: string }>>()
+    const [/*isVegan*/, setIsVegan] = useState<string | undefined>(undefined)
+    const [rate, setRate] = useState<number | null>(null)
 
     return (
         <>
@@ -118,8 +119,6 @@ recipeFor (pour combien)
                     name="description" label="Description de la recette *" />
                     <Select name="origin" options={possibleOrigins} state={origin} 
                     setter={setOrigin} label="Origine de la recette" />
-                    
-                    {/* <Input  /> */}
 
                     <div className="is-vegan-wrapper">
                         <p>La recette est-elle végane ?</p>
@@ -139,6 +138,7 @@ recipeFor (pour combien)
                     </Dropdown>
 
                     <Input type="number" label="Nombre de convives"  name="mealFor"/>
+                    <Rate rate={rate} setRate={setRate} />
 
                     <Button value="Publier la recette" />
 

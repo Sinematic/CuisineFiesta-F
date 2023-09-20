@@ -1,6 +1,6 @@
-import "../../styles/Input/Input.css"
-import "../../styles/FakeInput/FakeInput.css"
-import Lock from "../../assets/icons/lock.svg"
+import "../../../styles/FormElements/Input/Input.css"
+import "../../../styles/FormElements/FakeInput/FakeInput.css"
+import Lock from "../../../assets/icons/lock.svg"
 
 function FakeInput(props: { 
     value: string, 

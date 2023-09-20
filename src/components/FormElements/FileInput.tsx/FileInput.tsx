@@ -1,4 +1,4 @@
-import "../../styles/Input/FileInput.css"
+import "../../../styles/FormElements/FileInput/FileInput.css"
 
 
 function FileInput(props: { 

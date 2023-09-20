@@ -7,7 +7,7 @@ import Nav from "../Nav/Nav"
 import Banner from "../../assets/images/fruits-exotiques.webp"
 import "../../styles/Quiz/Quiz.css"
 import Question from "./Question"
-import Button from "../Button/Button"
+import Button from "../FormElements/Button/Button"
 
 function Quiz() {
 

@@ -1,4 +1,4 @@
-import "../../styles/Select/Select.css"
+import "../../../styles/FormElements/Select/Select.css"
 
 function Select(props: { 
     name: string, 
@@ -9,8 +9,7 @@ function Select(props: {
 
     return (
         <div className="select-wrapper">
-            <select id={props.name} name={props.name} onChange={(e) => props.setter(e.target.value)}
->
+            <select id={props.name} name={props.name} onChange={(e) => props.setter(e.target.value)}>
                 <option value="">{props.label}</option>
                 {props.options.map((option) => <option key={option} value={option}>{option}</option>)}
             </select>

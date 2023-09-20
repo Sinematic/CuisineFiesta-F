@@ -38,16 +38,17 @@
     overflow: hidden;
     padding-inline: 20px;
     transition: max-height 1s ease-in-out;
+    border: 2px solid transparent;
+}
+
+.dropdown-content.open {
+    border-color: #eaeaea;
+    border-top: none;
+    max-height: 9000px;
 }
 
 .dropdown-padding {
     padding-block: 20px 40px;
-}
-
-.dropdown-content.open {
-    border: 2px solid #eaeaea;
-    border-top: none;
-    max-height: 9000px;
 }
 
 .blue {

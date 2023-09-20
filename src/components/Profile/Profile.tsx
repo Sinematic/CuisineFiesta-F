@@ -1,16 +1,15 @@
 import { useState } from "react"
 import { useNavigate, NavLink } from "react-router-dom"
-import Input from "../Input/Input"
-//import FakeInput from "../FakeInput/FakeInput"
-import Button from "../Button/Button"
+import Input from "../FormElements/Input/Input"
+import Button from "../FormElements/Button/Button"
+import FakeInput from "../FormElements/FakeInput/FakeInput"
+import FileInput from "../FormElements/FileInput.tsx/FileInput"
 import Nav from "../Nav/Nav"
 import Footer from "../Footer/Footer"
 import "../../styles/Profile/Profile.css"
 import FakePicture from "../../assets/fake-profile-picture.png"
 import PremiumLogo from "../../assets/icons/premium-account.svg"
 import FreeLogo from "../../assets/icons/free-account.svg"
-import FakeInput from "../FakeInput/FakeInput"
-import FileInput from "../Input/FileInput"
 
 function Profile() {
 
@@ -38,8 +37,8 @@ function Profile() {
     const [lastname, setLastname] = useState(fakeUser.lastname)
     const [email, setEmail] = useState(fakeUser.email)
     const [password, setPassword] = useState(fakeUser.password)
-    const [birthdate/*, setBirthdate*/] = useState(fakeUser.birthdate)
-    const [premium/*, setSubscription*/] = useState(fakeUser.premium)
+    const birthdate = fakeUser.birthdate
+    const premium = fakeUser.premium
     const [isOpen, setIsOpen] = useState(false)
 
     return (
