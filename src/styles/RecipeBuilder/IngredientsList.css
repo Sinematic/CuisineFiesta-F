@@ -1,0 +1,6 @@
+.ingredients-list {
+    padding-block: 15px;
+    padding-inline: 20px;
+    border: 2px solid var(--main-color);
+    border-radius: 8px;
+}

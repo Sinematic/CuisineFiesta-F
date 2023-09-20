@@ -14,6 +14,8 @@ import Select from "../FormElements/Select/Select"
 import Textarea from "../FormElements/Textarea/Textarea"
 import Dropdown from "../Dropdown/Dropdown"
 import Rate from "../Rate/Rate"
+import IngredientsList from "./IngredientsList"
+import Tag from "./Tag"
 
 function RecipeBuilder() {
 
@@ -59,21 +61,6 @@ function RecipeBuilder() {
         "Sud-africaine"
     ]
 
-    /*const units = [
-        "Millilitres (mL)",
-        "Centilitres (cL)",
-        "Litres (L)",
-        "Cuillères à soupe (c. à s.)",
-        "Cuillères à café (c. à c.)",
-        "Milligrammes (mg)",
-        "Grammes (g)",
-        "Kilogrammes (kg)",
-        "Pincées",
-        "Cuillères à soupe (c. à s.)",
-        "Cuillères à café (c. à c.)",
-        "Pièces",
-        "Onces (oz)"
-    ];*/
       
 /*
 title //
@@ -86,17 +73,17 @@ description//
 //videos//
 time
 cost
-origin
-complexity
+origin//
+complexity//
 isvegan //
-recipeFor (pour combien)
+recipeFor (pour combien)//
 
 */
 
     const [mealName, setMealName] = useState<string>("")
-    const [description, setDescription] = useState<string | undefined>("")
-    const [type, setType] = useState<string | undefined>("")
-    const [origin, setOrigin] = useState<string | undefined>("")
+    const [description, setDescription] = useState<string>("")
+    const [type, setType] = useState<string>("")
+    const [origin, setOrigin] = useState<string>("")
     //const [specialUtensils, setSpecialUtensils] = useState<Array<string>>([])
     //const [ingredients, setIngredients] = useState<Array<{ name: string, amount: number, unit: string }>>()
     const [/*isVegan*/, setIsVegan] = useState<string | undefined>(undefined)
@@ -139,6 +126,10 @@ recipeFor (pour combien)
 
                     <Input type="number" label="Nombre de convives"  name="mealFor"/>
                     <Rate rate={rate} setRate={setRate} />
+                    
+                    <IngredientsList />
+
+                    <Tag />
 
                     <Button value="Publier la recette" />
 

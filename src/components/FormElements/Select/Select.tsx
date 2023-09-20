@@ -4,8 +4,9 @@ function Select(props: {
     name: string, 
     options: Array<string>, 
     state: string | undefined, 
-    setter: React.Dispatch<React.SetStateAction<string | undefined>>,
-    label: string }) {
+    setter: React.Dispatch<React.SetStateAction<string>>,
+    label: string 
+}) {
 
     return (
         <div className="select-wrapper">

@@ -2,13 +2,13 @@ import "../../../styles/FormElements/Textarea/Textarea.css"
 
 function Textarea(props: { 
     state: string | undefined,
-    setter: React.Dispatch<React.SetStateAction<string | undefined>>, 
-    value?: string | undefined,
-    identifier?: string | undefined,
-    name: string | undefined, 
-    label ?: string | undefined, 
-    minLength?: number | undefined, 
-    maxLength?: number | undefined
+    setter: React.Dispatch<React.SetStateAction<string>>, 
+    value?: string,
+    identifier?: string,
+    name: string, 
+    label ?: string, 
+    minLength?: number, 
+    maxLength?: number
 }) {
 
     return (

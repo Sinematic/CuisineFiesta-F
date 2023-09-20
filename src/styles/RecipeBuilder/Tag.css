@@ -1,0 +1,36 @@
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 5px;
+    padding-block: 12px;
+    border-radius: 10px;
+    color: var(--white);
+    background-color: var(--white);
+    font-size: 0.9rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+}
+
+.tag-element {
+    min-width: 90px;
+    padding-inline: 16px;
+    padding-block: 6px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.green {
+    background-color: #008000;
+}
+
+.orange {
+    background-color:  #ff5f00;
+}
+
+.blue {
+    background-color: #1455be;
+}
+
+.yellow {
+    background-color: #e6b422;
+}
