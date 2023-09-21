@@ -1,8 +1,8 @@
 .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 7px 5px;
-    padding-block: 12px;
+    gap: 4px 7px;
+    padding-block: 8px;
     border-radius: 10px;
     color: var(--white);
     background-color: var(--white);
@@ -12,7 +12,6 @@
 }
 
 .tag-element {
-    min-width: 90px;
     padding-inline: 16px;
     padding-block: 6px;
     border-radius: 50px;
@@ -20,17 +19,30 @@
 }
 
 .green {
-    background-color: #008000;
+    background-color: #1ABC9C;
 }
 
 .orange {
-    background-color:  #ff5f00;
+    background-color:  #E74C3C;
 }
 
 .blue {
-    background-color: #1455be;
+    background-color: #3498DB;
 }
 
 .yellow {
-    background-color: #e6b422;
+    background-color: #F1C40F;
+}
+
+.black {
+    padding-inline: 13px;
+    background-color: var(--black);
+}
+
+.tags > h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--black);
+    padding-bottom: 10px;
 }

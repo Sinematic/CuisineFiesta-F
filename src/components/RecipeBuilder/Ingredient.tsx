@@ -19,13 +19,20 @@ function Ingredient() {
         "Onces (oz)"
     ]
 
+    const [name, setName] = useState<string>("")
+    const [amount, setAmount] = useState<string>()
     const [unit, setUnit] = useState<string>("")
 
     return (
         <div className="ingredient-wrapper">
-            <Input name="ingredientName" type="text" label="Ingrédient n°1" />
-            <Input name="ingredientAmount" type="number" label="Quantité" />
-            <Select name="unit" options={units} state={unit} setter={setUnit} label="Unité de mesure"/>
+            <Input onChange={(e) => setName(e.target.value)} value={name} 
+            name="ingredientName" type="text" label="Ingrédient n°1" 
+            identifier={unit ? "input-filled" : ""} />
+            <Input onChange={(e) => setAmount(e.target.value)} value={amount} 
+            name="ingredientAmount" type="number" label="Quantité" 
+            identifier={amount ? "input-filled" :  ""}/>
+            <Select name="unit" options={units} label="Unité de mesure"
+            state={unit} setter={setUnit}/>
         </div>
     )
 }

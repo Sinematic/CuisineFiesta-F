@@ -6,7 +6,7 @@
 .recipe-builder > form {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 42px;
 }
 
 select, option {
