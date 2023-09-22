@@ -26,11 +26,9 @@ function Ingredient() {
     return (
         <div className="ingredient-wrapper">
             <Input onChange={(e) => setName(e.target.value)} value={name} 
-            name="ingredientName" type="text" label="Ingrédient n°1" 
-            identifier={unit ? "input-filled" : ""} />
+            name="ingredientName" type="text" label="Ingrédient n°1" placeholder={true} />
             <Input onChange={(e) => setAmount(e.target.value)} value={amount} 
-            name="ingredientAmount" type="number" label="Quantité" 
-            identifier={amount ? "input-filled" :  ""}/>
+            name="ingredientAmount" type="number" label="Quantité" />
             <Select name="unit" options={units} label="Unité de mesure"
             state={unit} setter={setUnit}/>
         </div>

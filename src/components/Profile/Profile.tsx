@@ -65,17 +65,17 @@ function Profile() {
 
                 <form className="profile-form">
 
-                    <Input onChange={(e) => setFirstname(e.target.value)} type="text" name="firstname"
-                    identifier={firstname ? "input-filled" : ""}  label="Prénom" value={firstname} />
+                    <Input onChange={(e) => setFirstname(e.target.value)} type="text" 
+                    name="firstname" label="Prénom" value={firstname} />
 
-                    <Input onChange={(e) => setLastname(e.target.value)} type="text" name="lastname"
-                    identifier={lastname ? "input-filled" : ""}  label="Nom"  value={lastname} />
+                    <Input onChange={(e) => setLastname(e.target.value)} type="text" 
+                    name="lastname" label="Nom" value={lastname} />
 
-                    <Input onChange={(e) => setEmail(e.target.value)} type="email" name="email"
-                    identifier={email ? "input-filled" : ""} label="E-mail" value={email} />
+                    <Input onChange={(e) => setEmail(e.target.value)} type="email" 
+                    name="email" label="E-mail" value={email} />
 
-                    <Input onChange={(e) => setPassword(e.target.value)} type="password" name="password"
-                    identifier={password ? "input-filled" : ""}  label="Mot de passe" value={password} />
+                    <Input onChange={(e) => setPassword(e.target.value)} type="password"
+                    name="password" label="Mot de passe" value={password} />
 
                     <FakeInput value={birthdate} name="birthdate" label="Date de naissance" />
 

@@ -146,16 +146,16 @@ function AccessControl() {
 
                     <form action="" method="POST">
                         <Input onChange={(e) => setEmail(e.target.value)} value={email} 
-                        name="email" label="Email" identifier={email ? "input-filled" : ""}
+                        name="email" label="Email"
                         type="email" maxLength={60} />
                         <Input onChange={(e) => setPassword(e.target.value)} value={password} 
-                        type="password" identifier={password ? "input-filled" : ""}
+                        type="password"
                         name="password" label="Mot de passe"  minLength={8} />
 
                         {page === "signup" ? 
                             <>
                                 <Input onChange={(e) => setBirthdate(e.target.value)} name="birthdate" 
-                                type="date" identifier={birthdate ? "input-filled" : ""} label="Date de naissance" /> 
+                                type="date" label="Date de naissance" /> 
                                 <Input onChange={() => setIsChecked(!isChecked)} name="policies" 
                                 type="checkbox" identifier="policies-wrapper"
                                 label="J'accepte la politique de confidentialité" />
