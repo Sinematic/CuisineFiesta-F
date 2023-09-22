@@ -1,4 +1,4 @@
-import "../../../styles/FormElements/Input/Input.css"
+import "../../styles/FormElements/Input.css"
 
 function Input(props: { 
     onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined,

@@ -1,4 +1,4 @@
-import "../../../styles/FormElements/Button/Button.css"
+import "../../styles/FormElements/Button.css"
 
 function Button(props: { 
     onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined,

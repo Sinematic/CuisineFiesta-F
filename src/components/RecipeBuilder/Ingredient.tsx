@@ -1,6 +1,6 @@
 import { useState } from "react"
-import Input from "../FormElements/Input/Input"
-import Select from "../FormElements/Select/Select"
+import Input from "../FormElements/Input"
+import Select from "../FormElements/Select"
 import "../../styles/RecipeBuilder/Ingredient.css"
 
 function Ingredient() {

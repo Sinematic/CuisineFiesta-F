@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "../../styles/RecipeBuilder/IngredientsList.css"
-import Button from "../FormElements/Button/Button"
+import Button from "../FormElements/Button"
 import Ingredient from "./Ingredient"
 
 function IngredientsList() {
@@ -12,9 +12,6 @@ function IngredientsList() {
             <h3>Les ingrédients nécessaires :</h3>
 
             <div className="ingredients">
-                <Ingredient />
-                <Ingredient />
-                <Ingredient />
                 <Ingredient />
             </div>
 

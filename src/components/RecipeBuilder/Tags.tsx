@@ -190,7 +190,7 @@ function Tags() {
         <div className="tags">
             <h3>Sélectionner jusqu'à 3 tags</h3>
             {tags.map((tag) => 
-                <TagElement tag={tag} handleSelection={() => handleSelection(tag.name)} 
+                <TagElement key={tag.name} tag={tag} handleSelection={() => handleSelection(tag.name)} 
                 isSelected={selectedTags.includes(tag.name) ? true : false} />
             )}
         </div>

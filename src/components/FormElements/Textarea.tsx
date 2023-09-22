@@ -1,4 +1,4 @@
-import "../../../styles/FormElements/Textarea/Textarea.css"
+import "../../styles/FormElements/Textarea.css"
 
 function Textarea(props: { 
     state: string | undefined,

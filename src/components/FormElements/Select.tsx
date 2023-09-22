@@ -1,4 +1,4 @@
-import "../../../styles/FormElements/Select/Select.css"
+import "../../styles/FormElements/Select.css"
 
 function Select(props: { 
     name: string, 

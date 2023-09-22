@@ -1,6 +1,6 @@
 import { useState } from "react"
-import Button from "../FormElements/Button/Button"
-import Input from "../FormElements/Input/Input"
+import Button from "../FormElements/Button"
+import Input from "../FormElements/Input"
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy"
 import Dropdown from "../Dropdown/Dropdown"
 import Notification from "../Notification/Notification"

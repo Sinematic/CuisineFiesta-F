@@ -1,20 +1,4 @@
 .ingredient-wrapper {
-    display: grid;
-    grid-template: 
-        "name name name"
-        "amount unit unit";
-    gap: 2px;
+    
     padding-block: 12px;
-}
-
-.ingredient-wrapper input[type="text"] {
-    grid-area: name;
-}
-
-.ingredient-wrapper input[type="number"] {
-    grid-area: amount;
-}
-
-.ingredient-wrapper select {
-    grid-area: unit;
 }
