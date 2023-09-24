@@ -23,7 +23,7 @@
     left: 10px;
 }
 
-.input-filled > .placeholder-like {
+.input-filled > .placeholder-like, .input-wrapper > input:focus + .placeholder-like {
     display: none;
 }
 

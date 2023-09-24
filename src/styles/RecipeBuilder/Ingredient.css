@@ -1,4 +1,5 @@
 .ingredient-wrapper {
-    
+    display: flex;
+    gap: 10px;
     padding-block: 12px;
 }

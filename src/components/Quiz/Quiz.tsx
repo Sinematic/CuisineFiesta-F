@@ -44,7 +44,6 @@ function Quiz() {
         if (isCorrect) setScore(score + 1)
         setQuestionIndex(questionIndex + 1)
         questionIndex < questions.length - 1 ? null : handleScore()
-
     }
 
     const handleScore = () => {
@@ -71,7 +70,12 @@ function Quiz() {
         setQuestionIndex(0)
         setScoreMessage("")
     }
-    
+
+    const [percentDone, setPercentDone] = useState(0)
+
+    useEffect(() => {
+        setPercentDone((questionIndex / questions.length) * 100)
+    }, [questionIndex, questions.length])
 
     return (
         <>
@@ -81,7 +85,9 @@ function Quiz() {
 
             <div className="quiz">
                 <div className="quiz-game">
-                    <div className="progress-bar" />
+                    <div className="progress-bar">
+                        <div className="bar-filler" style={{width: `${percentDone}%`}} />
+                    </div>
                     {questions && questionIndex < questions.length ?   
                         <Question question={questions[questionIndex].question} 
                         options={questions[questionIndex].options} 

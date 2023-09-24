@@ -1,21 +1,24 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "../../styles/RecipeBuilder/IngredientsList.css"
 import Button from "../FormElements/Button"
 import Ingredient from "./Ingredient"
 
 function IngredientsList() {
 
-    const [number, setNumber] = useState<number>(1)
+    const [number, setNumber] = useState<Array<number>>([1])
+
 
     return (
         <div className="ingredients-list">
-            <h3>Les ingrédients nécessaires :</h3>
+            <h3>Ingrédients nécessaires :</h3>
 
             <div className="ingredients">
-                <Ingredient />
+                {number.forEach(element => {
+                    <Ingredient index={element} />
+                })}
             </div>
 
-            <Button onClick={() => setNumber(number + 1)} value="Ajouter un ingrédient"/>
+            <Button onClick={() => setNumber([...number, number[-1] + 1])} value="Ajouter un autre ingrédient"/>
         </div>
 
     )
