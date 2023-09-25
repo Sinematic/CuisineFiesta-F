@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Header from "../Header/Header"
 import Cover from "../Cover/Cover"
 import Nav from "../Nav/Nav"
@@ -18,29 +18,11 @@ import Tags from "./Tags"
 
 function RecipeBuilder() {
 
-    const possibleTypes = [{ 
-        type: "Entrée", 
-        image: BannerStarter
-    }, {
-        type: "Plat principal",
-        image: BannerMeal
-    }, {
-        type: "Dessert",
-        Image: BannerDessert
-    }, { 
-        type: "Autres",
-        image: DefaultBanner
-    }]
+    const possibleTypes = ["Entrée", "Plat principal", "Dessert", "Autres"]
       
 /*
-title //
 ingredients
-type//
-specialutensils
 steps
-description//
-//images//
-//videos//
 duration //
 cost
 complexity//
@@ -52,15 +34,25 @@ recipeFor (pour combien)//
     const [description, setDescription] = useState<string>("")
     const [type, setType] = useState<string>("")
     const [duration, setDuration] = useState<string>()
-    //const [specialUtensils, setSpecialUtensils] = useState<Array<string>>([])
-    //const [ingredients, setIngredients] = useState<Array<{ name: string, amount: number, unit: string }>>()
+    const [ingredients, setIngredients] = useState<Array<{ name: string, amount: string, unit: string }>>([])
     const [rate, setRate] = useState<number | null>(null)
     const [mealFor, setMealFor] = useState<string>()
+    const [cover, setCover] = useState<string>(DefaultBanner)
+
+    useEffect(() => {
+        if (type === "Entrée") {
+            setCover(BannerStarter)
+        }else if (type === "Plat principal") {
+            setCover(BannerMeal)
+        } else if (type === "Dessert") {
+            setCover(BannerDessert)
+        } else setCover(DefaultBanner)
+    }, [type])
 
     return (
         <>
             <Header />
-            <Cover type="title" text="Partager une recette" src={DefaultBanner} alt="" />
+            <Cover type="title" text="Partager une recette" src={cover} alt="" />
             
             <div className="recipe-builder">
 
@@ -68,7 +60,7 @@ recipeFor (pour combien)//
 
                     <Input onChange={(e) => setMealName(e.target.value)} value={mealName} 
                     type="text" name="name" label="Nom de la recette" minLength={5} maxLength={60}/>
-                    <Select options={possibleTypes.map(option => option.type)} 
+                    <Select options={possibleTypes.map(option => option)} 
                     state={type} setter={setType} name="type" label="Type de recette" />
                     <Textarea state={description} setter={setDescription} value={description} 
                     name="description" label="Description de la recette *" />
@@ -77,7 +69,7 @@ recipeFor (pour combien)//
                     name="mealFor" type="number" label="Nombre de convives" />
                     <Rate rate={rate} setRate={setRate} />
                     
-                    <IngredientsList />
+                    <IngredientsList ingredients={ingredients} setIngredients={setIngredients} />
 
                     <Input onChange={(e) => setDuration(e.target.value)} value={duration} 
                     name="duration" type="number" identifier={duration ? "input-filled" : ""} 

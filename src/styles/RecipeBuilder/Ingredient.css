@@ -1,5 +1,28 @@
 .ingredient-wrapper {
-    display: flex;
+    display: grid;
     gap: 10px;
-    padding-block: 12px;
+    padding-block: 8px;
+}
+
+.first-row, .second-row {
+    display: grid;
+    gap: 7px;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.second-row {
+    grid-template-columns: 1.2fr 2fr;
+}
+
+.second-row {
+    outline: none;
+}
+
+.ingredient-wrapper input:focus, .ingredient-wrapper select:focus {
+    outline: none !important;
+}
+
+.second-row > .input-wrapper:first-of-type > input {
+    border-radius: 0px;
 }

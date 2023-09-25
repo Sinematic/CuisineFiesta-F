@@ -1,6 +1,65 @@
-.ingredients-list {
+.ingredients {
+    display: grid;
+    gap: 15px;
+    width: 100%;
+    background-color: var(--white);
     padding-block: 15px;
-    padding-inline: 20px;
-    border: 2px solid var(--main-color);
+    padding-inline: 8px;
+    border-radius: 10px;
+}
+
+.ingredients > li {
+    list-style: inside;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredients > li > span {
+    display: inline-block;
+    width: calc(100% - 54px);
+}
+
+.ingredients > li > .trash {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.ingredients-list {
+    display: grid;
+    gap: 15px;
+    background-color: var(--grey);
     border-radius: 8px;
+}
+
+.ingredients-list > h3 {
+    text-align: center;
+}
+
+.trash {
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--red);
+    border-radius: 10px;
+}
+
+.trash > svg {
+    width: 24px;
+    height: 24px;
+}
+
+.check {
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    background-color: var(--success);
+    border: 2px solid var(--white);
+    border-radius: 12px;
+}
+
+.first-row {
+    grid-template-columns: 1fr 48px;
+    width: 100%;
 }
