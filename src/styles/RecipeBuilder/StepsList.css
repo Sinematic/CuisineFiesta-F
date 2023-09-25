@@ -1,0 +1,24 @@
+.steps-wrapper {
+    width: 100%;
+    display: grid;
+    gap: 15px;
+}
+
+.steps-wrapper button {
+    width: auto;
+    padding: 12px 20px;
+    background-color: var(--mint);
+    border-radius: 10px;
+}
+
+ol.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding-block: 12px;
+    padding-inline: 15px;
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 10px;
+}

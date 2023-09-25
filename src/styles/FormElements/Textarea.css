@@ -1,5 +1,6 @@
 .textarea-wrapper {
     display: grid;
+    position: relative;
     gap: 12px;
     width: 100%;
 }
@@ -16,4 +17,20 @@ textarea {
 textarea:focus {
     outline-color: var(--mint);
     transition: all 0s 0.3s;
+}
+
+.length-indicator {
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    font-size: 0.6rem;
+    font-weight: 300;
+}
+
+.length-indicator.green {
+    color: var(--mint);
+}
+
+.length-indicator.red {
+    color: var(--red);
 }

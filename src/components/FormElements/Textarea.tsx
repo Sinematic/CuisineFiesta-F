@@ -16,6 +16,7 @@ function Textarea(props: {
             <label htmlFor={props.name}>{props.label}</label>
             <textarea onChange={(e) => props.setter(e.target.value)} id={props.name} rows={3} 
             name={props.name} minLength={props.minLength} maxLength={props.maxLength} value={props.value} />
+            {props.maxLength ? <span className={"length-indicator " + (props.value && props.value?.length < props.maxLength ? "green" : "red")}>{props.value?.length} / {props.maxLength}</span> : null}
         </div>
     )
 }

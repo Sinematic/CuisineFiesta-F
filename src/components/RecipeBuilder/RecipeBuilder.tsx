@@ -15,6 +15,7 @@ import Textarea from "../FormElements/Textarea"
 import Rate from "../Rate/Rate"
 import IngredientsList from "./IngredientsList"
 import Tags from "./Tags"
+import StepsList from "./StepsList"
 
 function RecipeBuilder() {
 
@@ -26,7 +27,6 @@ steps
 duration //
 cost
 complexity//
-recipeFor (pour combien)//
 
 */
 
@@ -36,7 +36,8 @@ recipeFor (pour combien)//
     const [duration, setDuration] = useState<string>()
     const [ingredients, setIngredients] = useState<Array<{ name: string, amount: string, unit: string }>>([])
     const [rate, setRate] = useState<number | null>(null)
-    const [mealFor, setMealFor] = useState<string>()
+    const [mealFor, setMealFor] = useState<string>("")
+    const [steps, setSteps] = useState<Array<string>>([])
     const [cover, setCover] = useState<string>(DefaultBanner)
 
     useEffect(() => {
@@ -60,22 +61,27 @@ recipeFor (pour combien)//
 
                     <Input onChange={(e) => setMealName(e.target.value)} value={mealName} 
                     type="text" name="name" label="Nom de la recette" minLength={5} maxLength={60}/>
+                    
                     <Select options={possibleTypes.map(option => option)} 
                     state={type} setter={setType} name="type" label="Type de recette" />
+
                     <Textarea state={description} setter={setDescription} value={description} 
                     name="description" label="Description de la recette *" />
 
-                    <Input onChange={(e) => setMealFor(e.target.value)} value={mealFor}
-                    name="mealFor" type="number" label="Nombre de convives" />
-                    <Rate rate={rate} setRate={setRate} />
-                    
                     <IngredientsList ingredients={ingredients} setIngredients={setIngredients} />
+
+                    <StepsList steps={steps} setSteps={setSteps} />
+
+                    <Select name="mealFor" options={["1", "2", "3", "4", "5", "6", "7", "8"]} 
+                    state={mealFor} setter={setMealFor} label="Nombre de convives" />
 
                     <Input onChange={(e) => setDuration(e.target.value)} value={duration} 
                     name="duration" type="number" identifier={duration ? "input-filled" : ""} 
                     label="Temps en minutes" />
 
                     <Tags />
+
+                    <Rate rate={rate} setRate={setRate} />
 
                     <Button value="Publier la recette" />
 
