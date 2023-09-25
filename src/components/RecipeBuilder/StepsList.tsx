@@ -21,7 +21,7 @@ function StepsList(props : {
             <Textarea value={content} setter={setContent} name="step" minLength={10} maxLength={500}/>
             <Button onClick={handleContent} value="Valider l'étape" type="button" />
 
-            {props.steps ? <ol className="steps">
+            {props.steps && props.steps.length > 0 ? <ol className="steps">
                 {props.steps.map((step) => <li key={uuidv4()} className="step">{step}</li>)}
 
             </ol> : null}

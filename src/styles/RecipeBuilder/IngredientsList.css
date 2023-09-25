@@ -29,12 +29,19 @@
 .ingredients-list {
     display: grid;
     gap: 15px;
+    padding-block: 15px;
+    padding-inline: 12px;
     background-color: var(--grey);
+    border: 2px solid var(--light-grey);
     border-radius: 8px;
 }
 
 .ingredients-list > h3 {
-    text-align: center;
+    width: fit-content;
+    margin: auto;
+    font-size: 1.1rem;
+    color: var(--success);
+    border-bottom: 2px solid var(--success);
 }
 
 .trash {

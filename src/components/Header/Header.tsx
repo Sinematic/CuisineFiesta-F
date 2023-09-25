@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router"
 import Notification from "../Notification/Notification"
 import "../../styles/Header/Header.css"
-import Logo from "../../assets/images/logo.svg"
+import Logo from "../../assets/icons/logo.svg"
 
 function Header() {
 

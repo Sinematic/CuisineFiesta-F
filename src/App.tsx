@@ -3,7 +3,7 @@ import AccessControl from './components/AccessControl/AccessControl'
 import Home from "./components/Home/Home"
 import Profile from "./components/Profile/Profile"
 import Premium from "./components/Premium/Premium"
-import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy"
+import PrivacyPolicy from "./components/FileReaders/PrivacyPolicy"
 import Quiz from "./components/Quiz/Quiz"
 import RecipeBuilder from "./components/RecipeBuilder/RecipeBuilder"
 

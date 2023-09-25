@@ -22,3 +22,7 @@ ol.steps {
     color: var(--black);
     border-radius: 10px;
 }
+
+ol.steps > .step {
+    list-style: inside;
+}

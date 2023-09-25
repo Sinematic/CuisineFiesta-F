@@ -16,6 +16,8 @@ import Rate from "../Rate/Rate"
 import IngredientsList from "./IngredientsList"
 import Tags from "./Tags"
 import StepsList from "./StepsList"
+import Dropdown from "../Dropdown/Dropdown"
+import RecipeGuidelines from "../FileReaders/RecipeGuidelines"
 
 function RecipeBuilder() {
 
@@ -57,8 +59,13 @@ complexity//
             
             <div className="recipe-builder">
 
-                <form action="" method="POST">
+                <Dropdown title="Conseils pour écrire une recette">
+                    <RecipeGuidelines />
+                </Dropdown>
 
+
+                <form action="" method="POST">
+{/* title, type, description, ingredients, steps, mealfor, temps requis, tags, note, publication */}
                     <Input onChange={(e) => setMealName(e.target.value)} value={mealName} 
                     type="text" name="name" label="Nom de la recette" minLength={5} maxLength={60}/>
                     

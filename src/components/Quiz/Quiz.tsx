@@ -1,4 +1,4 @@
-import Data from "../../assets/quiz-questions.json"
+import Data from "../../assets/files/quiz-questions.json"
 import { useEffect, useState } from "react"
 import Cover from "../Cover/Cover"
 import Footer from "../Footer/Footer"

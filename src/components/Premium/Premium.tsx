@@ -1,4 +1,4 @@
-import premium from "../../assets/premium.json"
+import premium from "../../assets/files/premium.json"
 import "../../styles/Premium/Premium.css"
 import Cover from "../Cover/Cover"
 import Header from "../Header/Header"

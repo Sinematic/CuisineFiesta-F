@@ -16,14 +16,14 @@ function IngredientsList(props: {
 
     return (
         <div className="ingredients-list">
-            <h3>Ingrédients nécessaires :</h3>
+            <h3>Ingrédients nécessaires 🥦</h3>
 
             <Ingredient key={uuidv4()} ingredients={props.ingredients} 
             setIngredients={props.setIngredients} />
 
             {props.ingredients.length > 0 ? <ul className="ingredients">
                 {props.ingredients.map((ingredient, index) => 
-                <li key={ingredient.name}>
+                <li key={uuidv4()}>
                     <span>{ingredient.name}: {ingredient.amount} x {ingredient.unit}</span>
                     <div className="trash" onClick={() => deleteSelf(index)}>
                         <svg xmlns="http://www.w3.org/2000/svg"

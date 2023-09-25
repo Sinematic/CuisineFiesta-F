@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Button from "../FormElements/Button"
 import Input from "../FormElements/Input"
-import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy"
+import PrivacyPolicy from "../FileReaders/PrivacyPolicy"
 import Dropdown from "../Dropdown/Dropdown"
 import Notification from "../Notification/Notification"
 import "../../styles/AccessControl/AccessControl.css"
@@ -145,31 +145,36 @@ function AccessControl() {
                     </div>
 
                     <form action="" method="POST">
+                        
                         <Input onChange={(e) => setEmail(e.target.value)} value={email} 
                         name="email" label="Email"
                         type="email" maxLength={60} />
+
                         <Input onChange={(e) => setPassword(e.target.value)} value={password} 
-                        type="password"
-                        name="password" label="Mot de passe"  minLength={8} />
+                        type="password" name="password" label="Mot de passe" minLength={8} />
 
                         {page === "signup" ? 
                             <>
                                 <Input onChange={(e) => setBirthdate(e.target.value)} name="birthdate" 
                                 type="date" label="Date de naissance" /> 
+
                                 <Input onChange={() => setIsChecked(!isChecked)} name="policies" 
                                 type="checkbox" identifier="policies-wrapper"
                                 label="J'accepte la politique de confidentialité" />
+
                                 <Dropdown title="Politique de confidentialité">
                                     <PrivacyPolicy title="false" />
                                 </Dropdown>
                             </>
                         : null}
 
-                        <Button onClick={() => auth()} type="button" value={page === "login" ? "Se connecter" : "S'inscrire"} 
-                        name={page} identifier="submit-form" />
+                        <Button onClick={() => auth()} type="button" identifier="submit-form"
+                        value={page === "login" ? "Se connecter" : "S'inscrire"} name={page} />
                     </form>
 
-                    {notification.type && !isLoading ? <Notification type={notification.type} content={notification.content} /> : null}
+                    {notification.type && !isLoading ? 
+                        <Notification type={notification.type} content={notification.content} /> 
+                    : null}
 
                 </div>
             : null}

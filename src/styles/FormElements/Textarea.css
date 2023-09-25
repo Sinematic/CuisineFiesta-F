@@ -21,10 +21,10 @@ textarea:focus {
 
 .length-indicator {
     position: absolute;
-    bottom: 2px;
-    right: 5px;
+    background-color: transparent;
+    bottom: 3px;
+    right: 4px;
     font-size: 0.6rem;
-    font-weight: 300;
 }
 
 .length-indicator.green {
