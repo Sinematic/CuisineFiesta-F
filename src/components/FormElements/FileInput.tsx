@@ -2,18 +2,18 @@ import "../../styles/FormElements/FileInput.css"
 
 
 function FileInput(props: { 
-    onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined,
-    value?: string | undefined,
-    name: string | undefined, 
-    label ?: string | undefined,
-    maxLength?: number | undefined
+    onChange?: React.ChangeEventHandler<HTMLInputElement>,
+    value?: string,
+    name?: string, 
+    label ?: string,
+    arialabel?: string,
+    maxLength?: number
 }) {
 
     return (
         <div className="input-wrapper">
-            <input onChange={props.onChange} type="file" value={props.value} 
-            name={props.name} id={props.name}
-            maxLength={props.maxLength} />
+            <input onChange={props.onChange} type="file" value={props.value} name={props.name} 
+            id={props.name} aria-label={props.arialabel} maxLength={props.maxLength} />
             <label htmlFor={props.name}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
                 stroke="#3c3b3b" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">

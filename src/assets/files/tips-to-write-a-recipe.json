@@ -6,12 +6,46 @@
             "content": "Bien écrire votre recette CuisineFiesta assurera une compréhension claire et cohérente pour les lecteurs, améliorant ainsi la qualité de l'expérience culinaire pour ceux qui suivent la recette."
         },
         {
-            "title": "",
-            "content": ""
+            "title": "Le titre",
+            "content": "Allez à l'essentiel. Veillez à le rendre informatif et concis, ne mettez pas d'articles superflus (\"La tarte aux pommes\" devient \"Tarte aux pommes\")"
+        },
+        {
+            "title": "Type (entrée, plat principal, ...)",
+            "content": "Sélectionnez le type de votre recette en fonction de la catégorie appropriée, par exemple, \"entrée\" pour les plats d'ouverture ou \"dessert\" pour les douceurs sucrées."
+        },
+        {
+            "title": "Description",
+            "content": "Rédigez une brève description de la recette pour donner un aperçu alléchant du plat."
+        },
+        {
+            "title": "Ingrédients",
+            "content": "Énumérez les ingrédients nécessaires avec précision, en commençant par le nom de l'ingrédient, sa quantité, suivis de l'unité de mesure. Relisez-vous puis confirmez via le bouton vert dédié. L'ingrédient sera ajouté à la liste et affiché juste au-dessous. En cas d'erreur, vous pouvez supprimer un ingrédient de la liste en cliquant sur le bouton route à côté. ",
+            "warning" : "Attention : Les ingrédients qui n'ont pas été validés seront perdus !"
+        },
+        {
+            "title": "Étapes de préparation",
+            "content": "Rédigez les étapes dans l'ordre de la préparation. Divisez la préparation en étapes faciles à suivre, en commençant par les instructions de base.",
+            "warning": "Assurez-vous de valider toutes les étapes de la préparation ou elles seront perdues ici aussi !"
+        },
+        {
+            "title": "Nombre de convives",
+            "content": "Spécifiez le nombre de personnes pour lesquelles la recette est prévue. Dans la mesure du possible, essayez d'indiquer la quantités pour 1, 2 ou 3 personnes plutôt des quantités inhabituelles car cela simplifie la préparation pour les cuisiniers et leur permet d'ajuster facilement les proportions en fonction de leurs besoins, tout en évitant des calculs de conversion complexes."
+        },
+        {
+            "title": "Temps requis",
+            "content": "Indiquez le temps total nécessaire pour préparer la recette en comprenant le temps de cuisson dans votre total."
+        },
+        {
+            "title": "Tags (ou étiquettes)",
+            "content": "Sélectionnez des tags pertinents pour décrire votre recette, comme \"végétalien\", \"cuisine française\" ou \"bon pour la santé\". Cela aide les utilisateurs à trouver des recettes spécifiques."
         },
         {
             "title": "",
             "content": ""
+        },
+        {
+            "title": "Au moment de publier",
+            "content": "Avant de publier, relisez attentivement votre recette pour vérifier les fautes d'orthographe, la cohérence et la clarté. Assurez-vous que les étapes sont bien détaillées et que les ingrédients sont correctement répertoriés."
         }
     ]
   }

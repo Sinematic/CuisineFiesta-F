@@ -43,7 +43,7 @@ function Ingredient(props: {
                 <Input onChange={(e) => setName(e.target.value)} value={name}
                 name="ingredient-name" type="text" label="Ingrédient" placeholder={true} />
 
-                <div className="check" onClick={addIngredient}>
+                <div className="check" onClick={addIngredient} aria-label="Ajouter l'ingrédient">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
                     viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" 
                     strokeLinecap="round" strokeLinejoin="round">

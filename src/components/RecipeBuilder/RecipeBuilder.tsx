@@ -43,14 +43,21 @@ complexity//
     const [cover, setCover] = useState<string>(DefaultBanner)
 
     useEffect(() => {
+
         if (type === "Entrée") {
             setCover(BannerStarter)
-        }else if (type === "Plat principal") {
+        } else if (type === "Plat principal") {
             setCover(BannerMeal)
         } else if (type === "Dessert") {
             setCover(BannerDessert)
         } else setCover(DefaultBanner)
+
     }, [type])
+
+    const submitData = () => {
+
+        console.log("toto")
+    }
 
     return (
         <>
@@ -63,9 +70,8 @@ complexity//
                     <RecipeGuidelines />
                 </Dropdown>
 
-
                 <form action="" method="POST">
-{/* title, type, description, ingredients, steps, mealfor, temps requis, tags, note, publication */}
+
                     <Input onChange={(e) => setMealName(e.target.value)} value={mealName} 
                     type="text" name="name" label="Nom de la recette" minLength={5} maxLength={60}/>
                     
@@ -73,7 +79,7 @@ complexity//
                     state={type} setter={setType} name="type" label="Type de recette" />
 
                     <Textarea state={description} setter={setDescription} value={description} 
-                    name="description" label="Description de la recette *" />
+                    name="description" label="Description de la recette (facultatif)" />
 
                     <IngredientsList ingredients={ingredients} setIngredients={setIngredients} />
 
@@ -90,7 +96,7 @@ complexity//
 
                     <Rate rate={rate} setRate={setRate} />
 
-                    <Button value="Publier la recette" />
+                    <Button value="Publier la recette" onClick={submitData} type="submit" />
 
                 </form>
 

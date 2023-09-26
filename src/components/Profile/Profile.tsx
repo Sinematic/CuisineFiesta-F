@@ -59,7 +59,7 @@ function Profile() {
                     }
 
                     <div className="icon-wrapper picture">
-                        <FileInput name="file" label="Mettre à jour ma photo de profil" />
+                        <FileInput name="file" arialabel="Mettre à jour ma photo de profil" />
                     </div>                 
                 </div>
 

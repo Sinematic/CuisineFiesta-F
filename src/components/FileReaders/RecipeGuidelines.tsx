@@ -12,6 +12,7 @@ function RecipeGuidelines() {
                         <div key={section.title} className="content-section">
                             <h3>{section.title}</h3>
                             <p>{section.content}</p>
+                            {section.warning ? <p className="warning-paragraph">{section.warning}</p>: null}
                         </div>
                     )}
                 </>
