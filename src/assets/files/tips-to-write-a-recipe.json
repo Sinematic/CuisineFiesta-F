@@ -40,8 +40,8 @@
             "content": "Sélectionnez des tags pertinents pour décrire votre recette, comme \"végétalien\", \"cuisine française\" ou \"bon pour la santé\". Cela aide les utilisateurs à trouver des recettes spécifiques."
         },
         {
-            "title": "",
-            "content": ""
+            "title": "Note",
+            "content": "Pour noter une recette sur 5 étoiles, attribuez une note en fonction de votre expérience globale avec la recette, en tenant compte de la saveur, de la texture, de la facilité de préparation et de la présentation. Une étoile représente une expérience médiocre, tandis que cinq étoiles indiquent une expérience exceptionnelle."
         },
         {
             "title": "Au moment de publier",

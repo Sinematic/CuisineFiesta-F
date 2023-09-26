@@ -39,6 +39,7 @@
     padding-inline: 20px;
     transition: max-height 1s ease-in-out;
     border: 2px solid transparent;
+    background-color: var(--white);
 }
 
 .dropdown-content.open {
@@ -53,4 +54,8 @@
 
 .blue {
     background-color: var(--information);
+}
+
+.red {
+    background-color: var(--red);
 }

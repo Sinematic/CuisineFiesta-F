@@ -55,7 +55,6 @@ complexity//
     }, [type])
 
     const submitData = () => {
-
         console.log("toto")
     }
 
@@ -66,7 +65,7 @@ complexity//
             
             <div className="recipe-builder">
 
-                <Dropdown title="Conseils pour écrire une recette">
+                <Dropdown title="Conseils pour écrire une recette" identifier="red bg-white">
                     <RecipeGuidelines />
                 </Dropdown>
 
