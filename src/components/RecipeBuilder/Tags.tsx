@@ -1,8 +1,10 @@
-import { useState } from "react"
 import "../../styles/RecipeBuilder/Tags.css"
 import TagElement from "./TagElement"
 
-function Tags() {
+function Tags(props : { 
+    selectedTags: Array<string>, 
+    setSelectedTags: React.Dispatch<React.SetStateAction<Array<string>>>
+}) {
 
     const tags = [
         {
@@ -173,7 +175,7 @@ function Tags() {
         }
     ]
 
-    const [selectedTags, setSelectedTags] = useState<Array<string>>([])
+    const { selectedTags, setSelectedTags } = props
 
     const handleSelection = (tag: string) => {
         if (selectedTags.includes(tag)) {
@@ -185,6 +187,7 @@ function Tags() {
             setSelectedTags([...selectedTags, tag])
         }
     }
+    
 
     return (
         <div className="tags">

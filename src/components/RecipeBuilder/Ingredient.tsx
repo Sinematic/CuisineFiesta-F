@@ -54,7 +54,7 @@ function Ingredient(props: {
            
             <div className="second-row">
                 <Input onChange={(e) => setAmount(e.target.value)} value={amount}
-                name="ingredient-amount" type="number" 
+                name="ingredient-amount" type="number" min={1}
                 label="Quantité" placeholder={true} maxLength={3} />
                 <Select name="unit" options={units} label="Unités"
                 state={unit} setter={setUnit} /> 

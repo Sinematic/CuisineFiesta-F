@@ -22,7 +22,7 @@ textarea:focus {
 
 .length-indicator {
     position: absolute;
-    background-color: transparent;
+    background-color: var(--white);
     bottom: 3px;
     right: 4px;
     font-size: 0.6rem;

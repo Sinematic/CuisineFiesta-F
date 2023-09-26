@@ -54,18 +54,18 @@
     padding-block: 20px 40px;
 }
 
-.blue {
+.dropdown-bar.blue {
     background-color: var(--information);
 }
 
-.red {
+.dropdown-bar.red {
     background-color: var(--red);
 }
 
-.orange {
+.dropdown-bar.orange {
     background-color: var(--warning);
 }
 
-.green {
+.dropdown-bar.green {
     background-color: #008000;
 }

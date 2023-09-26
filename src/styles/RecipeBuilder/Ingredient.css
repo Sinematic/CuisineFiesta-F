@@ -1,7 +1,6 @@
 .ingredient-wrapper {
     display: grid;
     gap: 10px;
-    padding-block: 8px;
 }
 
 .first-row, .second-row {

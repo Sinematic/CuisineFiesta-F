@@ -24,10 +24,12 @@
 ol.steps {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 5px;
     width: 100%;
     background-color: var(--grey);
     color: var(--black);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 ol.steps > .step {
@@ -49,12 +51,13 @@ ol.steps > .step {
     border-radius: 10px;
 }
 
-.ingredients-list > h3 {
+.steps-wrapper > h3 {
     width: fit-content;
     margin: auto;
+    padding-inline: 6px;
     font-size: 1.1rem;
-    color: var(--success);
-    border-bottom: 2px solid var(--success);
+    color: var(--red);
+    border-bottom: 2px solid var(--red);
 }
 
 .step > .trash > svg {

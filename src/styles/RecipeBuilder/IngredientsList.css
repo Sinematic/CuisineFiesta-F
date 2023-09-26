@@ -1,34 +1,45 @@
 .ingredients {
     display: grid;
-    gap: 15px;
+    gap: 5px;
     width: 100%;
-    background-color: var(--white);
-    padding-block: 15px;
-    padding-inline: 8px;
+    background-color: var(--light-grey);
+    padding-block: 5px;
+    padding-inline: 5px;
     border-radius: 10px;
 }
 
 .ingredients > li {
     list-style: inside;
     position: relative;
-    padding: 0;
-    margin: 0;
+    background-color: var(--white);
+    padding-inline: 4px 5px;
+    padding-block: 12px;
+}
+
+.ingredients > li:first-of-type {
+    border-radius: 10px 10px 0 0;
+}
+
+.ingredients > li:last-of-type {
+    border-radius: 0 0 10px 10px;
 }
 
 .ingredients > li > span {
     display: inline-block;
-    width: calc(100% - 54px);
+    width: calc(100% - 48px);
+    margin-left: -8px;
 }
 
 .ingredients > li > .trash {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
 }
 
 .ingredients-list {
     display: grid;
-    gap: 15px;
+    gap: 24px;
     padding-block: 15px;
     padding-inline: 12px;
     background-color: var(--grey);
@@ -39,6 +50,7 @@
 .ingredients-list > h3 {
     width: fit-content;
     margin: auto;
+    padding-inline: 6px;
     font-size: 1.1rem;
     color: var(--success);
     border-bottom: 2px solid var(--success);
@@ -46,8 +58,8 @@
 
 .ingredients-list .trash {
     padding: 4px;
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     background-color: var(--red);
     border-radius: 10px;
 }
