@@ -11,34 +11,6 @@
     font-weight: 500;
 }
 
-.tag-element {
-    padding-inline: 16px;
-    padding-block: 6px;
-    border-radius: 50px;
-    text-align: center;
-}
-
-.tag-element.green {
-    background-color: #1ABC9C;
-}
-
-.tag-element.orange {
-    background-color:  #E74C3C;
-}
-
-.tag-element.blue {
-    background-color: #3498DB;
-}
-
-.tag-element.yellow {
-    background-color: #F1C40F;
-}
-
-.tag-element.black {
-    padding-inline: 13px;
-    background-color: var(--black);
-}
-
 .tags > h3 {
     width: 100%;
     text-align: center;

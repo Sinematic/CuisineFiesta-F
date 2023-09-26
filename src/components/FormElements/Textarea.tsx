@@ -6,17 +6,23 @@ function Textarea(props: {
     value?: string,
     identifier?: string,
     name: string, 
-    label?: string, 
+    label?: string,
+    rows?: number
+    arialabel?: string
     minLength?: number, 
     maxLength?: number
 }) {
 
     return (
         <div className="textarea-wrapper">
-            <label htmlFor={props.name}>{props.label}</label>
-            <textarea onChange={(e) => props.setter(e.target.value)} id={props.name} rows={3} 
-            name={props.name} minLength={props.minLength} maxLength={props.maxLength} value={props.value} />
-            {props.maxLength ? <span className={"length-indicator " + (props.value && props.value?.length < props.maxLength ? "green" : "red")}>{props.value?.length} / {props.maxLength}</span> : null}
+            {props.label ? <label htmlFor={props.name}>{props.label}</label> : null}
+            <textarea onChange={(e) => props.setter(e.target.value)} id={props.name} name={props.name}
+            rows={props.rows ? props.rows : 3} aria-label={props.arialabel ? props.arialabel : ""}
+            minLength={props.minLength} maxLength={props.maxLength} value={props.value} />
+            {props.maxLength ? <span className={"length-indicator " + 
+            (props.value && props.value?.length < props.maxLength ? "green" : "red")}>
+                {props.value?.length} / {props.maxLength}
+            </span> : null}
         </div>
     )
 }

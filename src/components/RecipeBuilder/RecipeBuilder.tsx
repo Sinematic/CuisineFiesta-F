@@ -66,7 +66,7 @@ complexity//
             
             <div className="recipe-builder">
 
-                <Dropdown title="Conseils pour écrire une recette" identifier="red bg-white">
+                <Dropdown title="Conseils pour écrire une recette" identifier="green bg-white">
                     <DocumentReader document={Guidelines} />
                 </Dropdown>
 

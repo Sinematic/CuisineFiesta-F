@@ -61,3 +61,11 @@
 .red {
     background-color: var(--red);
 }
+
+.orange {
+    background-color: var(--warning);
+}
+
+.green {
+    background-color: #008000;
+}

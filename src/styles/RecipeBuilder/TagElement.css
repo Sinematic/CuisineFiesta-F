@@ -1,5 +1,34 @@
-.selected {
-    background-color: var(--white);
-    color: var(--black);
-    border: 2px solid var(--black);
+.tag-element {
+    padding-inline: 16px;
+    padding-block: 6px;
+    border-radius: 50px;
+    border: 2px solid;
+    text-align: center;
+}
+
+.tag-element.green {
+    background-color: #1ABC9C;
+}
+
+.tag-element.orange {
+    background-color:  #E74C3C;
+}
+
+.tag-element.blue {
+    background-color: #3498DB;
+}
+
+.tag-element.yellow {
+    background-color: #F1C40F;
+}
+
+.tag-element.black {
+    padding-inline: 13px;
+    background-color: var(--black);
+}
+
+.tag-element.selected {
+    color: var(--black) !important;
+    background-color: var(--white) !important;
+    border-color: var(--black) !important;
 }

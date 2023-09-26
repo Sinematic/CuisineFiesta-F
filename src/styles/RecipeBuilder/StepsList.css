@@ -1,7 +1,17 @@
 .steps-wrapper {
     width: 100%;
     display: grid;
-    gap: 15px;
+    gap: 22px;
+    padding-block: 15px;
+    border-radius: 8px;
+}
+
+.steps-wrapper > h3 {
+    width: fit-content;
+    margin: auto;
+    font-size: 1.1rem;
+    color: var(--red);
+    border-bottom: 2px solid var(--red);
 }
 
 .steps-wrapper button {
@@ -14,15 +24,46 @@
 ol.steps {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2px;
     width: 100%;
-    padding-block: 12px;
-    padding-inline: 15px;
-    background-color: var(--white);
+    background-color: var(--grey);
     color: var(--black);
-    border-radius: 10px;
 }
 
 ol.steps > .step {
-    list-style: inside;
+    position: relative;
+    background-color: var(--white);
+    padding-block: 4px;
+    padding-inline: 10px 3px;
+}
+
+.step > .trash {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    background-color: var(--red);
+    border-radius: 10px;
+}
+
+.ingredients-list > h3 {
+    width: fit-content;
+    margin: auto;
+    font-size: 1.1rem;
+    color: var(--success);
+    border-bottom: 2px solid var(--success);
+}
+
+.step > .trash > svg {
+    width: 100%;
+    height: 100%;
+}
+
+.step > span {
+    display: inline-block;
+    max-width: calc(100% - 45px);
+    text-align: justify;
 }

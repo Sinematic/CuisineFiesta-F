@@ -44,7 +44,7 @@
     border-bottom: 2px solid var(--success);
 }
 
-.trash {
+.ingredients-list .trash {
     padding: 4px;
     width: 32px;
     height: 32px;
@@ -53,8 +53,8 @@
 }
 
 .trash > svg {
-    width: 24px;
-    height: 24px;
+    width: 100%;
+    height: 100%;
 }
 
 .check {

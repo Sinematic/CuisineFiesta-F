@@ -7,7 +7,8 @@
 
 textarea {
     width: 100%;
-    padding: 15px;
+    padding-block: 15px;
+    padding-inline: 10px;
     font-size: 1rem;
     border-radius: 10px;
     border: none;
