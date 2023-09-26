@@ -1,13 +1,14 @@
 import { useState } from "react"
+import { useNavigate } from "react-router"
 import Button from "../FormElements/Button"
 import Input from "../FormElements/Input"
-import PrivacyPolicy from "../FileReaders/PrivacyPolicy"
 import Dropdown from "../Dropdown/Dropdown"
 import Notification from "../Notification/Notification"
 import "../../styles/AccessControl/AccessControl.css"
 import Cover from "../Cover/Cover"
 import CoverPicture from "../../assets/images/pates-italiennes-avec-legumes-et-fromage-fondu.webp"
-import { useNavigate } from "react-router"
+import PrivacyPolicy from "../../assets/files/privacy-policy.json"
+import DocumentReader from "../DocumentReader/DocumentReader"
 
 function AccessControl() {
 
@@ -163,7 +164,7 @@ function AccessControl() {
                                 label="J'accepte la politique de confidentialité" />
 
                                 <Dropdown title="Politique de confidentialité">
-                                    <PrivacyPolicy title="false" />
+                                    <DocumentReader document={PrivacyPolicy} />
                                 </Dropdown>
                             </>
                         : null}

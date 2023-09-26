@@ -17,7 +17,8 @@ import IngredientsList from "./IngredientsList"
 import Tags from "./Tags"
 import StepsList from "./StepsList"
 import Dropdown from "../Dropdown/Dropdown"
-import RecipeGuidelines from "../FileReaders/RecipeGuidelines"
+import Guidelines from "../../assets/files/tips-to-write-a-recipe.json"
+import DocumentReader from "../DocumentReader/DocumentReader"
 
 function RecipeBuilder() {
 
@@ -66,7 +67,7 @@ complexity//
             <div className="recipe-builder">
 
                 <Dropdown title="Conseils pour écrire une recette" identifier="red bg-white">
-                    <RecipeGuidelines />
+                    <DocumentReader document={Guidelines} />
                 </Dropdown>
 
                 <form action="" method="POST">
@@ -78,7 +79,7 @@ complexity//
                     state={type} setter={setType} name="type" label="Type de recette" />
 
                     <Textarea state={description} setter={setDescription} value={description} 
-                    name="description" label="Description de la recette (facultatif)" />
+                    name="description" label="Description de la recette (facultatif)" maxLength={600} />
 
                     <IngredientsList ingredients={ingredients} setIngredients={setIngredients} />
 

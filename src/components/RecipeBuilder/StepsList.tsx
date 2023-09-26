@@ -12,8 +12,11 @@ function StepsList(props : {
     const [content, setContent] = useState<string>("")
 
     const handleContent = () => {
-        props.setSteps([...props.steps, content])
-        setContent("")
+        
+        if(content.length > 10) {
+            props.setSteps([...props.steps, content])
+            setContent("")
+        }        
     }
 
     return (

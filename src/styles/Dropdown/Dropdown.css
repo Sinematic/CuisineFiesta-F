@@ -39,11 +39,13 @@
     padding-inline: 20px;
     transition: max-height 1s ease-in-out;
     border: 2px solid transparent;
+    border-top: none;
+    border-bottom: none;
     background-color: var(--white);
 }
 
 .dropdown-content.open {
-    border-color: #eaeaea;
+    border: 2px solid #eaeaea;
     border-top: none;
     max-height: 9000px;
 }
