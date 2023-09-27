@@ -1,13 +1,14 @@
 import "../../styles/Rate/Rate.css";
 
-function Rate(props: { rate: number | null, setRate: (rating: number) => void }) {
+function Rate(props: { rate: number | null, display?: boolean, setRate?: (rating: number) => void }) {
 
   const range = [1, 2, 3, 4, 5];
 
     return (
         <div className="stars">
             {range.map((option) => (
-                <li key={option} onClick={() => props.setRate(option)} className="star-element">
+                <li key={option} onClick={!props.display ? () => props.setRate && props.setRate(option) : undefined} className="star-element">
+
 
                     {props.rate === null || props.rate < option ?
                         <svg 

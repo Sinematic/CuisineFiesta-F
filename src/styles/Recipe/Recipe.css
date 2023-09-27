@@ -1,18 +1,132 @@
 .recipe-item {
-    padding-block: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-block: 30px 90px;
     padding-inline: 30px;
-
+    background-color: var(--alt-white);
 }
 
 .recipe-item > h2 {
+    margin-top: -40px;
+    margin-bottom: 20px;
     font-size: 1.2rem;
-    padding-block: 0 15px;
+    white-space: nowrap;
+    padding-block: 8px;
+    padding-inline: 6px;
     text-align: center;
+    background-color: var(--black);
+    color: var(--gold);
+    border-radius: 0 0 10px 10px;
+    border: 2px solid var(--white);
+    border-top: none;
 }
 
 .recipe-item > img {
     width: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    border: 2px solid var(--white);
+    border-bottom: none;
+}
+
+.recipe-item > .display-description {
+    background-color: var(--white);
+    padding: 12px 15px;
+    color: var(--black);
+    border-radius: 10px;
+}
+
+.recipe-item > .display-ingredients {
+    display: grid;
+    gap: 5px;
+    line-height: 1.4rem;
+    padding: 7px;
+    background-color: var(--white);
+    border-radius: 5px;
+}
+
+.recipe-item > .display-ingredients > li {
+    width: 100%;
+    padding-inline: 10px;
+    padding-block: 11px;
+    color: var(--white);
+    background-color: var(--blue);
+    border-radius: 5px;
+}
+
+.recipe-item > .display-ingredients span {
+    display: inline-block;
+    font-weight: 700;
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.instructions > h3 {
+    padding-block: 16px 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--black);
+}
+
+.display-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-block: 0 10px;
+    padding-inline: 5px;
+    color: var(--black);
+    background-color: var(--white);
+    border-radius: 5px;
+}
+
+.display-steps > li {
+    padding-block: 12px;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 5px;
+}
+
+.display-steps > li span {
+    font-weight: 700;
+    height: 100%;
+}
+
+.display-steps > li > p {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    grid-template-rows: 1fr;
+}
+
+.recipe-item > .display-tags {
+    display: grid;
+    gap: 6px;
+}
+
+.recipe-item > .display-tags > span {
+    display: inline-block;
+    padding-block: 9px;
+    padding-inline: 16px;
+    border-radius: 50px;
+    color: var(--white);
+    background-color: var(--warning);
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.rating {
+    background-color: var(--white);
+    border-radius: 5px;
+    transform: scale(0.9);
 }

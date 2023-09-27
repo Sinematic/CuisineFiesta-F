@@ -35,8 +35,8 @@ function Home() {
     
     return (
         <>
-            <Header />
-            <Cover type="title" text="CuisineFiesta" src={Banner} alt="Bannière accueil CuisineFiesta"/>
+            {/* <Header />
+            <Cover type="title" text="CuisineFiesta" src={Banner} alt="Bannière accueil CuisineFiesta"/> */}
 
             {recipe ? <Recipe content={recipe} /> : "Recette non trouvée"}
 
