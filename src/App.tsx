@@ -13,12 +13,12 @@ function App() {
 	return (
 		<>
 			<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/ajouter-une-recette" element={<RecipeBuilder />} />
-					<Route path="/profil" element={<Profile />} />
-					<Route path="/premium" element={<Premium />} />
-					<Route path="/quiz" element={<Quiz />} />
-					<Route path="/confidentialite" element={<DocumentReader document={PrivacyPolicy} />} />
+				<Route path="/" element={<Home />} />
+				<Route path="/ajouter-une-recette" element={<RecipeBuilder />} />
+				<Route path="/profil" element={<Profile />} />
+				<Route path="/premium" element={<Premium />} />
+				<Route path="/quiz" element={<Quiz />} />
+				<Route path="/confidentialite" element={<DocumentReader document={PrivacyPolicy} />} />
 				<Route path="/login" element={<AccessControl />} />
 			</Routes>
 		</>

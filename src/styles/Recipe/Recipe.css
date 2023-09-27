@@ -1,0 +1,18 @@
+.recipe-item {
+    padding-block: 30px;
+    padding-inline: 30px;
+
+}
+
+.recipe-item > h2 {
+    font-size: 1.2rem;
+    padding-block: 0 15px;
+    text-align: center;
+}
+
+.recipe-item > img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    overflow: hidden;
+}

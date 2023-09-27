@@ -36,6 +36,7 @@ function Ingredient(props: {
         }
     }
 
+    
     return (
         <div className="ingredient-wrapper">
 

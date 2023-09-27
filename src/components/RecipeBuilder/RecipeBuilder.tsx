@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router"
 import Header from "../Header/Header"
 import Cover from "../Cover/Cover"
 import Nav from "../Nav/Nav"
@@ -48,26 +49,55 @@ function RecipeBuilder() {
 
     }, [type])
 
-    const submitData = () => {
+    const navigate = useNavigate()
 
-        if (mealName && type && duration !== null && duration && ingredients.length >= 2 && rate && mealFor && steps.length > 0) {
-            const recipeData = {
-                title: mealName,
-                ingredients: [...ingredients],
-                mealType: type,
-                description: description,
-                steps: [...steps],
-                tags: [...selectedTags],
-                time: duration,
-                recipeFor: mealFor,
-                ratings: [{ 
-                    userId: localStorage.getItem("userId"), 
-                    grade: rate
-                }],
-                authorId: localStorage.getItem("userId")
+    const submitData = async () => {
+
+        if (mealName 
+            && type 
+            && duration !== null 
+            && duration 
+            && ingredients.length >= 2 
+            && rate 
+            && mealFor 
+            && steps.length > 0
+        ) {
+
+            try {
+                const token = localStorage.getItem("token")
+                
+                const recipeData = {
+                    title: mealName,
+                    ingredients: [...ingredients],
+                    mealType: type,
+                    description: description,
+                    steps: [...steps],
+                    tags: [...selectedTags],
+                    time: duration,
+                    recipeFor: mealFor,
+                    ratings: [{ 
+                        userId: localStorage.getItem("userId"), 
+                        grade: rate
+                    }],
+                    authorId: localStorage.getItem("userId")
+                }
+
+                const response = await fetch(`http://localhost:3000/api/recipe/`, {
+                    method: "POST",
+                    body: JSON.stringify(recipeData),
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}` 
+                    }
+                })
+
+                if (response.ok) {
+                    navigate("/")
+                } else console.log(response)
+        
+            } catch(error) {
+                console.log(error)
             }
-
-            console.log(recipeData)
         }
     }
 
