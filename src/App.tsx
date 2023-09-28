@@ -7,6 +7,7 @@ import Quiz from "./components/Quiz/Quiz"
 import PrivacyPolicy from "./assets/files/privacy-policy.json"
 import RecipeBuilder from "./components/RecipeBuilder/RecipeBuilder"
 import DocumentReader from "./components/DocumentReader/DocumentReader"
+import Recipe from "./components/Recipe/Recipe"
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
 		<>
 			<Routes>
 				<Route path="/" element={<Home />} />
+				<Route path="/recette/:id" element={<Recipe />} />
 				<Route path="/ajouter-une-recette" element={<RecipeBuilder />} />
 				<Route path="/profil" element={<Profile />} />
 				<Route path="/premium" element={<Premium />} />

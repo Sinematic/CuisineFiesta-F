@@ -1,4 +1,5 @@
 export interface Recipe {
+    _id: string,
     title: string,
     ingredients: { name: string, amount: string, unit: string },
     mealType: string,
