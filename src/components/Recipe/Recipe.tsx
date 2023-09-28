@@ -7,26 +7,28 @@ import "../../styles/Recipe/Recipe.css"
 import DefaultImage from "../../assets/images/verrines-fruits-desserts.webp"
 import Nav from "../Nav/Nav"
 import Footer from "../Footer/Footer"
+import Loader from "../Loader/Loader"
 
 function Recipe() {
 
+    const userId = localStorage.getItem("user")
     const token = localStorage.getItem("token")
+
     const navigate = useNavigate()
     const params = useParams()
+
     const [isLoading, setIsLoading] = useState(true)
     const [recipe, setRecipe] = useState<RecipeInterface | null>(null)
 
-
     const getRecipe = async () => {
-
-        console.log(params.id)
         
         try {
             const response = await fetch(`http://localhost:3000/api/recipe/${params.id}`)
 
             if (response.ok) {
                 const result = await response.json()
-                if (result && result.title) setRecipe(result)   
+                if (result && result.title) setRecipe(result)
+
             } else console.log("Une erreur est survenue !")
 
         } catch(error) {
@@ -34,22 +36,16 @@ function Recipe() {
         }
     }
 
-
-    useEffect(() => {
-        getRecipe()
-        //setIsLoading(false)
-    }, [])
-
     const deleteRecipe = async () => {
         setIsLoading(true)
-        console.log(recipe ? recipe._id : "")
-
+        return
         if (recipe) {
+
             try {
-                const response = await fetch(`http://localhost:3000/api/recipe/${recipe._id}`, {
+                const response = await fetch(`http://localhost:3000/api/recipe/${params.id}`, {
                     method: "DELETE",
                     headers: {
-                        "recipe-Type": "application/json",
+                        "Content-Type": "application/json",
                         "Authorization": `Bearer ${token}`
                     }
                 })
@@ -57,6 +53,7 @@ function Recipe() {
                 if (response.ok) {
                     navigate("/")
                 } else console.log("Une erreur est survenue !")
+
             } catch(error) {
                 console.log(error)
             } 
@@ -65,21 +62,59 @@ function Recipe() {
         setIsLoading(false)
     }
 
+    const editRecipe = () => console.log("")
+
+    useEffect(() => {
+        getRecipe()
+        console.log(recipe)
+        setIsLoading(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+
     return (
+    <>
+        {!isLoading ?
         <>
-            {!isLoading ?
-                <>
-                    {recipe && recipe.title ? 
-                        <div className="recipe-item">
-                            
-                            <img src={recipe.images.length > 0 ? recipe.images[0] : DefaultImage} alt="" />
-                            <h2>{recipe.title} 🔥</h2>
+            {recipe && recipe.title ? 
+                <div className="recipe-item">
+                    
+                    <img src={recipe.images.length > 0 ? recipe.images[0] : DefaultImage} alt="" />
+                    <h1>{recipe.title} 🔥</h1>
 
-                            {recipe.description.length > 20 ? 
-                                <div className="display-description">{recipe.description}</div> 
-                            : null }
+                    <div className="display-duration icon-btn">
+                        <div className="time" aria-label="Temps requis à la préparation">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 10"/>
+                            </svg>
+                        </div>
+                        <span>{recipe.time} minutes</span>
+                    </div>           
 
-                            <div className="delete" onClick={() => deleteRecipe()}>
+                    <div className="display-tags">
+                        {recipe.tags.map((tag) => <span key={uuidv4()}>{tag}</span>)}
+                    </div>    
+
+                    <div className="rating">
+                        <Rate rate={recipe.averageRating} />
+                    </div>
+
+                    {recipe.description.length > 20 ? 
+                        <div className="display-description">{recipe.description}</div> 
+                    : null }
+
+                    {recipe.authorId === userId ? 
+                        <div className="icon-btn">
+                            <div className="edit" onClick={() => editRecipe()} aria-label="Modifier la recette">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" 
+                                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                                    <path d="m15 5 4 4"/>
+                                </svg>
+                            </div>       
+
+                            <div className="delete" onClick={() => deleteRecipe()} aria-label="Supprimer la recette">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
                                 stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M3 6h18"/>
@@ -89,52 +124,42 @@ function Recipe() {
                                     <line x1="14" x2="14" y1="11" y2="17"/>
                                 </svg>
                             </div>
-
-                            <div className="rating">
-                                <Rate rate={recipe.averageRating} />
-                            </div>
-
-                            <ul className="display-ingredients">
-                                {recipe.ingredients.map((ingredient: { name: string, amount: string, unit: string }) => 
-                                    <li key={uuidv4()}><span>{ingredient.name} :</span> {ingredient.amount} x {ingredient.unit}</li>
-                                )}
-                            </ul>
-
-                            <div className="instructions">
-
-                                <h3>Instructions 🥘</h3>
-
-                                <ol className="display-steps">
-                                    {recipe.steps.map((step, index) => 
-                                        <li key={uuidv4()}>  
-                                            <p><span>{index + 1} - </span>{step}</p>
-                                        </li>
-                                    )}
-                                </ol>
-
-                            </div>
-
-                            <div className="display-tags">
-                                {recipe.tags.map((tag) => <span key={uuidv4()}>{tag}</span>)}
-                            </div>
-
-                        </div> 
-
-                    : null}
-                </>
-            : 
-                <div className="wrapper">
-                    <div className="loader-wrapper">
-                        <div className="loader">
-                            <div className="inner-loader"></div>
                         </div>
-                    </div>
-                </div>
-            }
+                    : null}
 
-            <Nav />
-            <Footer />
+                    <div className="display-ingredients">
+
+                        <h2>Ingrédients 🥦<span>({recipe.ingredients.length})</span></h2>
+
+                        <ul>
+                            {recipe.ingredients.map((ingredient: { name: string, amount: string, unit: string }) => 
+                                <li key={uuidv4()}><span>{ingredient.name} :</span> {ingredient.amount} x {ingredient.unit}</li>
+                            )}
+                        </ul>
+                    </div>
+
+                    <div className="instructions">
+
+                        <h2>Instructions 🥘</h2>
+
+                        <ol className="display-steps">
+                            {recipe.steps.map((step, index) => 
+                                <li key={uuidv4()}>  
+                                    <p><span>{index + 1} - </span>{step}</p>
+                                </li>
+                            )}
+                        </ol>
+
+                    </div>
+                </div> 
+
+            : null}
         </>
+        : <Loader />}
+
+        <Nav />
+        <Footer />
+    </>
     )
 }
 
