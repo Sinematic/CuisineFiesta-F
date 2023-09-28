@@ -38,7 +38,15 @@ function Home() {
             <Header />
             <Cover type="title" text="CuisineFiesta" src={Banner} alt="Bannière accueil CuisineFiesta"/>
             <div className="content-wrapper">
-                {recipe ? <Thumbnail content={recipe} /> : "Recette non trouvée"}
+                {recipe ? 
+                    <div className="recent-recipe">
+                        <p>
+                            <span>N</span>
+                            <span>E</span>
+                            <span>W</span>
+                        </p>
+                        <Thumbnail content={recipe} />
+                    </div> : "Recette non trouvée"}
             </div>
 
             <Nav />
