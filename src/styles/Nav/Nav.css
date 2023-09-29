@@ -8,6 +8,7 @@
     bottom: 0;
     background-color: var(--mint);
     height: 60px;
+    z-index: 100;
 }
 
 .nav-icon {

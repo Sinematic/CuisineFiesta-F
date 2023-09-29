@@ -8,6 +8,7 @@ import PrivacyPolicy from "./assets/files/privacy-policy.json"
 import RecipeBuilder from "./components/RecipeBuilder/RecipeBuilder"
 import DocumentReader from "./components/DocumentReader/DocumentReader"
 import Recipe from "./components/Recipe/Recipe"
+import Search from "./components/Search/Search"
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/recette/:id" element={<Recipe />} />
 				<Route path="/ajouter-une-recette" element={<RecipeBuilder />} />
+				<Route path="/recherche" element={<Search />} />
 				<Route path="/profil" element={<Profile />} />
 				<Route path="/premium" element={<Premium />} />
 				<Route path="/quiz" element={<Quiz />} />

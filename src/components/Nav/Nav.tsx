@@ -70,7 +70,7 @@ function Nav() {
                     <DropdownMenu isOpen={isOpen} links={hamburgerMenu} />
                 </div>
 
-                <div className="nav-icon search" onClick={() => handleNavigation('/search')}>
+                <div className="nav-icon search" onClick={() => handleNavigation('/recherche')}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" 
                     strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="40" cy="40" r="30" />

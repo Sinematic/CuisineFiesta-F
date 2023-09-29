@@ -1,0 +1,8 @@
+.search:has(.filters) {
+    padding-block: 40px 90px;
+    padding-inline: 30px;
+}
+
+.search > .results {
+    padding-block: 30px;
+}

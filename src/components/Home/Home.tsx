@@ -46,7 +46,8 @@ function Home() {
                             <span>W</span>
                         </p>
                         <Thumbnail content={recipe} />
-                    </div> : "Recette non trouvée"}
+                    </div> 
+                : "Recette non trouvée"}
             </div>
 
             <Nav />

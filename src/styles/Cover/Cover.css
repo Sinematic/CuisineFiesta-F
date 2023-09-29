@@ -28,7 +28,6 @@
 .cover > .text {
     position: absolute;
     width: 100%;
-    font-family: 'Playfair Display', serif;
     font-size: 1.6rem;
     color: var(--white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -44,3 +43,12 @@
 .reduced {
     height: 15vh;
 }
+
+.medium {
+    height: 25vh;
+    align-items: end;
+}
+
+.medium > p.text {
+    padding-bottom: 2vh;
+} 

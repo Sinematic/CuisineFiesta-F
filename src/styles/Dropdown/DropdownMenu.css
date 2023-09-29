@@ -14,16 +14,19 @@ ul.dropdown-menu {
     border-bottom: none;
     border-left: none;
     border-radius: 10px 10px 0 0;
+    border: 2px solid transparent;
+    border-left: none;
+    border-bottom: none;
     font-family: 'Montserrat', sans-serif; 
-    transition: max-height 0.5s ease-out, padding-block 0.5s ease-out, gap 0.5s ease-out, border 0s 0.9s ease;
+    transition: max-height 0.5s ease-out, padding-block 0.5s ease-out, gap 0.5s ease-out, border 0.9s ease;
 }
 
 ul.dropdown-menu.open {
     max-height: 500px;
     padding-block: 15px;
     gap: 6px;
-    border-color:  var(--white);
-    transition: max-height 0.5s ease-out, padding-block 0.5s ease-out, gap 0.5s ease-out, border 0s 0.9s ease;
+    border-color: var(--light-grey);
+    transition: max-height 0.5s ease-out, padding-block 0.5s ease-out, gap 0.5s ease-out, border 0s ease;
 }
 
 ul.dropdown-menu > li {
