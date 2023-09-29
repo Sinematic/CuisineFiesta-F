@@ -10,7 +10,7 @@ input[type="search"] {
 
 .svg-wrapper {
     position: absolute;
-    top: -2px;
+    top: 0px;
     right: 0;
     padding: 12px;
     height: 100%;

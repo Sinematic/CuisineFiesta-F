@@ -9,6 +9,8 @@ import RecipeBuilder from "./components/RecipeBuilder/RecipeBuilder"
 import DocumentReader from "./components/DocumentReader/DocumentReader"
 import Recipe from "./components/Recipe/Recipe"
 import Search from "./components/Search/Search"
+import Gallery from "./components/Gallery/Gallery"
+import NotFound from "./components/NotFound/NotFound"
 
 function App() {
 
@@ -17,6 +19,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/recette/:id" element={<Recipe />} />
+				<Route path="/galerie" element={<Gallery />} />
 				<Route path="/ajouter-une-recette" element={<RecipeBuilder />} />
 				<Route path="/recherche" element={<Search />} />
 				<Route path="/profil" element={<Profile />} />
@@ -24,6 +27,7 @@ function App() {
 				<Route path="/quiz" element={<Quiz />} />
 				<Route path="/confidentialite" element={<DocumentReader document={PrivacyPolicy} />} />
 				<Route path="/login" element={<AccessControl />} />
+				<Route path="/*" element={<NotFound />} />
 			</Routes>
 		</>
 	)

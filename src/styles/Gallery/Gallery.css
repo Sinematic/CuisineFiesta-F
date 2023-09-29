@@ -1,0 +1,7 @@
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-block: 40px 90px;
+    padding-inline: 30px;
+}

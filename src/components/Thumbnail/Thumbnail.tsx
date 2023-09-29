@@ -10,7 +10,7 @@ function Thumbnail(props: { content: RecipeInterface }) {
     const navigate = useNavigate()
 
     return (
-        <div className="thumbnail" onClick={() => navigate(`recette/${content._id}`)}>
+        <div className="thumbnail" onClick={() => navigate(`../recette/${content._id}`)}>
             <img src={content.images[0] && content.images[0] ! == "" ? content.images[0] : DefaultImage} alt={"Recette " + content.title} />
             <h3>{content.title} ✨<div /></h3>
             <div className="overlay"></div>

@@ -91,9 +91,7 @@ function RecipeBuilder() {
                     }
                 })
 
-                if (response.ok) {
-                    navigate("/")
-                } else console.log(response)
+                if (response.ok) navigate("/")
         
             } catch(error) {
                 console.log(error)

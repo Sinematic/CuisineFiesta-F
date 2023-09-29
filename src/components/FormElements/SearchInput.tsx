@@ -8,9 +8,17 @@ function SearchInput(props: {
     label?: string
 }) {
 
+    const handleKeyPress = (event) => {
+        if (event.key === "Enter" && props.onClick !== undefined) {
+            event.preventDefault()
+            props.onClick(event)
+        }
+    }
+
     return (
         <div className={(props.value ? "input-filled" : "") + " input-wrapper "}>
-            <input onChange={props.onChange} type="search" value={props.value} name="search" />
+            <input onChange={props.onChange} type="search" value={props.value} name="search" 
+            onKeyDown={handleKeyPress}/>
             <label className="placeholder-like" htmlFor="search">{props.label}</label>
 
             <div className="svg-wrapper" onClick={props.onClick}>

@@ -17,6 +17,7 @@ ul.dropdown-menu {
     border: 2px solid transparent;
     border-left: none;
     border-bottom: none;
+    border-top: none;
     font-family: 'Montserrat', sans-serif; 
     transition: max-height 0.5s ease-out, padding-block 0.5s ease-out, gap 0.5s ease-out, border 0.9s ease;
 }
@@ -25,6 +26,7 @@ ul.dropdown-menu.open {
     max-height: 500px;
     padding-block: 15px;
     gap: 6px;
+    border-top: 2px solid;
     border-color: var(--light-grey);
     transition: max-height 0.5s ease-out, padding-block 0.5s ease-out, gap 0.5s ease-out, border 0s ease;
 }

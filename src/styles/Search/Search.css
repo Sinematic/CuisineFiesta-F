@@ -1,8 +1,27 @@
 .search:has(.filters) {
-    padding-block: 40px 90px;
+    padding-bottom: 60px;
+    background-color: var(--white);
+    background-color: var(--light-grey);
+}
+
+.search:has(.filters) > * {
     padding-inline: 30px;
 }
 
-.search > .results {
+.search > .filters {
     padding-block: 30px;
+}
+
+.search > .results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 30px;
+    background-color: var(--white);
+}
+
+.results > h2 {
+    font-size: 1.3rem;
+    color: var(--dark-grey);
+    text-align: center;
 }

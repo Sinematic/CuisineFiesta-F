@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router"
 import { Recipe as RecipeInterface } from "../../interfaces/Recipe"
 import Header from "../Header/Header"
 import Cover from "../Cover/Cover"
@@ -10,6 +11,7 @@ import Thumbnail from "../Thumbnail/Thumbnail"
 
 function Home() {
 
+    const navigate = useNavigate()
     const [recipe, setRecipe] = useState<RecipeInterface | null>(null)
 
     const getLastRecipe = async () => {
@@ -37,7 +39,9 @@ function Home() {
         <>
             <Header />
             <Cover type="title" text="CuisineFiesta" src={Banner} alt="Bannière accueil CuisineFiesta"/>
+
             <div className="content-wrapper">
+                <h2 onClick={() => navigate("/galerie")}>Visiter la galerie</h2>
                 {recipe ? 
                     <div className="recent-recipe">
                         <p>

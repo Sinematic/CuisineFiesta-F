@@ -66,7 +66,6 @@ function Recipe() {
 
     useEffect(() => {
         getRecipe()
-        console.log(recipe)
         setIsLoading(false)
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
