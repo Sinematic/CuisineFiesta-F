@@ -11,6 +11,7 @@ import Recipe from "./components/Recipe/Recipe"
 import Search from "./components/Search/Search"
 import Gallery from "./components/Gallery/Gallery"
 import NotFound from "./components/NotFound/NotFound"
+import Blog from "./components/Blog/Blog"
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/recette/:id" element={<Recipe />} />
 				<Route path="/galerie" element={<Gallery />} />
+				<Route path="/blog" element={<Blog />} />
 				<Route path="/ajouter-une-recette" element={<RecipeBuilder />} />
 				<Route path="/recherche" element={<Search />} />
 				<Route path="/profil" element={<Profile />} />

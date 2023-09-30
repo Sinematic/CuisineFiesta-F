@@ -1,0 +1,40 @@
+.blog-article {
+    padding-block: 30px;
+    padding-inline: 24px;
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.blog-article h2 {
+    padding-block: 18px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--red);
+    text-align: center;
+}
+
+.blog-article h3 {
+    width: fit-content;
+    padding-block: 12px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.blog-article > div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blog-article > div > p:first-of-type {
+    padding-top: 15px;
+}
+
+.blog-article > div > p:last-of-type {
+    padding-bottom: 25px;
+}
+
+.blog-article > div:last-of-type > p:last-of-type {
+    padding-bottom: 0;
+}

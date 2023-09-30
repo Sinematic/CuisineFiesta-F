@@ -23,7 +23,7 @@ function Nav() {
         {
             path: "/ajouter-une-recette",
             content: "Ajouter une recette",
-            badge: "blue"
+            badge: "golden"
         },
         {
             path: "/les-mieux-notees",

@@ -18,14 +18,14 @@
 }
 
 #root {
-	max-width: 1920px;
-	font-family: 'Varela Round', sans-serif;
-	margin: auto;
-	background-color: var(--alt-white);
-	overflow: hidden;
 	width: 100vw;
 	min-height: 100vh;
+	max-width: 1920px;
+	margin: auto;
+	overflow: hidden;
 	scroll-behavior: smooth;
+	font-family: 'Montserrat', sans-serif;
+	background-color: var(--alt-white);
 }
 
 nav:hover {

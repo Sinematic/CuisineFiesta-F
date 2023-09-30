@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer"
 import Banner from "../../assets/images/hachage-d-herbe.webp"
 import "../../styles/Home/Home.css"
 import Thumbnail from "../Thumbnail/Thumbnail"
+import Blog from "../Blog/Blog"
 
 function Home() {
 
@@ -41,17 +42,28 @@ function Home() {
             <Cover type="title" text="CuisineFiesta" src={Banner} alt="Bannière accueil CuisineFiesta"/>
 
             <div className="content-wrapper">
-                <h2 onClick={() => navigate("/galerie")}>Visiter la galerie</h2>
-                {recipe ? 
-                    <div className="recent-recipe">
-                        <p>
-                            <span>N</span>
-                            <span>E</span>
-                            <span>W</span>
-                        </p>
-                        <Thumbnail content={recipe} />
-                    </div> 
-                : "Recette non trouvée"}
+
+                <div className="recent-article" onClick={() => navigate("/blog")}>
+                    <h2>Lire l'article de blog</h2>
+                    <Blog />
+                </div>
+
+                <div className="home-recipe">
+                    <h2 onClick={() => navigate("/galerie")}> 👉 Visiter la galerie 🍘</h2>
+
+                    {recipe ? 
+                        <div className="recent-recipe">
+                            <p>
+                                <span>N</span>
+                                <span>E</span>
+                                <span>W</span>
+                            </p>
+                            <Thumbnail content={recipe} />
+                        </div> 
+                    : "Recette non trouvée"}
+
+                </div>
+
             </div>
 
             <Nav />
