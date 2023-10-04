@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router"
 import Notification from "../Notification/Notification"
 import "../../styles/Header/Header.css"
-// import Logo from "../../assets/icons/logo.svg"
+ import Logo from "../../assets/images/logo-cuisinefiesta.jpg"
 
 function Header() {
 
@@ -30,7 +30,7 @@ function Header() {
 
     return (
         <header>
-            {/* <img className="logo" src={Logo} alt="" /> */}
+            {<img className="logo" src={Logo} alt="" />}
             {notification.type ? <Notification type={notification.type} content={notification.content} /> : null}
         </header>
     )

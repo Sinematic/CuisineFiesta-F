@@ -1,6 +1,6 @@
-# CuisineFiesta App
+# **CuisineFiesta App**
 
-![Logo GPT Fiesta](./src/assets/icons/logo.svg)
+![Logo CuisineFiesta](./src/assets/images/logo-cuisinefiesta.jpg)
 
 Bienvenue sur **CuisineFiesta App**, l'application mobile où chacun peut partager ses recettes.
 
@@ -25,7 +25,9 @@ Une fois authentifié, vous pouvez accéder à toutes les fonctionnalités de l'
 
 ![Ajouter des recettes](./src/assets/readme-images/add-recipe.png)
 
-Appuyez sur "Ajouter une Recette" depuis n'importe quelle page, le lien se trouve dans le menu burger (trois traits parallèles).
+Appuyez sur "Ajouter une Recette" depuis n'importe quelle page, le lien se trouve dans le menu burger (voir ci-dessous).
+
+![Menu Burger](./src/assets/readme-images/burger.png)
 
 Remplissez le formulaire avec le nom de la recette, les ingrédients, les étapes de préparation. Vous pourrez même bientôt ajouter une photo appétissante.
 Publiez votre recette pour que d'autres membres puissent la découvrir et l'essayer à leur tour.
@@ -59,6 +61,6 @@ CuisineFiesta App vous offre une expérience culinaire enrichissante et sociale.
 Pour garantir une expérience de téléchargement rapide, les images sont compressées au format Webp avec un effort de 6 et une qualité de 62%.
 
 
-#### License
+### **License**
 
 CuisineFiesta App est distribué sous la Licence *GNU Affero General Public License*.
