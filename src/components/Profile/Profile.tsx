@@ -67,7 +67,7 @@ function Profile() {
             <div className="profile-page">
 
                 <h1>Mes informations 🍜</h1>
-                {recipes ? recipes : ""}                
+                {recipes && recipes.length > 0 ? recipes.map((recipe) => <li key={recipe._id}>{recipe.title}</li>) : null}                
                 <div className="picture-container">
                     <img className="profile-picture" src={FakePicture} alt="" />
                     {fakeUser.premium ? 
