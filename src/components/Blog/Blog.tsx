@@ -8,7 +8,7 @@ function Blog(/*props: { link }*/) {
             <h2>CuisineFiesta sort aujourd'hui ! 🎊</h2>
 
             <div>
-                <h3>Lancez-vous dans une aventure gourmande collaborative</h3>
+                <h3>Lancez-vous dans une aventure collaborative gourmande</h3>
                 <p>Vous êtes un amateur de cuisine passionné, toujours à la recherche de nouvelles recettes pour émerveiller vos papilles et celles de vos proches ? Vous adorez partager vos créations culinaires et échanger avec d'autres passionnés de gastronomie ? Alors, vous êtes au bon endroit !</p>
                 <p>Bienvenue sur CuisineFiesta, une plateforme de cuisine collaborative qui vous permet de découvrir, partager et créer des recettes savoureuses du monde entier. Que vous soyez un chef amateur, un professionnel de la cuisine ou simplement quelqu'un qui aime expérimenter en cuisine, CuisineFiesta a quelque chose à vous offrir.</p>
             </div>

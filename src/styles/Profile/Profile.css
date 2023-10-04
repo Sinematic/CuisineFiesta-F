@@ -1,7 +1,7 @@
 .profile-page {
     margin: auto;
     text-align: center;
-    padding-block: 30px 40px;
+    padding-block: 30px 90px;
     padding-inline: 30px;
 }
 
@@ -70,4 +70,10 @@
 
 .submit-button {
     margin-top: 40px;
+}
+
+.user-recipes {
+    font-size: 2rem;
+    color: var(--red);
+    background-color: var(--black);
 }

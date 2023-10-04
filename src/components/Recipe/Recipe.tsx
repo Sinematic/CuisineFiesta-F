@@ -78,19 +78,22 @@ function Recipe() {
             {recipe && recipe.title ? 
                 <div className="recipe-item">
                     
-                    <img src={recipe.images.length > 0 ? recipe.images[0] : DefaultImage} alt="" />
-                    <h1>{recipe.title} 🔥</h1>
-
-                    <div className="display-duration icon-btn">
-                        <div className="time" aria-label="Temps requis à la préparation">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 10"/>
-                            </svg>
-                        </div>
-                        <span>{recipe.time} minutes</span>
-                    </div>           
-
+                    <div className="img-name-wrapper">
+                        <img src={recipe.images.length > 0 ? recipe.images[0] : DefaultImage} alt="" />
+                        <h1>{recipe.title} 🔥</h1>
+                    </div>
+                    <div className="duration-wrapper">
+                        <div className="display-duration icon-btn">
+                            <div className="time" aria-label="Temps requis à la préparation">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 10"/>
+                                </svg>
+                            </div>
+                            <span>{recipe.time} mins</span>
+                        </div>    
+                    </div>
+       
                     <div className="display-tags">
                         {recipe.tags.map((tag) => <span key={uuidv4()}>{tag}</span>)}
                     </div>    
@@ -102,29 +105,6 @@ function Recipe() {
                     {recipe.description.length > 20 ? 
                         <div className="display-description">{recipe.description}</div> 
                     : null }
-
-                    {recipe.authorId === userId ? 
-                        <div className="icon-btn">
-                            <div className="edit" onClick={() => editRecipe()} aria-label="Modifier la recette">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" 
-                                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
-                                    <path d="m15 5 4 4"/>
-                                </svg>
-                            </div>       
-
-                            <div className="delete" onClick={() => deleteRecipe()} aria-label="Supprimer la recette">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
-                                stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M3 6h18"/>
-                                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
-                                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
-                                    <line x1="10" x2="10" y1="11" y2="17"/>
-                                    <line x1="14" x2="14" y1="11" y2="17"/>
-                                </svg>
-                            </div>
-                        </div>
-                    : null}
 
                     <div className="display-ingredients">
 
@@ -150,6 +130,30 @@ function Recipe() {
                         </ol>
 
                     </div>
+
+                    
+                    {recipe.authorId === userId ? 
+                        <div className="icon-btn edit-delete-wrapper">
+                            <div className="edit" onClick={() => editRecipe()} aria-label="Modifier la recette">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" 
+                                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                                    <path d="m15 5 4 4"/>
+                                </svg>
+                            </div>       
+
+                            <div className="delete" onClick={() => deleteRecipe()} aria-label="Supprimer la recette">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
+                                stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M3 6h18"/>
+                                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+                                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+                                    <line x1="10" x2="10" y1="11" y2="17"/>
+                                    <line x1="14" x2="14" y1="11" y2="17"/>
+                                </svg>
+                            </div>
+                        </div>
+                    : null}
                 </div> 
 
             : null}

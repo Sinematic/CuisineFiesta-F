@@ -1,11 +1,13 @@
 import { useState } from "react"
 import { useNavigate, NavLink } from "react-router-dom"
+import Header from "../Header/Header"
 import Input from "../FormElements/Input"
 import Button from "../FormElements/Button"
 import FakeInput from "../FormElements/FakeInput"
 import FileInput from "../FormElements/FileInput"
 import Nav from "../Nav/Nav"
 import Footer from "../Footer/Footer"
+import { Recipe as RecipeInterface } from "../../interfaces/Recipe"
 import "../../styles/Profile/Profile.css"
 import FakePicture from "../../assets/fake-profile-picture.png"
 import PremiumLogo from "../../assets/icons/premium-account.svg"
@@ -14,6 +16,7 @@ import FreeLogo from "../../assets/icons/free-account.svg"
 function Profile() {
 
     const token = localStorage.getItem("token")
+    const userId = localStorage.getItem("user")
     const navigate = useNavigate()
 
     const logout = () => {
@@ -40,13 +43,31 @@ function Profile() {
     const birthdate = fakeUser.birthdate
     const premium = fakeUser.premium
     const [isOpen, setIsOpen] = useState(false)
+    const [recipes, setRecipes] = useState<RecipeInterface[] | []>([])
+
+    const getUserRecipes = async () => {
+
+        try {
+            const response = await fetch(`http://localhost:3000/api/recipe/author/${userId}`)
+
+            if (response.ok) {
+                const result = await response.json()
+                if(result && result.title) setRecipes([...result])
+            }
+        } catch(error) {
+            console.log(error)
+        }
+    }
+
+    getUserRecipes()
 
     return (
         <>
+            <Header />
             <div className="profile-page">
 
                 <h1>Mes informations 🍜</h1>
-                
+                {recipes ? recipes : ""}                
                 <div className="picture-container">
                     <img className="profile-picture" src={FakePicture} alt="" />
                     {fakeUser.premium ? 
@@ -86,6 +107,17 @@ function Profile() {
                     <Button identifier="submit-button" value="Mettre à jour mon profil" />
                     <Button identifier="red-button" value="Se déconnecter" onClick={() => logout()} />
                 </form>
+
+                {recipes && recipes.length > 0 ? 
+                    <ol className="user-recipes">
+                        {recipes.map((recipe : RecipeInterface) => 
+                            <li key={recipe.title} 
+                            onClick={() => navigate(`/${recipe._id}`)}>
+                                {recipe.title}
+                            </li>
+                        )}
+                    </ol>
+                : <p className="user-recipes">Vous n'avez pas encore écrit de recettes.</p>}
             </div>
 
             <Nav />
