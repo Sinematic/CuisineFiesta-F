@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { SetStateAction, useEffect, useState } from "react"
 import { useNavigate } from "react-router"
 import Button from "../FormElements/Button"
 import Input from "../FormElements/Input"
@@ -12,7 +12,6 @@ import DocumentReader from "../DocumentReader/DocumentReader"
 
 function AccessControl() {
 
-    const token = localStorage.getItem("token")
     const [page, setPage] = useState("login")
     const [isLoading, setIsLoading] = useState(false)
 
@@ -21,10 +20,14 @@ function AccessControl() {
     const [birthdate, setBirthdate] = useState("")
     const [isChecked, setIsChecked] = useState(false)
     const [notification, setNotification] = useState({ type: "", content: "" })
+    const [token, setToken] = useState<string>("")
 
     const navigate = useNavigate()
 
-    if (token && !isLoading) navigate("/")
+    useEffect(() => {
+        setToken(localStorage.getItem("token") as string)
+        if (token && !isLoading) navigate("/")
+    }, [token])
 
     const isValidPassword = (password: string) => {
         const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
@@ -121,6 +124,7 @@ function AccessControl() {
                     const data = await response.json()
                     localStorage.setItem("user",  data.userId)
                     localStorage.setItem("token", data.token)
+                    setToken(localStorage.getItem("token") as string)
                     setIsLoading(false)
                 } else generateNotification("error", "Identifiants incorrects !")
         

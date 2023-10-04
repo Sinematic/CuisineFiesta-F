@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate, NavLink } from "react-router-dom"
 import Header from "../Header/Header"
 import Input from "../FormElements/Input"
@@ -15,9 +15,9 @@ import FreeLogo from "../../assets/icons/free-account.svg"
 
 function Profile() {
 
-    const token = localStorage.getItem("token")
-    const userId = localStorage.getItem("user")
     const navigate = useNavigate()
+
+    const userId = localStorage.getItem("user")
 
     const logout = () => {
         localStorage.removeItem("token")
@@ -25,7 +25,11 @@ function Profile() {
         navigate("/login")
     }
 
-    if (!token) navigate("/login")
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        if (!token) navigate("/login")
+    }, [])
+
 
     const fakeUser = {
         firstname: "Maxime",
