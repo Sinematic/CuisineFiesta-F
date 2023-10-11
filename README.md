@@ -14,7 +14,7 @@ CuisineFiesta App est une application conviviale qui vous permet de découvrir, 
 
 ### Création de compte / Connexion
 
-![Créer un compte / Se connecter](./src/assets/readme-images/authentification.png)
+![Créer un compte / Se connecter](./src/assets/readme-images/authentification.webp)
 
 Avec notre plateforme, la création de votre compte membre est simple et utile.
 
