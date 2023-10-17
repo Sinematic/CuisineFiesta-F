@@ -1,4 +1,4 @@
-import "../../styles/Blog/Blog.css"
+import "../../styles/pages/Blog.css"
 import Nav from "../Nav/Nav"
 
 function Blog(/*props: { link }*/) {
