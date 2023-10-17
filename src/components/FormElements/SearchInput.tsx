@@ -8,7 +8,7 @@ function SearchInput(props: {
     label?: string
 }) {
 
-    const handleKeyPress = (event) => {
+    const handleKeyPress = (event : any) => {
         if (event.key === "Enter" && props.onClick !== undefined) {
             event.preventDefault()
             props.onClick(event)

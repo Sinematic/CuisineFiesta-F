@@ -129,11 +129,12 @@
 
 .recipe-item > .display-tags {
     display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, auto);
     gap: 6px;
 }
 
 .recipe-item > .display-tags > span {
-    display: inline-block;
     padding-block: 9px;
     padding-inline: 16px;
     border-radius: 50px;
@@ -175,7 +176,10 @@
     background-color: var(--red);
 }
 
-.time {
+.icon-btn > .time {
+    width: 30px;
+    height: 30px;
+    padding: 3px;
     background-color: var(--success);
 }
 
@@ -188,9 +192,17 @@
     position: absolute;
     right: 0;
     padding-block: 4px;
-    padding-inline: 5px 10px;
+    padding-inline: 4px;
     color: var(--dark-grey);
     background-color: var(--white);
     border: 1px solid var(--light-grey);
     border-radius: 5px;
+}
+
+.duration-wrapper > .icon-btn {
+    gap: 4px;
+}
+
+.display-duration span {
+    font-weight: 700;
 }

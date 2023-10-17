@@ -1,16 +1,13 @@
 import { useState } from "react"
-import { useNavigate } from "react-router"
+import useAuthRequirement from "../../state/hooks/useAuthRequirement"
 import Notification from "../Notification/Notification"
 import "../../styles/Header/Header.css"
  import Logo from "../../assets/images/logo-cuisinefiesta.jpg"
 
 function Header() {
 
-    const token = localStorage.getItem("token")
-    const navigate = useNavigate()
+    useAuthRequirement()
 
-    if (!token) navigate("/login")    
-    
     const [notification, setNotification] = useState({ type: "", content: "" })
     const notificationType = localStorage.getItem("notificationType")
     const notificationContent = localStorage.getItem("notificationContent")

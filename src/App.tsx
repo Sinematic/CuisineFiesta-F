@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom"
-import AccessControl from './components/AccessControl/AccessControl'
+import AccessControl from './components/pages/Authentification'
 import Home from "./components/Home/Home"
 import Profile from "./components/Profile/Profile"
 import Premium from "./components/Premium/Premium"
