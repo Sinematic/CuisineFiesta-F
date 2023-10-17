@@ -1,4 +1,4 @@
-import "../../styles/NotFound/NotFound.css"
+import "../../styles/pages/NotFound.css"
 import Nav from "../Nav/Nav"
 
 function NotFound() {

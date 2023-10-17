@@ -6,9 +6,9 @@ import Cover from "../Cover/Cover"
 import Nav from "../Nav/Nav"
 import Footer from "../Footer/Footer"
 import Banner from "../../assets/images/hachage-d-herbe.webp"
-import "../../styles/Home/Home.css"
+import "../../styles/pages/Home.css"
 import Thumbnail from "../Thumbnail/Thumbnail"
-import Blog from "../Blog/Blog"
+import Blog from "./Blog"
 
 function Home() {
 

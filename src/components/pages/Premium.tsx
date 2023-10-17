@@ -1,5 +1,5 @@
 import premium from "../../assets/files/premium.json"
-import "../../styles/Premium/Premium.css"
+import "../../styles/pages/Premium.css"
 import Cover from "../Cover/Cover"
 import Header from "../Header/Header"
 import Nav from "../Nav/Nav"

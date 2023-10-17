@@ -5,8 +5,8 @@ import Footer from "../Footer/Footer"
 import Header from "../Header/Header"
 import Nav from "../Nav/Nav"
 import Banner from "../../assets/images/fruits-exotiques.webp"
-import "../../styles/Quiz/Quiz.css"
-import Question from "./Question"
+import "../../styles/pages/Quiz.css"
+import Question from "../Quiz/Question"
 import Button from "../FormElements/Button"
 
 function Quiz() {

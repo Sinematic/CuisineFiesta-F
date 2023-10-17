@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router"
 import { v4 as uuidv4 } from 'uuid'
 import { Recipe as RecipeInterface } from "../../interfaces/Recipe"
 import Rate from "../Rate/Rate"
-import "../../styles/Recipe/Recipe.css"
+import "../../styles/pages/Recipe.css"
 import DefaultImage from "../../assets/images/verrines-fruits-desserts.webp"
 import Nav from "../Nav/Nav"
 import Footer from "../Footer/Footer"

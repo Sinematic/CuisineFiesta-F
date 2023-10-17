@@ -9,9 +9,9 @@ import Footer from "../Footer/Footer"
 import Select from "../FormElements/Select"
 import Textarea from "../FormElements/Textarea"
 import Rate from "../Rate/Rate"
-import IngredientsList from "./IngredientsList"
-import Tags from "./Tags"
-import StepsList from "./StepsList"
+import IngredientsList from "../RecipeBuilder/IngredientsList"
+import Tags from "../RecipeBuilder/Tags"
+import StepsList from "../RecipeBuilder/StepsList"
 import Dropdown from "../Dropdown/Dropdown"
 import DocumentReader from "../DocumentReader/DocumentReader"
 import DefaultBanner from "../../assets/images/macarons-et-café.webp"
@@ -19,10 +19,10 @@ import BannerStarter from "../../assets/images/bol-rempli-de-legumes.webp"
 import BannerMeal from "../../assets/images/poelee-de-legumes-et-de-viande.webp"
 import BannerDessert from "../../assets/images/pommes-et-ustensiles-de-cuisine.webp"
 import Guidelines from "../../assets/files/tips-to-write-a-recipe.json"
-import "../../styles/RecipeBuilder/RecipeBuilder.css"
+import "../../styles/pages/CreateRecipe.css"
 
 
-function RecipeBuilder() {
+function CreateRecipe() {
 
     const possibleTypes = ["Entrée", "Plat principal", "Dessert", "Autres"]
 
@@ -148,4 +148,4 @@ function RecipeBuilder() {
     )
 }
 
-export default RecipeBuilder
+export default CreateRecipe

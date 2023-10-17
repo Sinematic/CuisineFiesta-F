@@ -5,7 +5,7 @@ import Header from "../Header/Header"
 import Cover from "../Cover/Cover"
 import Nav from "../Nav/Nav"
 import Footer from "../Footer/Footer"
-import "../../styles/Gallery/Gallery.css"
+import "../../styles/pages/Gallery.css"
 import Banner from "../../assets/images/poelee-de-legumes-et-de-viande.webp"
 import Thumbnail from "../Thumbnail/Thumbnail"
 

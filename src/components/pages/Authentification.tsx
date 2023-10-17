@@ -10,7 +10,7 @@ import CoverPicture from "../../assets/images/pates-italiennes-avec-legumes-et-f
 import PrivacyPolicy from "../../assets/files/privacy-policy.json"
 import DocumentReader from "../DocumentReader/DocumentReader"
 
-function AccessControl() {
+function Authentification() {
 
     const [page, setPage] = useState("login")
     const [isLoading, setIsLoading] = useState(false)
@@ -187,4 +187,4 @@ function AccessControl() {
     )
 }
 
-export default AccessControl
+export default Authentification
