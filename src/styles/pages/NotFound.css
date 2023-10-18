@@ -24,3 +24,12 @@
     line-height: normal;
     color: var(--dark-grey);
 }
+
+.wrapper-404 > .redirect-home {
+    padding: 14px 24px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--blue);
+    border-radius: 5px;
+}
