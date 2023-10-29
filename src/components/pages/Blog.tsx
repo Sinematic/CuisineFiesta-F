@@ -43,7 +43,6 @@ function Blog(/*props: { link }*/) {
                     <h3>Rejoignez-nous et partagez vos recettes dès maintenant sur CuisineFiesta.</h3>
                     <p>Avec CuisineFiesta, vous êtes invité à vous lancer dans une aventure culinaire exceptionnelle où la créativité n'a pas de limites. Rejoignez la communauté et découvrez une multitude de saveurs et de recettes qui égayeront vos repas au quotidien. Bon appétit !</p>
                 </div>  
-
             </div>
             <Nav />
         </>
