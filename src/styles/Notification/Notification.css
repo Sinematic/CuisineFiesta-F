@@ -33,3 +33,12 @@
 .warning {
     background-color: var(--warning);
 }
+
+
+@media all and (min-width: 1024px) {
+
+    .notification {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

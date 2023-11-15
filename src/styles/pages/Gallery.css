@@ -5,3 +5,26 @@
     padding-block: 40px 90px;
     padding-inline: 30px;
 }
+
+
+@media all and (min-width: 768px) {
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        padding-block: 40px 90px;
+        padding-inline: 30px;
+    }
+}
+
+@media all and (min-width: 1024px) {
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        gap: 30px;
+        padding-block: 40px 90px;
+        padding-inline: 30px;
+    }
+}

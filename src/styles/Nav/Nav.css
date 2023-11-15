@@ -6,6 +6,8 @@
     padding-block: 10px 14px;
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
     background-color: var(--mint);
     height: 60px;
     z-index: 100;
@@ -27,6 +29,6 @@
 @media all and (min-width: 1024px) {
 
     .nav-bar {
-        max-width: 1024px;
+        width: 1024px;
     }
 }
