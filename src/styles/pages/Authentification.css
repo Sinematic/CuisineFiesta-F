@@ -95,3 +95,13 @@ button.active-page {
 .active-page {
     border-radius: 10px 10px 0 0;
 }
+
+
+@media all and (min-width: 1024px) {
+
+    .bar-state {
+        max-width: 1024px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

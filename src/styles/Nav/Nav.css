@@ -23,3 +23,10 @@
 .nav-icon svg {
     width: 24px;
 }
+
+@media all and (min-width: 1024px) {
+
+    .nav-bar {
+        max-width: 1024px;
+    }
+}
