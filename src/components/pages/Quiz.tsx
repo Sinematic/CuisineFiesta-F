@@ -38,7 +38,7 @@ function Quiz() {
         const shuffledQuestions = Data.questions.length > 10 ? 
             shuffleArray(Data.questions).slice(0,10) : shuffleArray(Data.questions)
         setQuestions(shuffledQuestions)
-    }, [])
+    }, [scoreMessage])
 
     const handleClick = (isCorrect: boolean) => {     
         if (isCorrect) setScore(score + 1)

@@ -65,3 +65,33 @@
     padding-inline: 60px;
     border-radius: 10px;
 }
+
+@media all and (min-width: 1024px) {
+    
+    .quiz-game {
+        text-align: center;
+    }
+
+    .options-wrapper {
+        margin: auto;
+        width: max-content;
+    }
+
+    .options-wrapper > li {
+        cursor: pointer;
+        padding-inline: 80px !important;
+    }
+
+    .score {
+        font-size: 1.8rem;
+    }
+
+    .score-message {
+        font-size: 1.3rem;
+    }
+
+    .play-again {
+        font-size: 1.1rem;
+        font-weight: normal;
+    }
+}
