@@ -25,3 +25,11 @@
     color: var(--dark-grey);
     text-align: center;
 }
+
+@media all and (min-width: 1024px) {
+
+    .filters > .input-wrapper {
+        margin: auto;
+        width: 50%;
+    }
+}

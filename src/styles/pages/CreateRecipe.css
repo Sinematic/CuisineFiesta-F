@@ -39,3 +39,13 @@ select, option {
 .dropdown-padding > p:first-of-type {
     padding-bottom: 12px;
 }
+
+@media all and (min-width: 1024px) {
+
+    .recipe-builder > form > .input-wrapper, 
+    .recipe-builder > form > .select-wrapper,
+    .recipe-builder > form > .textarea-wrapper,
+    .recipe-builder textarea {
+        width: 635px;
+    }
+}

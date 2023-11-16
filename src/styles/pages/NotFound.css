@@ -28,6 +28,8 @@
 .wrapper-404 > .redirect-home {
     padding: 14px 24px;
     border-radius: 5px;
+    color: var(--white);
+    background-color: var(--blue);
 }
 
 @media all and (min-width: 1024px) {
@@ -43,4 +45,5 @@
     .wrapper-404 > p {
         font-size: 1.4rem;
     }
+
 }
