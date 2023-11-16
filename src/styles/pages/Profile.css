@@ -77,3 +77,77 @@
     color: var(--red);
     background-color: var(--black);
 }
+
+
+@media all and (min-width: 1024px) {
+    
+    .profile-page > h1 {
+        font-size: 3rem;
+        padding-bottom: 30px;
+    }
+    
+    .picture-container {
+        width: 30%;
+    }
+    
+    .picture-container > img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 500px;
+        border: 5px solid var(--mint);
+    }
+    
+    .picture-container .profile-badge {
+        width: 24px;
+        aspect-ratio: 1/1;
+    }
+    
+    .icon-wrapper {
+        position: absolute;
+        bottom: 3vh;
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        background-color: var(--alt-white);
+        border-radius: 100px;
+        border: 3px solid var(--mint);
+    }
+    
+    .icon-wrapper.account {
+        right: 0;
+    }
+    
+    .icon-wrapper.picture {
+        left: 0;
+        background-color: var(--white);
+        border-color: var(--dark-grey);
+    }
+    
+    .icon-wrapper.premium {
+        background-color: var(--black);
+        border-color: var(--gold);
+    }
+    
+    .profile-form {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding-top: 20px;
+        padding-block: 40px;
+    }
+    
+    .profile-form > a {
+        font-style: italic;
+        color: blueviolet;
+    }
+    
+    .submit-button {
+        margin-top: 40px;
+    }
+    
+    .user-recipes {
+        font-size: 2rem;
+        color: var(--red);
+        background-color: var(--black);
+    }
+}

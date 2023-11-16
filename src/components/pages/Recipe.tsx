@@ -90,7 +90,7 @@ function Recipe() {
                                     <polyline points="12 6 12 12 16 10"/>
                                 </svg>
                             </div>
-                            <span>{recipe.time}:00</span>
+                            <span>{recipe.time}</span>
                         </div>    
                     </div>
        
