@@ -113,7 +113,7 @@ function Profile() {
                 </form>
 
                 {recipes && recipes.length > 0 ? 
-                    <ol className="user-recipes">
+                    <ol className="user-recipes has">
                         {recipes.map((recipe : RecipeInterface) => 
                             <li key={recipe.title} 
                             onClick={() => navigate(`/${recipe._id}`)}>

@@ -73,7 +73,17 @@
 }
 
 .user-recipes {
-    font-size: 2rem;
+    display: inline-block;
+    width: fit-content;
+    margin: auto;
+    font-size: 1.3rem;
+    color: var(--black);
+    padding-inline: 8px;
+    padding-block: 12px;
+    border-radius: 5px;
+}
+
+.user-recipes:not(.has) {
     color: var(--red);
     background-color: var(--black);
 }
