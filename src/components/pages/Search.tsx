@@ -50,7 +50,7 @@ function Search() {
             <div className="search">
 
                 <form className="filters">
-                    <SearchInput onClick={searchRecipe} value={search} 
+                    <SearchInput onClick={searchRecipe} value={search} label="Rechercher une recette"
                     onChange={(e) => setSearch(e.target.value)} />
                 </form>
 

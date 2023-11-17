@@ -31,6 +31,6 @@ function SearchInput(props: {
             </div>
         </div>
     )
-}
+} 
 
 export default SearchInput

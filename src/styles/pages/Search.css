@@ -1,7 +1,5 @@
 .search:has(.filters) {
     padding-bottom: 60px;
-    background-color: var(--white);
-    background-color: var(--light-grey);
 }
 
 .search:has(.filters) > * {
@@ -9,6 +7,7 @@
 }
 
 .search > .filters {
+    background-color: var(--light-grey);
     padding-block: 30px;
 }
 
@@ -17,7 +16,6 @@
     flex-direction: column;
     gap: 20px;
     padding-block: 30px;
-    background-color: var(--white);
 }
 
 .results > h2 {
@@ -31,5 +29,18 @@
     .filters > .input-wrapper {
         margin: auto;
         width: 50%;
+    }
+
+    .search > .results {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding-block: 30px;
+    }
+    
+    .results > h2 {
+        font-size: 1.3rem;
+        color: var(--dark-grey);
+        text-align: center;
     }
 }
