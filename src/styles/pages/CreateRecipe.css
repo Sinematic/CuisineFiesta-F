@@ -45,7 +45,17 @@ select, option {
     .recipe-builder > form > .input-wrapper, 
     .recipe-builder > form > .select-wrapper,
     .recipe-builder > form > .textarea-wrapper,
-    .recipe-builder textarea {
+    .recipe-builder textarea,
+    .recipe-builder .steps {
         width: 635px;
+        margin: auto;
+    }
+
+    .recipe-builder #step {
+        height: 120px;
+    }
+
+    .recipe-builder #description {
+        height: 140px;
     }
 }
