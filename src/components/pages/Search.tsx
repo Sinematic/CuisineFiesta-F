@@ -59,7 +59,7 @@ function Search() {
                     results ?
                         <div className="results">
                             {results.length > 0 ? results.map((result) => <Thumbnail key={uuidv4()} content={result} />)
-                            : <h2>Aucun résultat !</h2>}
+                            : <h2>Aucun résultat ! 🥲</h2>}
                         </div>
                     : null
                 )}

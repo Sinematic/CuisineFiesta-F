@@ -31,36 +31,47 @@ function Authentification() {
 
     const isValidPassword = (password: string) => {
         const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-        return passwordRegex.test(password);
+        return passwordRegex.test(password)
     }
 
     const isValidEmail = (email: string) => {
-        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
         return emailRegex.test(email)
     }
 
     const isValidAge = (birthdate: string) => {
+
         const currentDate = new Date()
         const userBirthdate = new Date(birthdate)
-        const thirteenYearsAgo = new Date(currentDate.getFullYear() - 13, currentDate.getMonth(), currentDate.getDate())
-        return userBirthdate <= thirteenYearsAgo        
-    }
+        
+        const thirteenYearsAgo = new Date()
 
-    const verifyFormInputs = () => {
+        if (currentDate.getFullYear() - userBirthdate.getFullYear() >= 125) {
+
+            return false
+        }
+
+        return userBirthdate <= thirteenYearsAgo
+    }
+    
+    const verifyFormInputs = (): string | "" => {
+
+        setIsLoading(true)
 
         if (page === "signup") {
 
-            setIsLoading(true)
-            let sentence : string = "";
+            let errors : string = ""
 
-            sentence += !isValidEmail(email) ? "L'email n'est pas valide. " : ""
-            sentence += !isValidPassword(password) ? "Le mot de passe doit contenir au moins 8 caractères dont 1 majuscule et 1 chiffre. " : ""
-            sentence += !isValidAge(birthdate) ? "Un âge minimal de 13 ans est requis pour utiliser l'application. " : ""
-            sentence += !isChecked ? "Vous devez accepter notre politique de confidentialité !" : ""
+            errors += !isValidEmail(email) ? "L'email n'est pas valide. " : ""
+            errors += !isValidPassword(password) ? "Le mot de passe doit contenir au moins 8 caractères dont 1 majuscule et 1 chiffre. " : ""
+            errors += !isValidAge(birthdate) ? "Un âge minimal de 13 ans est requis pour utiliser l'application. " : ""
+            errors += !isChecked ? "Vous devez accepter notre politique de confidentialité !" : ""
 
             setIsLoading(false)
-            if (sentence) generateNotification("error", sentence)
-        }
+
+            return errors.length > 0 ? errors : "" 
+
+        } else return isValidEmail(email) && password.length > 7 ? "" : "Champs vides !"
     }
 
     const generateNotification = (type: string, content: string) => {
@@ -71,10 +82,17 @@ function Authentification() {
     const auth = () => page === "login" ? authLogin() : authSignup()
 
     const authSignup = async () => {
-        setNotification({ type: "", content: "" })
-        verifyFormInputs()
 
-        if (!notification.content) {
+        setIsLoading(true)
+        setNotification({ type: "", content: "" })
+
+        const sentence = verifyFormInputs()
+
+        if (sentence.length > 0) {
+
+            generateNotification("error", sentence) 
+        
+        } else if (!notification.content) {
 
             const body = JSON.stringify({
                 email: email,

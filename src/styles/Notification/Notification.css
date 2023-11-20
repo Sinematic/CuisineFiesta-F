@@ -19,7 +19,7 @@
 }
 
 .error {
-    background-color: var(--error);
+    background-color: var(--red);
 }
 
 .success {

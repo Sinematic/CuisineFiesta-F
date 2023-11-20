@@ -39,8 +39,8 @@
     }
     
     .results > h2 {
-        font-size: 1.3rem;
-        color: var(--dark-grey);
-        text-align: center;
+        font-size: 1.5rem;
+        margin-top: 100px;
+        grid-column: span 3;
     }
 }
