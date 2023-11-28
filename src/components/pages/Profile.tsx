@@ -56,7 +56,7 @@ function Profile() {
 
             if (response.ok) {
                 const result = await response.json()
-                if(result && result.title) setRecipes([...result])
+                if (result && result.title) setRecipes([...result])
             }
         } catch(error) {
             console.log(error)
