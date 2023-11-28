@@ -8,6 +8,7 @@ import FileInput from "../FormElements/FileInput"
 import Nav from "../Nav/Nav"
 import Footer from "../Footer/Footer"
 import { Recipe as RecipeInterface } from "../../interfaces/Recipe"
+import { User as UserInterface } from "../../interfaces/User"
 import "../../styles/pages/Profile.css"
 import FakePicture from "../../assets/fake-profile-picture.png"
 import PremiumLogo from "../../assets/icons/premium-account.svg"
@@ -18,6 +19,11 @@ function Profile() {
     const navigate = useNavigate()
 
     const userId = localStorage.getItem("user")
+
+    const userDataString : string | null = localStorage.getItem("userData")
+    const userData: UserInterface = userDataString ? JSON.parse(userDataString) : null;
+
+    console.log(userData?.firstname)
 
     const logout = () => {
         localStorage.removeItem("token")
@@ -40,12 +46,12 @@ function Profile() {
         premium: true
     }
 
-    const [firstname, setFirstname] = useState(fakeUser.firstname)
-    const [lastname, setLastname] = useState(fakeUser.lastname)
-    const [email, setEmail] = useState(fakeUser.email)
+    const [firstname, setFirstname] = useState(userData.firstname !== undefined ? userData.firstname : "")
+    const [lastname, setLastname] = useState(userData.lastname !== undefined ? userData.lastname : "")
+    const [email, setEmail] = useState(userData.email)
     const [password, setPassword] = useState(fakeUser.password)
-    const birthdate = fakeUser.birthdate
-    const premium = fakeUser.premium
+    const birthdate = userData.birthdate
+    const premium = userData.isPremium
     const [isOpen, setIsOpen] = useState(false)
     const [recipes, setRecipes] = useState<RecipeInterface[] | []>([])
 

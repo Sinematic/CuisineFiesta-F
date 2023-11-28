@@ -136,14 +136,24 @@ function Authentification() {
                 })
 
                 if (response.ok) {
+
                     setIsLoading(true)
                     localStorage.setItem("notificationType", "succes")
                     localStorage.setItem("notificationContent", "Connexion effectuée !")
+
                     const data = await response.json()
+
+                    const userData = { ...data }
+                    delete userData.userId
+                    delete userData.token
+
+                    localStorage.setItem("userData", JSON.stringify(userData))
                     localStorage.setItem("user",  data.userId)
                     localStorage.setItem("token", data.token)
+
                     setToken(localStorage.getItem("token") as string)
                     setIsLoading(false)
+                    
                 } else generateNotification("error", "Identifiants incorrects !")
         
             } catch {
