@@ -23,7 +23,7 @@ function Recipe() {
     const getRecipe = async () => {
         
         try {
-            const response = await fetch(`http://localhost:3000/api/recipe/${params.id}`)
+            const response = await fetch(`${import.meta.env.VITE_API_ADDRESS}recipe/${params.id}`)
 
             if (response.ok) {
                 const result = await response.json()
@@ -38,11 +38,11 @@ function Recipe() {
 
     const deleteRecipe = async () => {
         setIsLoading(true)
-        return
+
         if (recipe) {
 
             try {
-                const response = await fetch(`http://localhost:3000/api/recipe/${params.id}`, {
+                const response = await fetch(`${import.meta.env.VITE_API_ADDRESS}recipe/${params.id}`, {
                     method: "DELETE",
                     headers: {
                         "Content-Type": "application/json",

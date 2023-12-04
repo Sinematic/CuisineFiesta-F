@@ -16,7 +16,7 @@ function Gallery() {
     const getRecipes = async () => {
         
         try {
-            const response = await fetch("http://localhost:3000/api/recipe")
+            const response = await fetch(`${import.meta.env.VITE_API_ADDRESS}recipe`)
 
             if(response.ok) {
                 const result = await response.json()

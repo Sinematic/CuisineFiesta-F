@@ -25,7 +25,7 @@ function Search() {
         if (keywords) {
 
             try {
-                const response = await fetch(`http://localhost:3000/api/recipe/search/${keywords}`)
+                const response = await fetch(`${import.meta.env.VITE_API_ADDRESS}recipe/search/${keywords}`)
 
                 if (response.ok) {
                     const result = await response.json()

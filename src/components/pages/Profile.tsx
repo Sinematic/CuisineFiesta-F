@@ -56,7 +56,7 @@ function Profile() {
     const getUserRecipes = async () => {
 
         try {
-            const response = await fetch(`http://localhost:3000/api/recipe/author/${userId}`)
+            const response = await fetch(`${import.meta.env.VITE_API_ADDRESS}recipe/author/${userId}`)
 
             if (response.ok) {
                 const result = await response.json()
@@ -67,7 +67,7 @@ function Profile() {
         }
     }
 
-    const imp = import.meta.env.API_ADDRESS
+    const imp = import.meta.env.VITE_API_ADDRESS
     console.log(imp)
 
     getUserRecipes()

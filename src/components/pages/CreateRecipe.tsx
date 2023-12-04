@@ -82,7 +82,7 @@ function CreateRecipe() {
                     authorId: localStorage.getItem("userId")
                 }
 
-                const response = await fetch(`http://localhost:3000/api/recipe/`, {
+                const response = await fetch(`${import.meta.env.VITE_API_ADDRESS}recipe/`, {
                     method: "POST",
                     body: JSON.stringify(recipeData),
                     headers: { 
