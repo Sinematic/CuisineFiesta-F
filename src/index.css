@@ -36,3 +36,11 @@ nav:hover {
 	box-sizing: border-box !important;
 	margin: auto;
 }
+
+@media all and (min-width: 1024px) {
+	
+	#root {
+		width: 1024px;
+		margin: auto;
+	}
+}
