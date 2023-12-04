@@ -21,9 +21,7 @@ function Profile() {
     const userId = localStorage.getItem("user")
 
     const userDataString : string | null = localStorage.getItem("userData")
-    const userData: UserInterface = userDataString ? JSON.parse(userDataString) : null;
-
-    console.log(userData?.firstname)
+    const userData: UserInterface = userDataString ? JSON.parse(userDataString) : null
 
     const logout = () => {
         localStorage.removeItem("token")
@@ -68,6 +66,9 @@ function Profile() {
             console.log(error)
         }
     }
+
+    const imp = import.meta.env.API_ADDRESS
+    console.log(imp)
 
     getUserRecipes()
 
