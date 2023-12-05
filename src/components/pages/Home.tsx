@@ -18,7 +18,7 @@ function Home() {
     const getLastRecipe = async () => {
         
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_ADDRESS}recipe/recent`)
+            const response = await fetch(`${import.meta.env.VITE_API_RECIPE}/recent`)
 
             if(response.ok) {
                 const result = await response.json()

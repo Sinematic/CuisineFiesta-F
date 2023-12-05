@@ -34,13 +34,12 @@ function Profile() {
         if (!token) navigate("/login")
     }, [])
 
-
     const fakeUser = {
-        firstname: "Maxime",
-        lastname: "Rache",
-        email: "maxime@gmail.com",
+        firstname: "Jean",
+        lastname: "Dupond",
+        email: "jean.dupond@cuisinefiesta.com",
         password: "**********",
-        birthdate: "07-11-1995",
+        birthdate: "14-07-2000",
         premium: true
     }
 
@@ -56,7 +55,7 @@ function Profile() {
     const getUserRecipes = async () => {
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_ADDRESS}recipe/author/${userId}`)
+            const response = await fetch(`${import.meta.env.VITE_API_RECIPE}/author/${userId}`)
 
             if (response.ok) {
                 const result = await response.json()
@@ -66,9 +65,6 @@ function Profile() {
             console.log(error)
         }
     }
-
-    const imp = import.meta.env.VITE_API_ADDRESS
-    console.log(imp)
 
     getUserRecipes()
 

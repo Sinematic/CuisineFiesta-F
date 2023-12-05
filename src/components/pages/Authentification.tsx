@@ -101,7 +101,7 @@ function Authentification() {
             })
 
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_ADDRESS}auth/signup`, {
+                const response = await fetch(`${import.meta.env.VITE_API_USER}/signup`, {
                     method: "POST",
                     body: body,
                     headers: { "Content-Type": "application/json" }
@@ -129,7 +129,7 @@ function Authentification() {
             const body = JSON.stringify({ email: email, password: password })
 
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_ADDRESS}auth/login`, {
+                const response = await fetch(`${import.meta.env.VITE_API_USER}/login`, {
                     method: "POST",
                     body: body,
                     headers: { "Content-Type": "application/json" }

@@ -23,7 +23,7 @@ function Recipe() {
     const getRecipe = async () => {
         
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_ADDRESS}recipe/${params.id}`)
+            const response = await fetch(`${import.meta.env.VITE_API_RECIPE}/${params.id}`)
 
             if (response.ok) {
                 const result = await response.json()
@@ -42,7 +42,7 @@ function Recipe() {
         if (recipe) {
 
             try {
-                const response = await fetch(`${import.meta.env.VITE_API_ADDRESS}recipe/${params.id}`, {
+                const response = await fetch(`${import.meta.env.VITE_API_RECIPE}/${params.id}`, {
                     method: "DELETE",
                     headers: {
                         "Content-Type": "application/json",
