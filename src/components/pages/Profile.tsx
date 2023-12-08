@@ -60,7 +60,6 @@ function Profile() {
 
             if (response.ok) {
                 const result = await response.json()
-                console.log(result[0])
                 if (result && result.title || result[0].title) setRecipes([...result])
             }
         } catch(error) {
@@ -80,7 +79,7 @@ function Profile() {
                 <h1>Mes informations 🍜</h1>
 
                 <div className="picture-container">
-                    <img className="profile-picture" src={/*FakePicture*/TemporaryPicture} alt="" />
+                    <img className="profile-picture" src={TemporaryPicture} alt="" />
                     {fakeUser.premium ? 
                         <div className="icon-wrapper account premium" onClick={() => setIsOpen(!isOpen)}>
                             <img className="profile-badge" src={PremiumLogo} alt="Premium" /> 
@@ -122,7 +121,6 @@ function Profile() {
                 {recipes && recipes.length > 0 ? 
 
                     <div className="user-recipes">
-
                         <h2>Mes recettes :</h2>      
                         <ol>
                             {recipes.map((recipe : RecipeInterface) => 
@@ -132,7 +130,6 @@ function Profile() {
                                 </li>
                             )}
                         </ol>
-
                     </div>
                 : 
                     <div className="no-recipe">

@@ -36,6 +36,7 @@ function CreateRecipe() {
     const [rate, setRate] = useState<number | null>(null)
     const [mealFor, setMealFor] = useState<string>("")
     const [steps, setSteps] = useState<Array<string>>([])
+    //const [image, setImage] = useState<string>(DefaultBanner)
     const [cover, setCover] = useState<string>(DefaultBanner)
 
     const [notification, setNotification] = useState({ type: "", content: "" })
@@ -68,6 +69,8 @@ function CreateRecipe() {
 
             try {
                 const token = localStorage.getItem("token")
+
+                console.log(image, [image])
                 
                 const recipeData = {
                     title: mealName,
@@ -82,8 +85,11 @@ function CreateRecipe() {
                         userId: localStorage.getItem("userId"), 
                         grade: rate
                     }],
-                    authorId: localStorage.getItem("userId")
+                    authorId: localStorage.getItem("userId")/*,
+                    images: image ? [image] : "" */
                 }
+
+                console.log(image)
 
                 const response = await fetch(`${import.meta.env.VITE_API_RECIPE}/`, {
                     method: "POST",
@@ -101,7 +107,7 @@ function CreateRecipe() {
             }
         } else {
 
-            let sentence : string = "Il faut renseigner : "
+            let sentence : string = "Il faut renseigner "
 
             const properties: Record<string, string> = {
                 mealName: "le titre",
@@ -164,13 +170,15 @@ function CreateRecipe() {
                     <Tags selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
 
                     <Rate rate={rate} setRate={setRate} />
+{/* 
+                    <Input onChange={(e) => setImage(e.target.value)} value={image} 
+                    type="text" name="image" label="Lien de l'image de votre recette"  maxLength={200}/> */}
 
                     <Button value="Publier la recette" onClick={submitData} type="button" />
 
                     {notification.type ? <Notification type={notification.type} content={notification.content} /> : null}
 
                 </form>
-
             </div>
 
             <Nav />

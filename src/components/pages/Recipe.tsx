@@ -27,6 +27,7 @@ function Recipe() {
 
             if (response.ok) {
                 const result = await response.json()
+
                 if (result && result.title) setRecipe(result)
 
             } else console.log("Une erreur est survenue !")
@@ -79,7 +80,7 @@ function Recipe() {
                 <div className="recipe-item">
                     
                     <div className="img-name-wrapper">
-                        <img src={recipe.images.length > 0 ? recipe.images[0] : DefaultImage} alt="" />
+                        <img src={recipe.images ? recipe.images[0] : DefaultImage} alt="" />
                         <h1>{recipe.title} 🔥</h1>
                     </div>
                     <div className="duration-wrapper">

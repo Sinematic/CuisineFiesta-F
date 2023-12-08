@@ -26,7 +26,7 @@
 
 .picture-container .profile-badge {
     width: 24px;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
 }
 
 .icon-wrapper {
@@ -103,6 +103,7 @@
 }
 
 .user-recipes > ol > li, .no-recipe > .redirect {
+    cursor: pointer;
     padding-block: 8px;
     color: var(--white);
     background-color: var(--blue);
