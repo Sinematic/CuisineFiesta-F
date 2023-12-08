@@ -76,6 +76,7 @@
     display: grid;
     gap: 10px;
     padding-block: 10px;
+    padding-inline: 10px;
     font-size: 1.05rem;
     width: 100%;
     max-width: 482px;
@@ -84,13 +85,20 @@
     border-radius: 5px;
 }
 
+.no-recipe {
+    background-color: transparent;
+}
+
+.no-recipe > h2, .user-recipes > h2 {
+    font-weight: 500;
+}
+
 .user-recipes > ol {   
     display: grid;
     width: 100%;
     grid-template-columns: 1fr;
     gap: 10px;
     margin: auto;
-    padding-inline: 8px;
     line-height: normal;
 }
 
@@ -102,20 +110,12 @@
     font-weight: 500;
 }
 
-.no-recipe {
-    background-color: transparent;
-    padding-inline: 10px;
-}
-
-.no-recipe > h2 {
-    font-weight: 500;
-}
-
 .no-recipe > .redirect {
     font-size: 1.1rem;
     padding-inline: 8px;
     padding-block: 12px;
 }
+
 
 @media all and (min-width: 1024px) {
     
