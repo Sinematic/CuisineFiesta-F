@@ -10,7 +10,6 @@ import Footer from "../Footer/Footer"
 import { Recipe as RecipeInterface } from "../../interfaces/Recipe"
 import { User as UserInterface } from "../../interfaces/User"
 import "../../styles/pages/Profile.css"
-//import FakePicture from "../../assets/fake-profile-picture.png"
 import TemporaryPicture from "../../assets/temporary-profile-picture.png"
 import PremiumLogo from "../../assets/icons/premium-account.svg"
 import FreeLogo from "../../assets/icons/free-account.svg"
@@ -53,6 +52,7 @@ function Profile() {
     const [isOpen, setIsOpen] = useState(false)
     const [recipes, setRecipes] = useState<RecipeInterface[] | []>([])
 
+
     const getUserRecipes = async () => {
 
         try {
@@ -60,14 +60,17 @@ function Profile() {
 
             if (response.ok) {
                 const result = await response.json()
-                if (result && result.title) setRecipes([...result])
+                console.log(result[0])
+                if (result && result.title || result[0].title) setRecipes([...result])
             }
         } catch(error) {
             console.log(error)
         }
     }
 
-    getUserRecipes()
+    useEffect(() => {
+        getUserRecipes()
+    },[])
 
     return (
         <>
@@ -75,7 +78,7 @@ function Profile() {
             <div className="profile-page">
 
                 <h1>Mes informations 🍜</h1>
-                {recipes && recipes.length > 0 ? recipes.map((recipe) => <li key={recipe._id}>{recipe.title}</li>) : null}                
+
                 <div className="picture-container">
                     <img className="profile-picture" src={/*FakePicture*/TemporaryPicture} alt="" />
                     {fakeUser.premium ? 
@@ -117,15 +120,26 @@ function Profile() {
                 </form>
 
                 {recipes && recipes.length > 0 ? 
-                    <ol className="user-recipes has">
-                        {recipes.map((recipe : RecipeInterface) => 
-                            <li key={recipe.title} 
-                            onClick={() => navigate(`/${recipe._id}`)}>
-                                {recipe.title}
-                            </li>
-                        )}
-                    </ol>
-                : <p className="user-recipes">Vous n'avez pas encore écrit de recettes.</p>}
+
+                    <div className="user-recipes">
+
+                        <h2>Mes recettes :</h2>      
+                        <ol>
+                            {recipes.map((recipe : RecipeInterface) => 
+                                <li key={recipe.title} 
+                                onClick={() => navigate(`/recette/${recipe._id}`)}>
+                                    {recipe.title}
+                                </li>
+                            )}
+                        </ol>
+
+                    </div>
+                : 
+                    <div className="no-recipe">
+                        <h2>Vous n'avez pas encore ajouté de recettes. 🥲</h2>
+                        <p className="redirect" onClick={() => navigate("/ajouter-une-recette")}>Ajouter une recette maintenant</p>
+                    </div>
+                }
             </div>
 
             <Nav />
