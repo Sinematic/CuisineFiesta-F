@@ -10,7 +10,8 @@ import Footer from "../Footer/Footer"
 import { Recipe as RecipeInterface } from "../../interfaces/Recipe"
 import { User as UserInterface } from "../../interfaces/User"
 import "../../styles/pages/Profile.css"
-import FakePicture from "../../assets/fake-profile-picture.png"
+//import FakePicture from "../../assets/fake-profile-picture.png"
+import TemporaryPicture from "../../assets/temporary-profile-picture.png"
 import PremiumLogo from "../../assets/icons/premium-account.svg"
 import FreeLogo from "../../assets/icons/free-account.svg"
 
@@ -76,7 +77,7 @@ function Profile() {
                 <h1>Mes informations 🍜</h1>
                 {recipes && recipes.length > 0 ? recipes.map((recipe) => <li key={recipe._id}>{recipe.title}</li>) : null}                
                 <div className="picture-container">
-                    <img className="profile-picture" src={FakePicture} alt="" />
+                    <img className="profile-picture" src={/*FakePicture*/TemporaryPicture} alt="" />
                     {fakeUser.premium ? 
                         <div className="icon-wrapper account premium" onClick={() => setIsOpen(!isOpen)}>
                             <img className="profile-badge" src={PremiumLogo} alt="Premium" /> 
