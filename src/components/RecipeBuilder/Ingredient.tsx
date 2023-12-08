@@ -18,7 +18,9 @@ function Ingredient(props: {
         "Pincées",
         "Cuillères à soupe (c. à s.)",
         "Cuillères à café (c. à c.)",
-        "Pièces"
+        "Pièces",
+        "Sachets",
+        "Pas d'unité"
     ]
 
     const [name, setName] = useState<string>("")

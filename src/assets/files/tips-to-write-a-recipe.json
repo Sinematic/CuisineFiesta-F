@@ -19,7 +19,7 @@
         },
         {
             "title": "Ingrédients",
-            "content": "Énumérez les ingrédients nécessaires avec précision, en commençant par le nom de l'ingrédient, sa quantité, suivis de l'unité de mesure. Relisez-vous puis confirmez via le bouton vert dédié. L'ingrédient sera ajouté à la liste et affiché juste au-dessous. En cas d'erreur, vous pouvez supprimer un ingrédient de la liste en cliquant sur le bouton route à côté. ",
+            "content": "Énumérez les ingrédients nécessaires avec précision, en commençant par le nom de l'ingrédient, sa quantité, suivis de l'unité de mesure. Relisez-vous puis confirmez via le bouton vert dédié. L'ingrédient sera ajouté à la liste et affiché juste au-dessous. En cas d'erreur, vous pouvez supprimer un ingrédient de la liste en cliquant sur le bouton rouge à côté. ",
             "warning" : "Attention : Les ingrédients qui n'ont pas été validés seront perdus !"
         },
         {

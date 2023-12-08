@@ -24,7 +24,7 @@ function IngredientsList(props: {
             {props.ingredients.length > 0 ? <ul className="ingredients">
                 {props.ingredients.map((ingredient, index) => 
                 <li key={uuidv4()}>
-                    <span>{ingredient.name}: {ingredient.amount} x {ingredient.unit}</span>
+                    <span>{ingredient.unit !== "Pas d'unité" ? `${ingredient.name}: ${ingredient.amount} x ${ingredient.unit}` : `${ingredient.amount} x ${ingredient.name}`}</span>
                     <div className="trash" onClick={() => deleteSelf(index)} aria-label="Supprimer l'ingrédient">
                         <svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" 

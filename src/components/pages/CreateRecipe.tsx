@@ -19,6 +19,7 @@ import BannerStarter from "../../assets/images/bol-rempli-de-legumes.webp"
 import BannerMeal from "../../assets/images/poelee-de-legumes-et-de-viande.webp"
 import BannerDessert from "../../assets/images/pommes-et-ustensiles-de-cuisine.webp"
 import Guidelines from "../../assets/files/tips-to-write-a-recipe.json"
+import Notification from "../Notification/Notification"
 import "../../styles/pages/CreateRecipe.css"
 
 
@@ -36,6 +37,8 @@ function CreateRecipe() {
     const [mealFor, setMealFor] = useState<string>("")
     const [steps, setSteps] = useState<Array<string>>([])
     const [cover, setCover] = useState<string>(DefaultBanner)
+
+    const [notification, setNotification] = useState({ type: "", content: "" })
 
     useEffect(() => {
 
@@ -96,6 +99,32 @@ function CreateRecipe() {
             } catch(error) {
                 console.log(error)
             }
+        } else {
+
+            let sentence : string = "Il faut renseigner : "
+
+            const properties: Record<string, string> = {
+                mealName: "le titre",
+                type: "le type de recette",
+                duration: "le temps de préparation",
+                ingredients: "2 ingrédients ou plus",
+                rate: "une note",
+                mealFor: "le nombre de convives",
+                steps: "une étape de préparation ou plus"
+            }
+            
+            if (!mealName) sentence += properties.mealName + ", "
+            if (!type || type === null) sentence += properties.type + ", "
+            if (!duration) sentence += properties.duration + ", "
+            if (ingredients.length < 2) sentence += properties.ingredients + ", "
+            if (!rate) sentence += properties.rate + ", "
+            if (!mealFor) sentence += properties.mealFor + ", "
+            if (steps.length < 1) sentence += properties.steps
+
+            sentence += " !"
+
+            setNotification({ type: "error", content: sentence })
+            setTimeout(() => setNotification({ type: "", content: "" }), 3000)
         }
     }
 
@@ -137,6 +166,8 @@ function CreateRecipe() {
                     <Rate rate={rate} setRate={setRate} />
 
                     <Button value="Publier la recette" onClick={submitData} type="button" />
+
+                    {notification.type ? <Notification type={notification.type} content={notification.content} /> : null}
 
                 </form>
 
