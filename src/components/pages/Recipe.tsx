@@ -80,9 +80,10 @@ function Recipe() {
                 <div className="recipe-item">
                     
                     <div className="img-name-wrapper">
-                        <img src={recipe.images ? recipe.images[0] : DefaultImage} alt="" />
+                        <img src={DefaultImage} alt="" />
                         <h1>{recipe.title} 🔥</h1>
                     </div>
+
                     <div className="duration-wrapper">
                         <div className="display-duration icon-btn">
                             <div className="time" aria-label="Temps requis à la préparation">
@@ -97,7 +98,7 @@ function Recipe() {
        
                     <div className="display-tags">
                         {recipe.tags.map((tag) => <span key={uuidv4()}>{tag}</span>)}
-                    </div>    
+                    </div>
 
                     <div className="rating">
                         <Rate rate={recipe.averageRating} />
@@ -109,7 +110,9 @@ function Recipe() {
 
                     <div className="display-ingredients">
 
-                        <h2>Ingrédients 🥦<span>({recipe.ingredients.length})</span></h2>
+                        <h2>Ingrédients 🥦
+                            <span>({recipe.recipeFor} personne{recipe.recipeFor > 1 ? "s" : ""})</span>
+                        </h2>
 
                         <ul>
                             {recipe.ingredients.map((ingredient: { name: string, amount: string, unit: string }) => 
@@ -129,9 +132,7 @@ function Recipe() {
                                 </li>
                             )}
                         </ol>
-
                     </div>
-
                     
                     {recipe.authorId === userId ? 
                         <div className="icon-btn edit-delete-wrapper">

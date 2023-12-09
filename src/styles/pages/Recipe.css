@@ -15,7 +15,7 @@
 }
 
 .recipe-item > .img-name-wrapper > h1 {
-    font-size: 1.2rem;
+    font-size: 1.08rem;
     white-space: nowrap;
     text-align: center;
     padding-block: 8px;
@@ -27,7 +27,7 @@
 }
 
 .recipe-item h2 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     text-align: center;
     color: var(--black);
@@ -39,7 +39,7 @@
 .recipe-item > .img-name-wrapper > img {
     width: 100%;
     object-fit: cover;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 2 / 1;
     overflow: hidden;
     border-radius: 10px 10px 0 0;
     border-bottom: none;
@@ -111,9 +111,6 @@
 
 .display-steps > li {
     padding-block: 12px;
-    background-color: var(--black);
-    color: var(--white);
-    border-radius: 5px;
 }
 
 .display-steps > li span {

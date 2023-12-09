@@ -69,8 +69,6 @@ function CreateRecipe() {
 
             try {
                 const token = localStorage.getItem("token")
-
-                console.log(image, [image])
                 
                 const recipeData = {
                     title: mealName,
@@ -88,8 +86,6 @@ function CreateRecipe() {
                     authorId: localStorage.getItem("userId")/*,
                     images: image ? [image] : "" */
                 }
-
-                console.log(image)
 
                 const response = await fetch(`${import.meta.env.VITE_API_RECIPE}/`, {
                     method: "POST",
