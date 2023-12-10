@@ -17,10 +17,9 @@
     transform: translateX(-50%);
     width: max-content;
     max-width: 90%;
-    padding-block: 6px;
-    padding-inline: 9px 6px;
-    border: 1px solid;
-    border-radius: 6px;
+    padding-block: 2px;
+    padding-inline: 7px 4px;
+    border-radius: 3px;
     overflow: hidden;
     text-align: center;
     color: var(--white);
@@ -37,7 +36,7 @@
     left: 0;
     right: 0;
     background-color: var(--black);
-    opacity: 0.6;
+    opacity: 0.8;
     z-index: -2;
 }
 
@@ -49,4 +48,11 @@
     height: 100%;
     background-color: var(--black);
     opacity: 0.2;
+}
+
+@media all and (min-width: 1024px) {
+
+    .thumbnail > h3 {
+        font-size: 1.5rem;
+    }
 }

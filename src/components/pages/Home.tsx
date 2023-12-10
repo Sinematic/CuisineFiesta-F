@@ -43,8 +43,8 @@ function Home() {
 
             <div className="content-wrapper">
 
-                <div className="recent-article" onClick={() => navigate("/blog")}>
-                    <h2>Lire l'article de blog</h2>
+                <div className="recent-article">
+                    <h2 onClick={() => navigate("/blog")}>Lire l'article de blog</h2>
                     <Blog />
                 </div>
 
@@ -53,14 +53,12 @@ function Home() {
 
                     {recipe ? 
                         <div className="recent-recipe">
-                            <p>
-                                <span>N</span>
-                                <span>E</span>
-                                <span>W</span>
-                            </p>
+                            <p>Nouveau</p>
                             <Thumbnail content={recipe} />
                         </div> 
-                    : "Recette non trouvée"}
+                    : 
+                        <p className="no-recipe-found">Recette non trouvée</p>
+                    }
 
                 </div>
 

@@ -3,8 +3,11 @@ import useAuthRequirement from "../../state/hooks/useAuthRequirement"
 import Notification from "../Notification/Notification"
 import "../../styles/Header/Header.css"
 import Logo from "../../assets/images/logo-cuisinefiesta.jpg"
+import { useNavigate } from "react-router"
 
 function Header() {
+
+    const navigate = useNavigate()
 
     useAuthRequirement()
 
@@ -27,7 +30,7 @@ function Header() {
 
     return (
         <header>
-            {<img className="logo" src={Logo} alt="" />}
+            {<img className="logo" src={Logo} alt="" onClick={() => navigate("/")} />}
             {notification.type ? <Notification type={notification.type} content={notification.content} /> : null}
         </header>
     )
