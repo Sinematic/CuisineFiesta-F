@@ -40,6 +40,24 @@ select, option {
     padding-bottom: 12px;
 }
 
+.file-input-wrapper {
+    width: fit-content !important;
+    margin: auto;
+}
+
+.file-input-wrapper {
+    padding: 30px 0;
+}
+
+.file-input-wrapper > label > svg {
+    transform: scale(2);
+}
+        
+.file-input-wrapper::after {
+    padding-left: 20px;
+    content: "Ajouter une image (obligatoire)";
+}
+
 @media all and (min-width: 1024px) {
 
     .recipe-builder > form > .input-wrapper, 
@@ -63,5 +81,14 @@ select, option {
         width: auto;
         border-radius: 15px;
         font-size: 1.2rem;
-    }    
+    }      
+
+    .file-input-wrapper::after {
+        padding-left: 30px;
+        content: "Ajouter une image (obligatoire)";
+    }
+         
+    .file-input-wrapper > label > svg {
+        transform: scale(3);
+    }
 }

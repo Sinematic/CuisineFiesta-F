@@ -10,6 +10,7 @@ textarea {
     padding-block: 15px;
     padding-inline: 10px;
     font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
     border-radius: 10px;
     border: none;
     outline: 2px solid transparent;

@@ -1,3 +1,8 @@
-.input-wrapper > input[type="file"] + label > svg {
-    width: 24px;
+.file-input-wrapper > label {
+    height: fit-content;
+}
+
+.file-input-wrapper > label > svg {
+    aspect-ratio: 34 / 29;
+    transform: scale(1.1);
 }

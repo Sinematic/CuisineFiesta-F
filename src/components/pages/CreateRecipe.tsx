@@ -21,6 +21,7 @@ import BannerDessert from "../../assets/images/pommes-et-ustensiles-de-cuisine.w
 import Guidelines from "../../assets/files/tips-to-write-a-recipe.json"
 import Notification from "../Notification/Notification"
 import "../../styles/pages/CreateRecipe.css"
+//import FileInput from "../FormElements/FileInput"
 
 
 function CreateRecipe() {
@@ -36,7 +37,6 @@ function CreateRecipe() {
     const [rate, setRate] = useState<number | null>(null)
     const [mealFor, setMealFor] = useState<string>("")
     const [steps, setSteps] = useState<Array<string>>([])
-    //const [image, setImage] = useState<string>(DefaultBanner)
     const [cover, setCover] = useState<string>(DefaultBanner)
 
     const [notification, setNotification] = useState({ type: "", content: "" })
@@ -83,15 +83,14 @@ function CreateRecipe() {
                         userId: localStorage.getItem("userId"), 
                         grade: rate
                     }],
-                    authorId: localStorage.getItem("userId")/*,
-                    images: image ? [image] : "" */
+                    authorId: localStorage.getItem("userId")
                 }
 
                 const response = await fetch(`${import.meta.env.VITE_API_RECIPE}/`, {
                     method: "POST",
                     body: JSON.stringify(recipeData),
                     headers: { 
-                        "Content-Type": "application/json",
+                        "Content-Type": "multipart/form-data",
                         "Authorization": `Bearer ${token}` 
                     }
                 })
@@ -141,7 +140,7 @@ function CreateRecipe() {
                     <DocumentReader document={Guidelines} />
                 </Dropdown>
 
-                <form action="" method="POST">
+                <form action="" method="POST" encType="multipart/form-data">
 
                     <Input onChange={(e) => setMealName(e.target.value)} value={mealName} 
                     type="text" name="name" label="Nom de la recette" minLength={5} maxLength={60}/>
@@ -151,6 +150,8 @@ function CreateRecipe() {
 
                     <Textarea state={description} setter={setDescription} value={description} 
                     name="description" label="Description de la recette (facultatif)" maxLength={600} />
+
+{/* <FileInput name="file" arialabel="Mettre à jour ma photo de profil" /> */}
 
                     <IngredientsList ingredients={ingredients} setIngredients={setIngredients} />
 
@@ -166,9 +167,6 @@ function CreateRecipe() {
                     <Tags selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
 
                     <Rate rate={rate} setRate={setRate} />
-{/* 
-                    <Input onChange={(e) => setImage(e.target.value)} value={image} 
-                    type="text" name="image" label="Lien de l'image de votre recette"  maxLength={200}/> */}
 
                     <Button value="Publier la recette" onClick={submitData} type="button" />
 

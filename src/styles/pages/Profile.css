@@ -46,8 +46,8 @@
 
 .icon-wrapper.picture {
     left: 0;
-    background-color: var(--white);
-    border-color: var(--dark-grey);
+    background-color: var(--black);
+    border-color: var(--black);
 }
 
 .icon-wrapper.premium {
