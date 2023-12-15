@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, /*ChangeEvent */} from "react"
 import { useNavigate } from "react-router"
 import Header from "../Header/Header"
 import Cover from "../Cover/Cover"
 import Nav from "../Nav/Nav"
 import Input from "../FormElements/Input"
+//import FileInput from "../FormElements/FileInput"
 import Button from "../FormElements/Button"
 import Footer from "../Footer/Footer"
 import Select from "../FormElements/Select"
@@ -21,7 +22,6 @@ import BannerDessert from "../../assets/images/pommes-et-ustensiles-de-cuisine.w
 import Guidelines from "../../assets/files/tips-to-write-a-recipe.json"
 import Notification from "../Notification/Notification"
 import "../../styles/pages/CreateRecipe.css"
-//import FileInput from "../FormElements/FileInput"
 
 
 function CreateRecipe() {
@@ -37,10 +37,19 @@ function CreateRecipe() {
     const [rate, setRate] = useState<number | null>(null)
     const [mealFor, setMealFor] = useState<string>("")
     const [steps, setSteps] = useState<Array<string>>([])
+    //const [image, setImage] = useState<File | null>(null)
     const [cover, setCover] = useState<string>(DefaultBanner)
 
     const [notification, setNotification] = useState({ type: "", content: "" })
 
+/*
+    const handleFileChange = (e : ChangeEvent<HTMLInputElement>) => {
+
+        const file = e.target.files?.[0];
+        if (file) setImage(file)
+        console.log(file)
+    }
+*/
     useEffect(() => {
 
         if (type === "Entrée") {
@@ -57,6 +66,7 @@ function CreateRecipe() {
 
     const submitData = async () => {
 
+
         if (mealName 
             && type 
             && duration !== null 
@@ -66,40 +76,61 @@ function CreateRecipe() {
             && mealFor 
             && steps.length > 0
         ) {
+/*
+            if (!image) {
+                console.log("pas d'image")
+            } else {*/
+                try {
+                    const token = localStorage.getItem("token")
 
-            try {
-                const token = localStorage.getItem("token")
-                
-                const recipeData = {
-                    title: mealName,
-                    ingredients: [...ingredients],
-                    mealType: type,
-                    description: description,
-                    steps: [...steps],
-                    tags: [...selectedTags],
-                    time: duration,
-                    recipeFor: mealFor,
-                    ratings: [{ 
-                        userId: localStorage.getItem("userId"), 
-                        grade: rate
-                    }],
-                    authorId: localStorage.getItem("userId")
-                }
-
-                const response = await fetch(`${import.meta.env.VITE_API_RECIPE}/`, {
-                    method: "POST",
-                    body: JSON.stringify(recipeData),
-                    headers: { 
-                        "Content-Type": "multipart/form-data",
-                        "Authorization": `Bearer ${token}` 
+                    const recipeData = {
+                        title: mealName,
+                        ingredients: [...ingredients],
+                        mealType: type,
+                        description: description,
+                        steps: [...steps],
+                        tags: [...selectedTags],
+                        time: duration,
+                        recipeFor: mealFor,
+                        ratings: [{ 
+                            userId: localStorage.getItem("userId"), 
+                            grade: rate
+                        }],
+                        authorId: localStorage.getItem("userId")
                     }
-                })
+    
+                    const response = await fetch(`${import.meta.env.VITE_API_RECIPE}/`, {
+                        method: "POST",
+                        body: JSON.stringify(recipeData),
+                        headers: { 
+                            "Content-Type": "application/json",
+                            "Authorization": `Bearer ${token}` 
+                        }
+                    })
+    
+                    /*
+    
+                    const bodyFormData = new FormData();
 
-                if (response.ok) navigate("/")
-        
-            } catch(error) {
-                console.log(error)
-            }
+                    bodyFormData.append('recipe', JSON.stringify(recipeData));
+                    if (image instanceof Blob) bodyFormData.append('image', image);
+    
+                    const response = await fetch(`${import.meta.env.VITE_API_RECIPE}/`, {
+                        method: "POST",
+                        body: bodyFormData,
+                        headers: { 
+                            "Authorization": `Bearer ${token}`,
+                        }
+                    })*/
+    
+                    if (response.ok) navigate("/")
+            
+                } catch(error) {
+                    console.log(error)
+                }
+          /*  }*/
+
+
         } else {
 
             let sentence : string = "Il faut renseigner "
@@ -140,7 +171,7 @@ function CreateRecipe() {
                     <DocumentReader document={Guidelines} />
                 </Dropdown>
 
-                <form action="" method="POST" encType="multipart/form-data">
+                <form action="" method="POST">
 
                     <Input onChange={(e) => setMealName(e.target.value)} value={mealName} 
                     type="text" name="name" label="Nom de la recette" minLength={5} maxLength={60}/>
@@ -151,7 +182,7 @@ function CreateRecipe() {
                     <Textarea state={description} setter={setDescription} value={description} 
                     name="description" label="Description de la recette (facultatif)" maxLength={600} />
 
-{/* <FileInput name="file" arialabel="Mettre à jour ma photo de profil" /> */}
+                    {/* <FileInput name="file" onChange={(e) => handleFileChange(e)} arialabel="Mettre à jour ma photo de profil" /> */}
 
                     <IngredientsList ingredients={ingredients} setIngredients={setIngredients} />
 

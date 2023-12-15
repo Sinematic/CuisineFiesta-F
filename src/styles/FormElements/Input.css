@@ -29,6 +29,7 @@
 
 input:not([type="file"]) + label:not(.placeholder-like) {
     pointer-events: none;
+    user-select: none;
     position: absolute;
     bottom: 10px;
     left: 15px;

@@ -36,3 +36,11 @@ textarea:focus {
 .length-indicator.red {
     color: var(--red);
 }
+
+
+@media all and (min-width: 1024px) {
+
+    .textarea-wrapper {
+        width: 635px;
+    }
+}

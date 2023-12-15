@@ -7,9 +7,9 @@ function Ingredient(props: {
     ingredients: Array<{ name: string; amount: string; unit: string }>;
     setIngredients: React.Dispatch<React.SetStateAction<Array<{ name: string; amount: string; unit: string }>>>,
 }) {
-
+/*
     const units = [
-        "Millilitres (mL)",
+        { "singulier": "Millilitres (mL)"},
         "Centilitres (cL)",
         "Litres (L)",
         "Milligrammes (mg)",
@@ -21,7 +21,12 @@ function Ingredient(props: {
         "Pièces",
         "Sachets",
         "Pas d'unité"
-    ]
+    ]*/
+
+    const units = [
+        ["mL", "cL", "L", "mg", "g", "kg", "Pincée", "Cuillère à soupe", "Cuillère à café", "Pièce", "Sachet", "Pas d'unité"],
+        ["mL", "cL", "L", "mg", "g", "kg", "Pincées", "Cuillères à soupe", "Cuillères à café", "Pièces", "Sachets", "Pas d'unité"]
+    ];
 
     const [name, setName] = useState<string>("")
     const [amount, setAmount] = useState<string>("")
@@ -59,7 +64,7 @@ function Ingredient(props: {
                 <Input onChange={(e) => setAmount(e.target.value)} value={amount}
                 name="ingredient-amount" type="number" min={1}
                 label="Quantité" placeholder={true} maxLength={3} />
-                <Select name="unit" options={units} label="Unités"
+                <Select name="unit" options={amount === "1" ? units[0] : units[1]} label="Unités"
                 state={unit} setter={setUnit} /> 
             </div>
         </div>

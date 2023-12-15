@@ -10,6 +10,10 @@ button {
     border-radius: 40px;
 }
 
+button:focus {
+    outline: none;
+} 
+
 .dark-button {
     width: auto;
     padding: 15px;

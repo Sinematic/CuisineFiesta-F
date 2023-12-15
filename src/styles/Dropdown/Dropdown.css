@@ -69,3 +69,15 @@
 .dropdown-bar.green {
     background-color: #008000;
 }
+
+@media all and (min-width: 1024px) {
+
+    .dropdown-bar {
+        width: 635px;
+        background-color: var(--blue) !important;
+    }
+
+    .dropdown {
+        width: 635px;
+    }
+}

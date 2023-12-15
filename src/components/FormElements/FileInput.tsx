@@ -1,7 +1,7 @@
 import "../../styles/FormElements/FileInput.css"
 
 function FileInput(props: { 
-    onChange?: React.ChangeEventHandler<HTMLInputElement>,
+    onChange: React.ChangeEventHandler<HTMLInputElement>,
     name?: string, 
     label ?: string,
     arialabel?: string,

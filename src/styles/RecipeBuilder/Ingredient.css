@@ -29,3 +29,12 @@
 .second-row > .input-wrapper:first-of-type > input {
     border-radius: 0px;
 }
+
+
+@media all and (min-width: 1024px) {
+
+    .second-row {
+        grid-template-columns: 100px 180px;
+    }
+
+}

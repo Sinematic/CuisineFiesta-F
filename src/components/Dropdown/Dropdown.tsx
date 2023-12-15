@@ -20,7 +20,6 @@ function Dropdown(props: { title: string, identifier?: string, children: React.R
                     {props.children}
                 </div>
             </div>
-
         </div>
     )
 }

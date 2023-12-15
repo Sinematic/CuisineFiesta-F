@@ -90,7 +90,7 @@ function Profile() {
                     }
 
                     <div className="icon-wrapper picture">
-                        <FileInput name="file" arialabel="Mettre à jour ma photo de profil" />
+                        <FileInput onChange={() => console.log()} name="file" arialabel="Mettre à jour ma photo de profil" />
                     </div>                 
                 </div>
 
