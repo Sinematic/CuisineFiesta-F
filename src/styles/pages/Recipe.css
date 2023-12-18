@@ -21,7 +21,6 @@
     text-align: center;
     padding-block: 8px;
     padding-inline: 6px;
-    font-family: 'Playfair Display', serif;
     color: var(--gold);
     background-color: var(--black);
     border-radius: 0 0 10px 10px;
@@ -51,6 +50,7 @@
     color: var(--black);
     border-radius: 10px;
     font-size: 1.05rem;
+    white-space: pre-line;
 }
 
 .display-ingredients {
@@ -97,6 +97,7 @@
     background-color: var(--white);
     border: 2px solid;
     border-radius: 10px;
+    white-space: pre-line;
 }
 
 .display-steps {
@@ -212,6 +213,11 @@
 
 
 @media all and (min-width: 1024px) {
+    
+    .recipe-item > .img-name-wrapper > h1 {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
 
     .recipe-item > .display-tags {
         margin-top: -20px;
@@ -232,8 +238,11 @@
     .recipe-item > .display-tags > span::after {
         content: "";
     }
-
-    .display-duration span::after {
-        content: " minutes";
+    
+    .display-ingredients {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        margin: auto;
     }
 }

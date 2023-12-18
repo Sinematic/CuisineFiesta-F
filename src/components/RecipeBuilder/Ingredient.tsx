@@ -24,8 +24,8 @@ function Ingredient(props: {
     ]*/
 
     const units = [
-        ["mL", "cL", "L", "mg", "g", "kg", "Pincée", "Cuillère à soupe", "Cuillère à café", "Pièce", "Sachet", "Pas d'unité"],
-        ["mL", "cL", "L", "mg", "g", "kg", "Pincées", "Cuillères à soupe", "Cuillères à café", "Pièces", "Sachets", "Pas d'unité"]
+        ["Pas d'unité", "mL", "cL", "L", "mg", "g", "kg", "Pincée", "Cuillère à soupe", "Cuillère à café", "Sachet"],
+        ["Pas d'unité", "mL", "cL", "L", "mg", "g", "kg", "Pincées", "Cuillères à soupe", "Cuillères à café", "Sachets"]
     ];
 
     const [name, setName] = useState<string>("")

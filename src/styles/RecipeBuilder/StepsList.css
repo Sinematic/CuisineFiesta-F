@@ -37,6 +37,7 @@ ol.steps > .step {
     background-color: var(--white);
     padding-block: 4px;
     padding-inline: 10px 3px;
+    white-space: pre-line;
 }
 
 .step > .trash {

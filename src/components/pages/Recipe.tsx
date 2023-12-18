@@ -11,6 +11,8 @@ import Loader from "../Loader/Loader"
 
 function Recipe() {
 
+    const width = window.innerWidth
+
     const userId = localStorage.getItem("user")
     const token = localStorage.getItem("token")
 
@@ -92,8 +94,9 @@ function Recipe() {
                                     <polyline points="12 6 12 12 16 10"/>
                                 </svg>
                             </div>
-                            <span>{recipe.time % 60 === 0 ? (recipe.time / 60) + "h" : recipe.time + "m"}</span>
-                        </div>    
+                            <span>{recipe.time % 60 === 0 ? (recipe.time / 60) + (width < 720 ? "h" : " heures") 
+                            : recipe.time + (width < 720 ? "m" : " minutes") }</span>
+                        </div>
                     </div>
        
                     <div className="display-tags">
@@ -109,14 +112,19 @@ function Recipe() {
                     : null }
 
                     <div className="display-ingredients">
-
                         <h2>Ingrédients 🥦
                             <span>({recipe.recipeFor} personne{recipe.recipeFor > 1 ? "s" : ""})</span>
                         </h2>
 
                         <ul>
                             {recipe.ingredients.map((ingredient: { name: string, amount: string, unit: string }) => 
-                                <li key={uuidv4()}><span>{ingredient.name} :</span> {ingredient.amount} x {ingredient.unit}</li>
+                                <li key={uuidv4()}>{ingredient.amount} 
+                                {ingredient.unit === "Pas d'unité" || ingredient.unit === "Pièces" || ingredient.unit === "Pièce" ? " " 
+                                : " " + ingredient.unit + (
+                                    ingredient.name[0] === "A" || ingredient.name[0] === "E"  || ingredient.name[0] === "H"  || 
+                                ingredient.name[0] === "I"  || ingredient.name[0] === "O"  || ingredient.name[0] === "U" 
+                                ? " d'" : " de ")}
+                                <span>{ingredient.name}</span></li>
                             )}
                         </ul>
                     </div>

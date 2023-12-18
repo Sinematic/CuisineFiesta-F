@@ -49,6 +49,54 @@
     background-color: var(--black);
     opacity: 0.2;
 }
+/*
+
+.thumbnail {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: auto 0;
+    background-color: var(--white) !important;
+}
+
+.thumbnail > img {
+    width: 100%;
+}
+
+.thumbnail > h3 {
+    padding-block: 2px;
+    padding-inline: 7px 4px;
+    border-radius: 3px;
+    overflow: hidden;
+    text-align: center;
+    background-color: var(--white);
+    color: var(--black);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.thumbnail:hover {
+    grid-template-rows: auto 150px;
+}
+
+.thumbnail > h3 > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--black);
+    opacity: 0.8;
+    z-index: -2;
+}
+
+.thumbnail > .overlay {
+    display: none;
+}*/
+
 
 @media all and (min-width: 1024px) {
 

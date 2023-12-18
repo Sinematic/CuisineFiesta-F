@@ -24,6 +24,13 @@
     text-align: center;
 }
 
+.found-recipes {
+    padding-top: 10px;
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
 @media all and (min-width: 1024px) {
 
     .filters > .input-wrapper {
