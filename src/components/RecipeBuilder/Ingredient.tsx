@@ -64,7 +64,7 @@ function Ingredient(props: {
                 <Input onChange={(e) => setAmount(e.target.value)} value={amount}
                 name="ingredient-amount" type="number" min={1}
                 label="Quantité" placeholder={true} maxLength={3} />
-                <Select name="unit" options={amount === "1" ? units[0] : units[1]} label="Unités"
+                <Select name="unit" options={amount === "1" ? units[0] : units[1]} label="Unités de mesure"
                 state={unit} setter={setUnit} /> 
             </div>
         </div>

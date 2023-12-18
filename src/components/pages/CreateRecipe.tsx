@@ -42,6 +42,38 @@ function CreateRecipe() {
 
     const [notification, setNotification] = useState({ type: "", content: "" })
 
+    const drafts = localStorage.getItem("draft-recipe")
+
+    console.log(localStorage.getItem("draft-recipe"))
+/*
+
+    useEffect(() => {
+
+        if (localStorage.getItem("draft-recipe") !== "" )
+
+        if (mealName !== "" || description !== "" || steps[0] !== "" || ingredients[0].name !== "") {
+
+            setInterval(() => {
+                const recipeDraft = {
+                    title: mealName ,
+                    ingredients: [...ingredients],
+                    mealType: type,
+                    description: description,
+                    steps: [...steps],
+                    tags: [...selectedTags],
+                    time: duration,
+                    recipeFor: mealFor,
+                    ratings: [{ 
+                        grade: rate
+                    }],
+                }
+                localStorage.setItem("draft-recipe", JSON.stringify(recipeDraft))
+
+                console.log(localStorage.getItem("draft-recipe"))
+            }, 15000)
+        }
+    }, [])*/
+
 /*
     const handleFileChange = (e : ChangeEvent<HTMLInputElement>) => {
 
@@ -170,6 +202,10 @@ function CreateRecipe() {
                 <Dropdown title="Conseils pour écrire une recette" identifier="green bg-white">
                     <DocumentReader document={Guidelines} />
                 </Dropdown>
+
+                {drafts !== null ? 
+                    <div className="drafts-box">📑</div> 
+                : ""}    
 
                 <form action="" method="POST">
 

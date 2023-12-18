@@ -34,7 +34,7 @@
 @media all and (min-width: 1024px) {
 
     .second-row {
-        grid-template-columns: 100px 180px;
+        grid-template-columns: 130px 300px;
     }
 
 }
