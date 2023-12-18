@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://cuisinefiesta.com/</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://cuisinefiesta.com/recette/657d89567d0a617ef77105e4</loc>
+        <changefreq>yearly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://cuisinefiesta.com/galerie</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://cuisinefiesta.com/blog</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://cuisinefiesta.com/ajouter-une-recette</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://cuisinefiesta.com/recherche</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://cuisinefiesta.com/profil</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://cuisinefiesta.com/premium</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://cuisinefiesta.com/quiz</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://cuisinefiesta.com/confidentialite</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://cuisinefiesta.com/login</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://cuisinefiesta.com/*</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+</urlset>
