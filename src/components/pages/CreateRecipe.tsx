@@ -19,6 +19,7 @@ import DefaultBanner from "../../assets/images/macarons-et-café.webp"
 import BannerStarter from "../../assets/images/bol-rempli-de-legumes.webp"
 import BannerMeal from "../../assets/images/poelee-de-legumes-et-de-viande.webp"
 import BannerDessert from "../../assets/images/pommes-et-ustensiles-de-cuisine.webp"
+import Meat from "../../assets/images/viande-crue-et-assaisonnement.webp"
 import Guidelines from "../../assets/files/tips-to-write-a-recipe.json"
 import Notification from "../Notification/Notification"
 import "../../styles/pages/CreateRecipe.css"
@@ -26,7 +27,7 @@ import "../../styles/pages/CreateRecipe.css"
 
 function CreateRecipe() {
 
-    const possibleTypes = ["Entrée", "Plat principal", "Dessert", "Autres"]
+    const possibleTypes = ["Entrée", "Plat principal", "Dessert", "Viande", "Accompagnement"]
 
     const [mealName, setMealName] = useState<string>("")
     const [description, setDescription] = useState<string>("")
@@ -90,6 +91,8 @@ function CreateRecipe() {
             setCover(BannerMeal)
         } else if (type === "Dessert") {
             setCover(BannerDessert)
+        } else if (type === "Viande") {
+            setCover(Meat)
         } else setCover(DefaultBanner)
 
     }, [type])

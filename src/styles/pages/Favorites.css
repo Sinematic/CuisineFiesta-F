@@ -1,0 +1,42 @@
+.favlist-wrapper {
+    padding-block: 30px 90px;
+    padding-inline: 30px;
+    font-size: 1rem;
+}
+
+.favlist-wrapper > h2 {
+    font-size: 1.3rem;
+    color: var(--dark-grey);
+    text-align: center;
+}
+
+.fav-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-block: 20px;
+}
+
+.found-recipes {
+    padding-top: 10px;
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+
+@media all and (min-width: 720px) {
+
+    .fav-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+
+@media all and (min-width: 1024px) {
+
+    .fav-list {
+        gap: 30px;
+    }
+}

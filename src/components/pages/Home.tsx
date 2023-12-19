@@ -54,7 +54,8 @@ function Home() {
                     {recipe ? 
                         <div className="recent-recipe">
                             <p>Nouveau</p>
-                            <Thumbnail content={recipe} />
+                            <Thumbnail title={recipe.title} url={recipe._id} 
+                            image={recipe.image} mealType={recipe.mealType} />
                         </div> 
                     : 
                         <p className="no-recipe-found">Recette non trouvée</p>

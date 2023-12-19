@@ -11,6 +11,6 @@ export interface Recipe {
     ratings: { userId: string, grade: number },
     averageRating: number,
     authorId: string,
-    images: string[]
+    image: string
 }
 

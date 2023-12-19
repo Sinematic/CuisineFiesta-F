@@ -18,13 +18,18 @@ function Nav() {
         {
             path: "/quiz",
             content: "Quiz",
-            badge: "green"
+            badge: undefined
         },
         {
             path: "/ajouter-une-recette",
             content: "Ajouter une recette",
-            badge: "golden"
+            badge: "green"
         },
+        {
+            path: "/mes-favoris",
+            content: "Mes favoris",
+            badge: "green"
+        }/*,
         {
             path: "/les-mieux-notees",
             content: "Les incontournables",
@@ -39,7 +44,7 @@ function Nav() {
             path: "/menu-aleatoire",
             content: "Le menu Mystère",
             badge: undefined
-        }
+        }*/
     ]
 
     const handleNavigation = (path: string) => {

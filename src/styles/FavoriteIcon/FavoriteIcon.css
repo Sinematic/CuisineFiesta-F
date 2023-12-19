@@ -1,0 +1,33 @@
+.favorite-wrapper {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+    background-color: transparent;
+    border-radius: 40px;
+    z-index: 3;
+}
+
+.favorite-wrapper.not {    
+    background-color: var(--black);
+    opacity: 0.5;
+}
+
+.favorite-wrapper.not:hover {    
+    opacity: 1;
+}
+
+.favorite, .is-not-favorite {
+    width: 26px;
+    height: 26px;
+}
+
+@media all and (min-width: 1024px) {
+
+    .favorite, .is-not-favorite {
+        width: 30px;
+        height: 30px;
+    }
+}

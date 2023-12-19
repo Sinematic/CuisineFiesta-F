@@ -12,6 +12,7 @@ import Search from "./components/pages/Search"
 import Gallery from "./components/pages/Gallery"
 import NotFound from "./components/pages/NotFound"
 import Blog from "./components/pages/Blog"
+import Favorites from "./components/pages/Favorites"
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
 				<Route path="/premium" element={<Premium />} />
 				<Route path="/quiz" element={<Quiz />} />
 				<Route path="/confidentialite" element={<DocumentReader document={PrivacyPolicy} />} />
+				<Route path="/mes-favoris" element={<Favorites />} />
 				<Route path="/login" element={<Authentification />} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>

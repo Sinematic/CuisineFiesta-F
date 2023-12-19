@@ -41,7 +41,9 @@ function Gallery() {
             <div className="gallery">
                 {recipes ? 
                     (recipes.length > 0 ? 
-                        recipes.map((recipe) => <Thumbnail key={uuidv4()} content={recipe} />)    
+                        recipes.map((recipe) => 
+                            <Thumbnail key={uuidv4()} title={recipe.title} url={recipe._id} 
+                            image={recipe.image} mealType={recipe.mealType} />)    
                     : <h2>Aucune recette, ajoutes-en une !</h2>)
                 
                 : null}

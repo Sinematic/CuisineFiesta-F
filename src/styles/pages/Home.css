@@ -23,10 +23,13 @@
 .content-wrapper > .home-recipe > h2 {
     width: auto;
     margin: auto;
-    padding-bottom: 4px;
+    padding: 4px 8px;
     color: var(--black);
+    background-color: var(--white);
     font-weight: 500;
-    border-bottom: 3px solid var(--black);
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .recent-article {
@@ -46,6 +49,7 @@
     color: var(--white);
     background-color: var(--blue);
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .recent-recipe {
@@ -55,7 +59,7 @@
 .recent-recipe > p {
     display: flex;
     position: absolute;
-    top: 10px;
+    bottom: 65px;
     right: 10px;
     max-width: 90%;
     color: var(--white) ;
@@ -69,4 +73,11 @@
 
 .no-recipe-found {
     text-align: center;
+}
+
+@media all and (min-width: 1024px) {
+
+    .recent-recipe > p {
+        bottom: 40px;
+    }
 }

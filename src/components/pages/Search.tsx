@@ -60,7 +60,9 @@ function Search() {
                     <>     
                         <p className="found-recipes">{results.length > 2 ? results.length + " recettes trouvées" : results.length + " recette trouvée"}</p>                   
                         <div className="results">
-                            {results.length > 0 ? results.map((result) => <Thumbnail key={uuidv4()} content={result} />)
+                            {results.length > 0 ? results.map((result) => 
+                                <Thumbnail key={uuidv4()} title={result.title} url={result._id} 
+                                image={result.image} mealType={result.mealType} />)
                             : <h2>Aucun résultat ! 🥲</h2>}
                         </div>
                     </>
