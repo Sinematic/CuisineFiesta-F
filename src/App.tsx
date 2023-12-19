@@ -29,7 +29,7 @@ function App() {
 				<Route path="/premium" element={<Premium />} />
 				<Route path="/quiz" element={<Quiz />} />
 				<Route path="/confidentialite" element={<DocumentReader document={PrivacyPolicy} />} />
-				<Route path="/mes-favoris" element={<Favorites />} />
+				<Route path="/favoris" element={<Favorites />} />
 				<Route path="/login" element={<Authentification />} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>

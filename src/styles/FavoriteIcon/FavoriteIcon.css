@@ -26,6 +26,10 @@
 
 @media all and (min-width: 1024px) {
 
+    .favorite-wrapper {
+        padding: 5px;
+    }
+
     .favorite, .is-not-favorite {
         width: 30px;
         height: 30px;

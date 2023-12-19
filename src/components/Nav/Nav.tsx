@@ -26,7 +26,7 @@ function Nav() {
             badge: "green"
         },
         {
-            path: "/mes-favoris",
+            path: "/favoris",
             content: "Mes favoris",
             badge: "green"
         }/*,
