@@ -41,6 +41,11 @@
     </url>
 
     <url>
+        <loc>https://cuisinefiesta.com/favoris</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <url>
         <loc>https://cuisinefiesta.com/quiz</loc>
         <changefreq>weekly</changefreq>
     </url>
