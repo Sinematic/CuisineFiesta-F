@@ -172,14 +172,6 @@
     height: 100%;
 }
 
-.edit {
-    background-color: var(--blue);
-}
-
-.delete {
-    background-color: var(--red);
-}
-
 .icon-btn > .time {
     width: 30px;
     height: 30px;

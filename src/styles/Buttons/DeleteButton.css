@@ -1,0 +1,4 @@
+.delete {
+    cursor: pointer;
+    background-color: var(--red);
+}

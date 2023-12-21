@@ -26,10 +26,11 @@
 
 .no-favorites {
     display: flex;
+    justify-content: center;
     align-items: center;
     height: 60vh;
-    vertical-align: middle;
-    text-align: center;
+    max-width: 90%;
+    margin: auto;
 }
 
 
