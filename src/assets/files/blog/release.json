@@ -1,0 +1,48 @@
+{
+    "maintitle": "CuisineFiesta sort aujourd'hui ! 🎊",
+    "content": [
+        {
+            "section": "Lancez-vous dans une aventure collaborative gourmande",
+            "content": [
+                {
+                    "title": "Vous êtes un amateur de cuisine passionné, toujours à la recherche de nouvelles recettes...",
+                    "content": "Bienvenue sur CuisineFiesta, une plateforme de cuisine collaborative qui vous permet de découvrir, partager et créer des recettes savoureuses du monde entier. Que vous soyez un chef amateur, un professionnel de la cuisine ou simplement quelqu'un qui aime expérimenter en cuisine, CuisineFiesta a quelque chose à vous offrir."
+                },
+                {
+                    "title": "Le Concept CuisineFiesta",
+                    "content": "CuisineFiesta, c'est bien plus qu'une simple application de recettes en ligne. C'est une communauté de passionnés qui partagent leur amour pour la cuisine et la créativité culinaire. Notre objectif est de créer un espace où chacun peut contribuer en partageant ses recettes préférées, de l'apéritif au dessert."
+                },
+                {
+                    "title": "Rejoignez-nous et partagez vos recettes dès maintenant sur CuisineFiesta.",
+                    "content": "Avec CuisineFiesta, vous êtes invité à vous lancer dans une aventure culinaire exceptionnelle où la créativité n'a pas de limites. Rejoignez la communauté et découvrez une multitude de saveurs et de recettes qui égayeront vos repas au quotidien. Bon appétit !"
+                }
+            ]
+        },
+        {
+            "section": "Améliorations globales de l'interface",
+            "content": [
+                {
+                    "title": "Page de recette",
+                    "content": "Affichage amélioré de la liste des éléments afin qu'il paraisse plus naturel."
+                },
+                {
+                    "title": "Formatage du texte",
+                    "content": "Les sauts de lignes sont désormais correctement enregistrés et affichés."
+                }
+            ]
+        },
+        {
+            "section": "Nouvelles fonctionnalités",
+            "content": [
+                {
+                    "title": "Favoris",
+                    "content": "Il est désormais possible d'ajouter certaines recettes aux favoris. Afin d'afficher les recettes favorites, il suffit de visiter \"https://cuisinefiesta.com/mes-favoris\" (lien présent dans le bouton hamburger)"
+                }
+            ]
+        },
+        {
+            "section": "Conclusion",
+            "content": "Restez à l'écoute pour plus de mises à jour passionnantes sur CuisineFiesta !"
+        }
+    ]
+}

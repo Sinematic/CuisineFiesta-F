@@ -20,7 +20,6 @@ function FileInput(props: {
                 type="file"
                 name={props.name} 
                 id={props.name}
-                aria-label={props.arialabel}
             />
             <label htmlFor={props.name}>
                 <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 1024 1024">

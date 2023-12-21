@@ -1,0 +1,29 @@
+{
+    "maintitle": "Changelog - CuisineFiesta",
+    "content": [
+		{
+			"section": "Améliorations globales de l'interface",
+			"content": [
+				{
+					"title": "Page de recette",
+					"content": "Affichage amélioré de la liste des éléments afin qu'il paraisse plus naturel."
+				},
+				{
+					"title": "Formatage du texte",
+					"content": "Les sauts de lignes sont désormais correctement enregistrés et affichés."
+				}
+			]
+		},
+		{
+			"section": "Nouvelles fonctionnalités",
+			"content": [
+				{
+					"title": "Favoris",
+					"content": "Il est désormais possible d'ajouter certaines recettes aux favoris. Afin d'afficher les recettes favorites, il suffit de visiter \"https://cuisinefiesta.com/mes-favoris\" (lien présent dans le bouton hamburger)"
+				}
+			]
+		}
+	],
+    "conclusion": "Restez à l'écoute pour plus de mises à jour passionnantes sur CuisineFiesta !"
+}
+  

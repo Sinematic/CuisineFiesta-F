@@ -46,8 +46,17 @@
 
 .icon-wrapper.picture {
     left: 0;
+    padding: 3px 0;
     background-color: var(--black);
     border-color: var(--black);
+}
+
+.icon-wrapper.picture > .file-input-wrapper {
+    transform: scale(0.67);
+}
+
+.icon-wrapper.picture > .file-input-wrapper::after {
+    content: "";
 }
 
 .icon-wrapper.premium {
@@ -152,4 +161,11 @@
     .icon-wrapper.picture {
         left: 7%;
     }
+
+    .icon-wrapper.picture > .file-input-wrapper {
+        width: 40px !important;
+        padding-inline: 0;
+        text-align: left;
+        transform: scale(0.4);
+    }    
 } 

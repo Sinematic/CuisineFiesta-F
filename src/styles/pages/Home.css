@@ -75,6 +75,11 @@
     text-align: center;
 }
 
+.article-wrapper {
+
+}
+
+
 @media all and (min-width: 1024px) {
 
     .recent-recipe > p {

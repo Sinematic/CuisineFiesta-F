@@ -1,7 +1,18 @@
 import "../../styles/pages/Blog.css"
+//import { v4 as uuidv4 } from 'uuid'
 import Nav from "../Nav/Nav"
 
-function Blog(/*props: { link }*/) {
+function Blog(/*props: { 
+    document: { maintitle: string, 
+        content : { 
+            section: string, 
+            content : { title: string, content: string }[] 
+        }[]
+    }
+
+}*/) {
+
+    //const { document } = props
 
     return (
         <>
@@ -47,6 +58,24 @@ function Blog(/*props: { link }*/) {
             <Nav />
         </>
     )
+
+    // return (
+    //     <>
+    //         {document ?
+    //             <div className="blog-article">
+    //                 {document.maintitle ? <h2>{document.maintitle}</h2> : null}
+    //                 {document.content.map((section) => 
+    //                     <div key={uuidv4()} className="content-section">
+    //                         <h3>{content.title}</h3>
+    //                         <p>{content.content}</p>
+    //                     </div>
+    //                 )}
+    //             </div>
+    //         : <h2>Impossible de charger le document !</h2>}
+
+    //         <Nav />
+    //     </>
+    // )
 }
 
 export default Blog
