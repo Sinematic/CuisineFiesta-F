@@ -2,6 +2,7 @@ import { useState } from "react"
 import "../../styles/Nav/Nav.css"
 import DropdownMenu from "../Dropdown/DropdownMenu"
 import { useNavigate, useLocation } from "react-router"
+import Badge from "../Badge/Badge"
 
 function Nav() {
 
@@ -23,7 +24,7 @@ function Nav() {
         {
             path: "/ajouter-une-recette",
             content: "Ajouter une recette",
-            badge: "green"
+            badge: undefined
         },
         {
             path: "/favoris",
@@ -88,7 +89,8 @@ function Nav() {
                     strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="12" cy="8" r="5"/>
                         <path d="M20 21a8 8 0 1 0-16 0"/>
-                    </svg>                  
+                    </svg>       
+                    <Badge type="green" />           
                 </div>
             </nav>  
         </>

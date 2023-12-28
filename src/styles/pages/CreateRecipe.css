@@ -1,4 +1,5 @@
 .recipe-builder {
+    position: relative;
     padding-inline: 30px;
     padding-block: 40px;
 }
@@ -7,7 +8,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 42px;
-    padding-block: 50px;
+    padding-block: 80px 50px;
 }
 
 select, option {
@@ -58,6 +59,17 @@ select, option {
     content: "Ajouter une image (obligatoire)";
 }
 
+.drafts-box {
+    position: absolute;
+    top: 100px;
+    right: 30px;
+    width: fit-content;
+    padding: 7px;
+    color: var(--white);
+    background-color: var(--blue);
+    border-radius: 7px;
+}
+
 @media all and (min-width: 1024px) {
 
     .recipe-builder > form > .input-wrapper, 
@@ -90,5 +102,9 @@ select, option {
          
     .file-input-wrapper > label > svg {
         transform: scale(3);
+    }
+
+    .drafts-box {
+        right: 19%;
     }
 }

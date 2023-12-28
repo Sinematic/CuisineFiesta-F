@@ -52,6 +52,7 @@ ul li:last-child {
 .ingredients-list > h3 {
     width: fit-content;
     margin: auto;
+    text-align: center;
     padding-inline: 6px;
     font-size: 1.1rem;
     color: var(--success);

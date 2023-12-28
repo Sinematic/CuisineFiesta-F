@@ -36,6 +36,10 @@
         left: 5px;
     }
 
+    .second-row > .select-wrapper > select {
+        padding-inline: 5px;
+    }
+
 }
 
 

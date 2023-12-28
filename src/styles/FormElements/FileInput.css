@@ -1,14 +1,14 @@
 .file-input-wrapper {
-    width: 40px;
+    width: 30px;
     padding: 0 !important;
 }
 
 .file-input-wrapper > label {
     width: fit-content;
     height: fit-content;
+    padding-left: 2px;
 }
 
 .file-input-wrapper > label > svg {
     aspect-ratio: 34 / 29;
-    width: 30px;
 }

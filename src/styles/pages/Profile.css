@@ -46,13 +46,13 @@
 
 .icon-wrapper.picture {
     left: 0;
-    padding: 3px 0;
+    padding: 2px 0;
     background-color: var(--black);
     border-color: var(--black);
 }
 
 .icon-wrapper.picture > .file-input-wrapper {
-    transform: scale(0.67);
+    transform: scale(0.58);
 }
 
 .icon-wrapper.picture > .file-input-wrapper::after {
