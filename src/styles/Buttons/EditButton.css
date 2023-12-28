@@ -1,4 +1,17 @@
 .edit {
+    padding: 5px;
+    border-radius: 5px;
+    width: 36px;
+    height: 36px;
+}
+
+.edit > svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+.edit {
     cursor: pointer;
     background-color: var(--blue);
 }

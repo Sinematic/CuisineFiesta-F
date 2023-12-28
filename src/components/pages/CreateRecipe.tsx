@@ -46,6 +46,7 @@ function CreateRecipe() {
     const drafts = localStorage.getItem("draft-recipe")
 
     console.log(localStorage.getItem("draft-recipe"))
+    
 /*
 
     useEffect(() => {

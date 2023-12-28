@@ -26,7 +26,9 @@ function Ingredient(props: {
     const units = [
         ["Pas d'unité", "mL", "cL", "L", "mg", "g", "kg", "Pincée", "Cuillère à soupe", "Cuillère à café", "Sachet"],
         ["Pas d'unité", "mL", "cL", "L", "mg", "g", "kg", "Pincées", "Cuillères à soupe", "Cuillères à café", "Sachets"]
-    ];
+    ]
+
+    const width = window.innerWidth
 
     const [name, setName] = useState<string>("")
     const [amount, setAmount] = useState<string>("")
@@ -64,7 +66,7 @@ function Ingredient(props: {
                 <Input onChange={(e) => setAmount(e.target.value)} value={amount}
                 name="ingredient-amount" type="number" min={1}
                 label="Quantité" placeholder={true} maxLength={3} />
-                <Select name="unit" options={amount === "1" ? units[0] : units[1]} label="Unités de mesure"
+                <Select name="unit" options={amount === "1" ? units[0] : units[1]} label={width >= 375 ? "Unités de mesure" : "Unités"}
                 state={unit} setter={setUnit} /> 
             </div>
         </div>

@@ -30,6 +30,14 @@
     border-radius: 0px;
 }
 
+@media all and (max-width: 374px) {
+
+    .second-row > .input-wrapper > input[type="number"] + .placeholder-like {
+        left: 5px;
+    }
+
+}
+
 
 @media all and (min-width: 1024px) {
 
