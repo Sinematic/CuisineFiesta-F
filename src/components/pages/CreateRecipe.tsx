@@ -40,12 +40,26 @@ function CreateRecipe() {
     const [steps, setSteps] = useState<Array<string>>([])
     //const [image, setImage] = useState<File | null>(null)
     const [cover, setCover] = useState<string>(DefaultBanner)
+    const [isOpenDraftBox, setIsOpenDraftBox] = useState<boolean>(false)
 
     const [notification, setNotification] = useState({ type: "", content: "" })
 
-    const drafts = localStorage.getItem("draft-recipe")
+    const drafts = [localStorage.getItem("draft-recipe")]
 
     const width = window.innerWidth
+
+    const loadDraft = (draft) => {
+        setMealName(draft.mealName)
+        setDescription(draft.description)
+        setType(draft.type)
+        setDuration(draft.duration)
+        setIngredients(draft.ingredients)
+        setRate(draft.rate)
+        setMealFor(draft.mealFor)
+        setSteps(draft.steps)
+        setSelectedTags(draft.tags)
+
+    }
 
 
     useEffect(() => {
@@ -202,7 +216,13 @@ function CreateRecipe() {
                 </Dropdown>
 
                 {drafts !== null ? 
-                    <div className="drafts-box">📖 Brouillons</div> 
+                    <>
+                        <div onClick={() => setIsOpenDraftBox(!isOpenDraftBox)} className="drafts-box">📖 Brouillons</div>
+                        {isOpenDraftBox ? <ol>
+                            {drafts.map((draft) => <li onClick={() => loadDraft(draft)}></li>)}
+                        </ol> : null}
+                    </>
+                    
                 : ""}    
 
                 <form action="" method="POST">
