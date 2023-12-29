@@ -1,5 +1,6 @@
 import { useEffect, useState, /*ChangeEvent */} from "react"
 import { useNavigate } from "react-router"
+import { v4 as uuidv4 } from 'uuid'
 import Header from "../Header/Header"
 import Cover from "../Cover/Cover"
 import Nav from "../Nav/Nav"
@@ -23,6 +24,7 @@ import Meat from "../../assets/images/viande-crue-et-assaisonnement.webp"
 import Guidelines from "../../assets/files/tips-to-write-a-recipe.json"
 import Notification from "../Notification/Notification"
 import "../../styles/pages/CreateRecipe.css"
+import { Recipe } from "../../interfaces/Recipe"
 
 
 function CreateRecipe() {
@@ -41,48 +43,62 @@ function CreateRecipe() {
     //const [image, setImage] = useState<File | null>(null)
     const [cover, setCover] = useState<string>(DefaultBanner)
     const [isOpenDraftBox, setIsOpenDraftBox] = useState<boolean>(false)
+    const [draftId, setDraftId] = useState<string>("")
 
     const [notification, setNotification] = useState({ type: "", content: "" })
 
-    const drafts = [localStorage.getItem("draft-recipe")]
+    const drafts: Recipe[] | null = (() => {
+        const draftsString = localStorage.getItem("drafts")
+        return draftsString !== null ? JSON.parse(draftsString) : null
+    })()
 
-    const width = window.innerWidth
-
-    const loadDraft = (draft) => {
-        setMealName(draft.mealName)
+    const loadDraft = (draft : Recipe) => {
+        setMealName(draft.title)
         setDescription(draft.description)
-        setType(draft.type)
-        setDuration(draft.duration)
+        setType(draft.mealType)
+        setDuration(draft.time.toString())
         setIngredients(draft.ingredients)
-        setRate(draft.rate)
-        setMealFor(draft.mealFor)
+        setRate(draft.ratings.grade)
+        setMealFor(draft.recipeFor.toString())
         setSteps(draft.steps)
         setSelectedTags(draft.tags)
-
+        // setImage(null)
+        //setLoadedFromDrafts(true)
     }
-
 
     useEffect(() => {
 
-        const recipeDraft = {
-            title: mealName ,
-            ingredients: [...ingredients],
-            mealType: type,
-            description: description,
-            steps: [...steps],
-            tags: [...selectedTags],
-            time: duration,
-            recipeFor: mealFor,
-            ratings: [{ 
-                grade: rate
-            }],
+        if (mealName !== "" || description !== "" || ingredients.length > 0 || steps.length > 0) {
+
+            const recipeDraft = {
+                _id: draftId !== null ? draftId : setDraftId(uuidv4()),
+                title: mealName ,
+                ingredients: [...ingredients],
+                mealType: type,
+                description: description,
+                steps: [...steps],
+                tags: [...selectedTags],
+                time: duration,
+                recipeFor: mealFor,
+                ratings: [{ 
+                    grade: rate
+                }]
+            }
+    
+            if (drafts !== null && drafts.length > 0) {
+    
+                const updatedDrafts = drafts.map((draft) => draft._id === draftId ? recipeDraft : draft)
+    
+                localStorage.setItem("drafts", JSON.stringify(updatedDrafts))
+    
+            } else localStorage.setItem("drafts", JSON.stringify([recipeDraft]))
         }
 
-        localStorage.setItem("draft-recipe", JSON.stringify(recipeDraft))
-
-        console.log(localStorage.getItem("draft-recipe"))
+        console.log(drafts)
+        console.log(mealName)
         
     }, [mealName, description, steps, ingredients, type, selectedTags, duration, mealFor, rate])
+
 
 /*
     const handleFileChange = (e : ChangeEvent<HTMLInputElement>) => {
@@ -109,7 +125,6 @@ function CreateRecipe() {
     const navigate = useNavigate()
 
     const submitData = async () => {
-
 
         if (mealName 
             && type 
@@ -167,7 +182,10 @@ function CreateRecipe() {
                         }
                     })*/
     
-                    if (response.ok) navigate("/")
+                    if (response.ok) {
+                        const result = await response.json()
+                        navigate(`/recette/${result.id}`)
+                    }
             
                 } catch(error) {
                     console.log(error)
@@ -215,11 +233,11 @@ function CreateRecipe() {
                     <DocumentReader document={Guidelines} />
                 </Dropdown>
 
-                {drafts !== null ? 
+                {drafts !== null && drafts ? 
                     <>
                         <div onClick={() => setIsOpenDraftBox(!isOpenDraftBox)} className="drafts-box">📖 Brouillons</div>
                         {isOpenDraftBox ? <ol>
-                            {drafts.map((draft) => <li onClick={() => loadDraft(draft)}></li>)}
+                            {drafts.map((draft) => <li onClick={() => loadDraft(draft)} key={uuidv4()}></li>)}
                         </ol> : null}
                     </>
                     
