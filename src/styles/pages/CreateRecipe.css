@@ -64,10 +64,54 @@ select, option {
     top: 100px;
     right: 30px;
     width: fit-content;
+    cursor: pointer;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.drafts-box > h3 {
     padding: 7px;
+    height: fit-content;
     color: var(--white);
     background-color: var(--blue);
-    border-radius: 7px;
+}
+
+.drafts-box.open {
+    z-index: 10;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    text-align: center;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    color: var(--black);
+    border: 3px solid var(--blue);
+}
+
+.drafts-box.open > h3 {
+    background-color: var(--red);
+    transition: background-color 2s;
+}
+
+.drafts-box.open > .close-wrapper {
+    opacity: 1;
+    transition: opacity 2s;
+}
+
+.drafts-box > .close-wrapper {
+    opacity: 0;
+}
+
+.drafts-box.open > ol {
+    padding-block: 40px;
+}
+
+.drafts-box.open > ol > li {
+    font-weight: 500;
 }
 
 @media all and (min-width: 1024px) {
@@ -107,4 +151,10 @@ select, option {
     .drafts-box {
         right: 19%;
     }
+
+    .drafts-box.open {
+        width: 60%;
+    }
+
+    
 }

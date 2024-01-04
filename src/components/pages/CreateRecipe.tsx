@@ -25,6 +25,7 @@ import Guidelines from "../../assets/files/tips-to-write-a-recipe.json"
 import Notification from "../Notification/Notification"
 import "../../styles/pages/CreateRecipe.css"
 import { Recipe } from "../../interfaces/Recipe"
+import Close from "../Close/Close"
 
 
 function CreateRecipe() {
@@ -99,7 +100,6 @@ function CreateRecipe() {
         
     }, [mealName, description, steps, ingredients, type, selectedTags, duration, mealFor, rate])
 
-
 /*
     const handleFileChange = (e : ChangeEvent<HTMLInputElement>) => {
 
@@ -108,6 +108,7 @@ function CreateRecipe() {
         console.log(file)
     }
 */
+
     useEffect(() => {
 
         if (type === "Entrée") {
@@ -192,7 +193,6 @@ function CreateRecipe() {
                 }
           /*  }*/
 
-
         } else {
 
             let sentence : string = "Il faut renseigner "
@@ -234,13 +234,13 @@ function CreateRecipe() {
                 </Dropdown>
 
                 {drafts !== null && drafts ? 
-                    <>
-                        <div onClick={() => setIsOpenDraftBox(!isOpenDraftBox)} className="drafts-box">📖 Brouillons</div>
-                        {isOpenDraftBox ? <ol>
-                            {drafts.map((draft) => <li onClick={() => loadDraft(draft)} key={uuidv4()}></li>)}
-                        </ol> : null}
-                    </>
-                    
+                    <div className={"drafts-box" + (isOpenDraftBox ? " open" : "")}>
+                        <h3 onClick={() => setIsOpenDraftBox(!isOpenDraftBox)}>📖 Brouillons</h3>
+                        <Close onClick={() => setIsOpenDraftBox(false)} />
+                            {isOpenDraftBox ? <ol>
+                                {drafts.map((draft) => <li onClick={() => loadDraft(draft)} key={uuidv4()}>{draft.title}</li>)}
+                            </ol> : null}
+                    </div>                    
                 : ""}    
 
                 <form action="" method="POST">
