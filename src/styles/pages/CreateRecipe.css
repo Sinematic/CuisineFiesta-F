@@ -89,7 +89,7 @@ select, option {
     transform: translateX(-50%);
     background-color: var(--white);
     color: var(--black);
-    border: 3px solid var(--blue);
+    border: 3px solid var(--red);
 }
 
 .drafts-box.open > h3 {
@@ -111,7 +111,20 @@ select, option {
 }
 
 .drafts-box.open > ol > li {
+    width: fit-content;
+    margin: auto;
+    cursor: pointer;
     font-weight: 500;
+}
+
+.drafts-box.open > ol > li > .this-recipe {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.drafts-box.open >  ol > li > span {
+    font-size: 1rem;
+    font-weight: 300;
 }
 
 @media all and (min-width: 1024px) {

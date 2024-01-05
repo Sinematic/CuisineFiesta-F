@@ -30,6 +30,11 @@ import Close from "../Close/Close"
 
 function CreateRecipe() {
 
+    const drafts: Recipe[] | null = (() => {
+        const draftsString = localStorage.getItem("drafts")
+        return draftsString !== null ? JSON.parse(draftsString) : null
+    })()
+
     const possibleTypes = ["Entrée", "Plat principal", "Dessert", "Viande", "Accompagnement"]
 
     const [mealName, setMealName] = useState<string>("")
@@ -45,19 +50,16 @@ function CreateRecipe() {
     const [cover, setCover] = useState<string>(DefaultBanner)
     const [isOpenDraftBox, setIsOpenDraftBox] = useState<boolean>(false)
     const [draftId, setDraftId] = useState<string>("")
+    console.log(draftId)
 
     const [notification, setNotification] = useState({ type: "", content: "" })
 
-    const drafts: Recipe[] | null = (() => {
-        const draftsString = localStorage.getItem("drafts")
-        return draftsString !== null ? JSON.parse(draftsString) : null
-    })()
-
     const loadDraft = (draft : Recipe) => {
+        setDraftId(draft._id)
         setMealName(draft.title)
         setDescription(draft.description)
         setType(draft.mealType)
-        setDuration(draft.time.toString())
+        setDuration(duration !== null ? draft.time.toString() : null)
         setIngredients(draft.ingredients)
         setRate(draft.ratings.grade)
         setMealFor(draft.recipeFor.toString())
@@ -65,15 +67,19 @@ function CreateRecipe() {
         setSelectedTags(draft.tags)
         // setImage(null)
         //setLoadedFromDrafts(true)
+        setIsOpenDraftBox(false)
     }
 
     useEffect(() => {
 
-        if (mealName !== "" || description !== "" || ingredients.length > 0 || steps.length > 0) {
+        if ((mealName) && (description !== "" || ingredients.length > 0 || steps.length > 0)) {
+
+            const tempId = draftId !== "" ? draftId : uuidv4()
+            setDraftId(tempId) 
 
             const recipeDraft = {
-                _id: draftId !== null ? draftId : setDraftId(uuidv4()),
-                title: mealName ,
+                _id: tempId,
+                title: mealName,
                 ingredients: [...ingredients],
                 mealType: type,
                 description: description,
@@ -88,17 +94,16 @@ function CreateRecipe() {
     
             if (drafts !== null && drafts.length > 0) {
     
-                const updatedDrafts = drafts.map((draft) => draft._id === draftId ? recipeDraft : draft)
-    
+                const tempDrafts = drafts.filter((draft) => draft._id !== draftId)
+                const updatedDrafts = [...tempDrafts, recipeDraft]
+
                 localStorage.setItem("drafts", JSON.stringify(updatedDrafts))
     
             } else localStorage.setItem("drafts", JSON.stringify([recipeDraft]))
         }
-
-        console.log(drafts)
-        console.log(mealName)
         
     }, [mealName, description, steps, ingredients, type, selectedTags, duration, mealFor, rate])
+    console.log(drafts)
 
 /*
     const handleFileChange = (e : ChangeEvent<HTMLInputElement>) => {
@@ -238,12 +243,17 @@ function CreateRecipe() {
                         <h3 onClick={() => setIsOpenDraftBox(!isOpenDraftBox)}>📖 Brouillons</h3>
                         <Close onClick={() => setIsOpenDraftBox(false)} />
                             {isOpenDraftBox ? <ol>
-                                {drafts.map((draft) => <li onClick={() => loadDraft(draft)} key={uuidv4()}>{draft.title}</li>)}
+                                {drafts.map((draft) => 
+                                    <li onClick={() => loadDraft(draft)} key={uuidv4()}>
+                                        {draft.title}
+                                        {draft._id === draftId ? <span className="this-recipe">   (Cette recette)</span> : null}
+                                        {draft._id !== draftId ?<span onClick={() => deleteDraft(draft._id)}> Supprimer</span> : null}
+                                    </li>)}
                             </ol> : null}
                     </div>                    
                 : ""}    
 
-                <form action="" method="POST">
+                {!isOpenDraftBox ? <form action="" method="POST">
 
                     <Input onChange={(e) => setMealName(e.target.value)} value={mealName} 
                     type="text" name="name" label="Nom de la recette" minLength={5} maxLength={60}/>
@@ -275,7 +285,7 @@ function CreateRecipe() {
 
                     {notification.type ? <Notification type={notification.type} content={notification.content} /> : null}
 
-                </form>
+                </form> : ""}
             </div>
 
             <Nav />
