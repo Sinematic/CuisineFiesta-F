@@ -26,6 +26,8 @@ import Notification from "../Notification/Notification"
 import "../../styles/pages/CreateRecipe.css"
 import { Recipe } from "../../interfaces/Recipe"
 import Close from "../Close/Close"
+import EditButton from "../Buttons/EditButton"
+import DeleteButton from "../Buttons/DeleteButton"
 
 
 function CreateRecipe() {
@@ -70,6 +72,17 @@ function CreateRecipe() {
         setIsOpenDraftBox(false)
     }
 
+    const deleteDraft = (id: string) => {
+
+        if (drafts) {
+            const updatedDrafts = drafts.filter((draft) => draft._id !== id)
+    
+            if (JSON.stringify(updatedDrafts) !== JSON.stringify(drafts)) {
+                localStorage.setItem("drafts", JSON.stringify(updatedDrafts))
+            }
+        }
+    }
+
     useEffect(() => {
 
         if ((mealName) && (description !== "" || ingredients.length > 0 || steps.length > 0)) {
@@ -108,7 +121,7 @@ function CreateRecipe() {
 /*
     const handleFileChange = (e : ChangeEvent<HTMLInputElement>) => {
 
-        const file = e.target.files?.[0];
+        const file = e.target.files?.[0]
         if (file) setImage(file)
         console.log(file)
     }
@@ -175,10 +188,10 @@ function CreateRecipe() {
     
                     /*
     
-                    const bodyFormData = new FormData();
+                    const bodyFormData = new FormData()
 
-                    bodyFormData.append('recipe', JSON.stringify(recipeData));
-                    if (image instanceof Blob) bodyFormData.append('image', image);
+                    bodyFormData.append('recipe', JSON.stringify(recipeData))
+                    if (image instanceof Blob) bodyFormData.append('image', image)
     
                     const response = await fetch(`${import.meta.env.VITE_API_RECIPE}/`, {
                         method: "POST",
@@ -238,16 +251,17 @@ function CreateRecipe() {
                     <DocumentReader document={Guidelines} />
                 </Dropdown>
 
-                {drafts !== null && drafts ? 
+                {drafts !== null && drafts.length > 0 ? 
                     <div className={"drafts-box" + (isOpenDraftBox ? " open" : "")}>
                         <h3 onClick={() => setIsOpenDraftBox(!isOpenDraftBox)}>📖 Brouillons</h3>
                         <Close onClick={() => setIsOpenDraftBox(false)} />
                             {isOpenDraftBox ? <ol>
                                 {drafts.map((draft) => 
-                                    <li onClick={() => loadDraft(draft)} key={uuidv4()}>
-                                        {draft.title}
-                                        {draft._id === draftId ? <span className="this-recipe">   (Cette recette)</span> : null}
-                                        {draft._id !== draftId ?<span onClick={() => deleteDraft(draft._id)}> Supprimer</span> : null}
+                                    <li key={uuidv4()}>
+                                        <span className="draft-title">{draft.title}</span>
+                                        <EditButton onClick={() => loadDraft(draft)} />
+                                        <DeleteButton onClick={() => deleteDraft(draft._id)} />
+                                        {draft._id === draftId ? <span className="this-recipe">Cette recette</span> : null}
                                     </li>)}
                             </ol> : null}
                     </div>                    

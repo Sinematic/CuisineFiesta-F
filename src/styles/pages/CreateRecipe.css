@@ -89,11 +89,11 @@ select, option {
     transform: translateX(-50%);
     background-color: var(--white);
     color: var(--black);
-    border: 3px solid var(--red);
+    border: 2px solid var(--black);
 }
 
 .drafts-box.open > h3 {
-    background-color: var(--red);
+    background-color: var(--black);
     transition: background-color 2s;
 }
 
@@ -107,14 +107,35 @@ select, option {
 }
 
 .drafts-box.open > ol {
-    padding-block: 40px;
+    display: grid;
+    width: 1fr;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-block: 20px;
+    padding-inline: 12px;
+    margin: auto;
 }
 
 .drafts-box.open > ol > li {
+    display: flex;
+    gap: 7px;
     width: fit-content;
-    margin: auto;
     cursor: pointer;
     font-weight: 500;
+}
+
+.drafts-box.open >  ol > li > span {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.drafts-box.open > ol > li > .draft-title { 
+    font-weight: 500;
+}
+
+.drafts-box.open > ol > li > .edit, 
+.drafts-box.open > ol > li > .delete {
+    transform: scale(0.8);
 }
 
 .drafts-box.open > ol > li > .this-recipe {
@@ -122,10 +143,16 @@ select, option {
     font-style: italic;
 }
 
-.drafts-box.open >  ol > li > span {
-    font-size: 1rem;
-    font-weight: 300;
+.drafts-box.open > ol > li > .this-recipe::before {
+    content: "(";
+    font-style: normal;
 }
+
+.drafts-box.open > ol > li > .this-recipe::after {
+    content: ")";
+    font-style: normal;
+}
+
 
 @media all and (min-width: 1024px) {
 
@@ -166,8 +193,15 @@ select, option {
     }
 
     .drafts-box.open {
+        border: 3px solid;
         width: 60%;
     }
 
-    
+    .drafts-box.open > ol > li {
+        gap: 15px;
+    }
+
+    .drafts-box.open >  ol > li > .delete-draft {
+        font-size: 1rem;
+    }
 }
