@@ -13,4 +13,3 @@ export interface Recipe {
     authorId: string,
     image: string
 }
-

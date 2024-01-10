@@ -1,8 +1,8 @@
-import "../../styles/Rate/Rate.css";
+import "../../styles/Rate/Rate.css"
 
 function Rate(props: { rate: number | null, display?: boolean, setRate?: (rating: number) => void }) {
 
-  const range = [1, 2, 3, 4, 5];
+    const range = [1, 2, 3, 4, 5]
 
     return (
         <div className="stars">

@@ -12,7 +12,7 @@ function Select(props: {
     return (
         <div className={"select-wrapper " + (props.identifier ? props.identifier : "")}>
             {props.state !==  "" ?<label>{props.label}</label> : ""}
-            <select id={props.name} name={props.name} onChange={(e) => props.setter(e.target.value)}>
+            <select id={props.name} name={props.name} onChange={(e) => props.setter(e.target.value)} value={props.state || ""}>
                 <option value="">{props.label}</option>
                 {props.options.map((option) => <option key={option} value={option}>{option}</option>)}
             </select>

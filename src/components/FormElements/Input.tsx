@@ -17,7 +17,7 @@ function Input(props: {
     return (
         <div className={(props.value ? "input-filled" : "") + " input-wrapper " + 
         (props.identifier ? props.identifier : "")}>
-            <input onChange={props.onChange} type={props.type} value={props.value} name={props.name} 
+            <input onChange={props.onChange} type={props.type} value={props.value || ""} name={props.name} 
             id={props.name} minLength={props.minLength} maxLength={props.maxLength} min={props.min}
             aria-label={props.arialabel} />
             <label className={props.placeholder ? "placeholder-like" : ""} 

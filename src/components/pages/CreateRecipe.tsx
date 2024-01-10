@@ -32,7 +32,7 @@ import DeleteButton from "../Buttons/DeleteButton"
 
 function CreateRecipe() {
 
-    const drafts: Recipe[] | null = (() => {
+    const localDrafts: Recipe[] | null = (() => {
         const draftsString = localStorage.getItem("drafts")
         return draftsString !== null ? JSON.parse(draftsString) : null
     })()
@@ -52,7 +52,7 @@ function CreateRecipe() {
     const [cover, setCover] = useState<string>(DefaultBanner)
     const [isOpenDraftBox, setIsOpenDraftBox] = useState<boolean>(false)
     const [draftId, setDraftId] = useState<string>("")
-    console.log(draftId)
+    const [drafts, setDrafts] = useState<Recipe[] | null>(localDrafts)
 
     const [notification, setNotification] = useState({ type: "", content: "" })
 
@@ -61,25 +61,21 @@ function CreateRecipe() {
         setMealName(draft.title)
         setDescription(draft.description)
         setType(draft.mealType)
-        setDuration(duration !== null ? draft.time.toString() : null)
+        setDuration(String(draft.time))
         setIngredients(draft.ingredients)
-        setRate(draft.ratings.grade)
-        setMealFor(draft.recipeFor.toString())
+        setRate(draft.ratings.grade !== null ? draft.ratings.grade : null)
+        setMealFor(String(draft.recipeFor))
         setSteps(draft.steps)
         setSelectedTags(draft.tags)
         // setImage(null)
-        //setLoadedFromDrafts(true)
         setIsOpenDraftBox(false)
     }
 
     const deleteDraft = (id: string) => {
 
         if (drafts) {
-            const updatedDrafts = drafts.filter((draft) => draft._id !== id)
-    
-            if (JSON.stringify(updatedDrafts) !== JSON.stringify(drafts)) {
-                localStorage.setItem("drafts", JSON.stringify(updatedDrafts))
-            }
+            const updatedDrafts: Recipe[] = drafts.filter((draft) => draft._id !== id)
+            setDrafts(updatedDrafts)
         }
     }
 
@@ -108,15 +104,18 @@ function CreateRecipe() {
             if (drafts !== null && drafts.length > 0) {
     
                 const tempDrafts = drafts.filter((draft) => draft._id !== draftId)
-                const updatedDrafts = [...tempDrafts, recipeDraft]
+                const updatedDrafts: Recipe[] | null = [...tempDrafts, recipeDraft]
 
-                localStorage.setItem("drafts", JSON.stringify(updatedDrafts))
+                setDrafts(updatedDrafts)
     
-            } else localStorage.setItem("drafts", JSON.stringify([recipeDraft]))
+            } else setDrafts([recipeDraft])
         }
         
     }, [mealName, description, steps, ingredients, type, selectedTags, duration, mealFor, rate])
-    console.log(drafts)
+
+    useEffect(() => {
+        localStorage.setItem("drafts", JSON.stringify(drafts))
+    }, [drafts])
 
 /*
     const handleFileChange = (e : ChangeEvent<HTMLInputElement>) => {
@@ -202,6 +201,7 @@ function CreateRecipe() {
                     })*/
     
                     if (response.ok) {
+                        deleteDraft(draftId)
                         const result = await response.json()
                         navigate(`/recette/${result.id}`)
                     }
@@ -287,7 +287,7 @@ function CreateRecipe() {
                     <Select name="mealFor" options={["1", "2", "3", "4", "5", "6", "7", "8"]} 
                     state={mealFor} setter={setMealFor} label="Nombre de convives" />
 
-                    <Input onChange={(e) => setDuration(e.target.value)} value={duration ? duration : ""} 
+                    <Input onChange={(e) => setDuration(e.target.value)} value={duration || ""} 
                     name="duration" type="number" identifier={duration !== null ? "input-filled" : ""} 
                     label="Temps en minutes" minLength={1} maxLength={4} min={1} />
 
