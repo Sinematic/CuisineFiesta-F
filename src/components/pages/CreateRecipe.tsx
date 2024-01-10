@@ -63,7 +63,7 @@ function CreateRecipe() {
         setType(draft.mealType)
         setDuration(String(draft.time))
         setIngredients(draft.ingredients)
-        setRate(draft.ratings.grade !== null ? draft.ratings.grade : null)
+        setRate(draft.ratings.grade !== undefined ? draft.ratings.grade : null)
         setMealFor(String(draft.recipeFor))
         setSteps(draft.steps)
         setSelectedTags(draft.tags)
