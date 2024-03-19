@@ -104,4 +104,8 @@ button.active-page {
         left: 50%;
         transform: translateX(-50%);
     }
+
+    .session-form > form {
+        width: 720px;
+    }
 }

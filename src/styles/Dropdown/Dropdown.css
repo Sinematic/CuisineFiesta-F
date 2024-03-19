@@ -73,11 +73,11 @@
 @media all and (min-width: 1024px) {
 
     .dropdown-bar {
-        width: 635px;
         background-color: var(--blue) !important;
     }
 
     .dropdown {
+        margin-left: -111.1px;
         width: 635px;
     }
 }
